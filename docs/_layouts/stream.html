@@ -1,0 +1,33 @@
+---
+layout: home
+---
+<strong><a href="{{ page.url }}">{{ page.title }}</a></strong>
+<br>
+<span class="text-small text-gray-light">
+  {{ page.content | strip_html }}
+</span>
+
+{% for time in page.timetable.dominical %}
+{% assign dominical = true %}
+{% include time.html %}
+{% endfor %}
+
+{% for time in page.timetable.weekdays %}
+{% assign dominical = false %}
+{% include time.html %}
+{% endfor %}
+
+{% if page.facebook %}
+<a href="{{ page.facebook }}"><i class="fab fa-facebook-square fa-fw"></i> {{ page.facebook | split: "/" | last }}</a>
+<br>
+{% endif %}
+
+{% if page.twitter %}
+<a href="{{ page.twitter }}"><i class="fab fa-twitter fa-fw"></i> {{ page.twitter | split: "/" | last }}</a>
+<br>
+{% endif %}
+
+{% if page.youtube %}
+<a href="{{ page.youtube }}"><i class="fab fa-youtube fa-fw"></i> {{ page.youtube | split: "/" | last }}</a>
+<br>
+{% endif %}

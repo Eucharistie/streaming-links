@@ -31,10 +31,18 @@ plugins:
   - jekyll-feed
 
 collections:
-- streaming_links
+  streams:
+    output: true
 
 sass:
     sass_dir: "assets/css"
+
+defaults:
+  - scope:
+      path: ""
+      type: streams
+    values:
+      layout: stream
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
