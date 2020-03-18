@@ -37,6 +37,9 @@ collections:
 sass:
     sass_dir: "assets/css"
 
+gems:
+  - jekyll-octicons
+
 defaults:
   - scope:
       path: ""
