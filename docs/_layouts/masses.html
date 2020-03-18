@@ -1,0 +1,53 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+<div class="Box Box">
+
+  <div class="Box-header text-red">
+    Zondagsmis
+  </div>
+  <div class="Box-body text-small">
+    Liturgie van de zondag, ook als het op zaterdagavond is
+  </div>
+
+  {% for stream in site.streams %}
+    {% assign timetable = stream.timetable.dominical %}
+    {% assign dominical = true %}
+    {% if timetable %}
+      {% include mass_row.html %}
+    {% endif %}
+  {% endfor %}
+
+</div>
+<br>
+<div class="Box">
+
+  <div class="Box-header">
+    Weekmis
+  </div>
+  <div class="Box-body text-small">
+    Weekdagen zijn inbegrepen zaterdag, uitgezonderd feestdagen
+  </div>
+
+  {% for stream in site.streams %}
+    {% assign timetable = stream.timetable.weekdays %}
+    {% assign dominical = false %}
+    {% if timetable %}
+      {% include mass_row.html %}
+    {% endif %}
+  {% endfor %}
+
+</div>
+<div style="height:150px">
+  <div class="position-fixed bottom-0 left-0 mb-3 ml-3">
+    <div class="Toast Toast--loading">
+      <span class="Toast-icon" style="color: red;">
+        {% octicon primitive-dot %}
+      </span>
+      <span class="Toast-content text-red">Nu live: dummy</span>
+    </div>
+  </div>
+</div>

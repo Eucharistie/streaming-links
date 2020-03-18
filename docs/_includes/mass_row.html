@@ -1,0 +1,23 @@
+<div class="Box-row d-flex flex-items-center">
+
+  {% comment %}
+  <a href="{{ stream.stream }}" class="mr-3 text-gray">
+    <i class="fas fa-play fa-2x"></i>
+  </a>
+  {% endcomment %}
+
+  <div class="flex-auto">
+
+    <strong><a href="{{ stream.url }}">{{ stream.title }}</a></strong>
+    <br>
+    <span class="text-small text-gray-light">
+      {{ stream.content | strip_html }}
+    </span>
+
+    {% for time in timetable %}
+    {% include time.html %}
+    {% endfor %}
+
+  </div>
+
+</div>

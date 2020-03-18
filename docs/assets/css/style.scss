@@ -5,13 +5,9 @@
 @import "primer";
 @import "fontawesome";
 
-
 /* Fontawesome Social Media icons */
-a .fab {
-  color: #444;
-}
 .fa-facebook, .fa-facebook-square {
-    &:hover { color: #3b5998 }
+    color: #3b5998
 }
 .fa-twitter, .fa-twitter-square {
     color: #00aced

@@ -1,0 +1,13 @@
+<div class="">
+  <span title="Uur" class="Label Label--gray {% if dominical %}text-red{% endif %}">
+    {% assign h = time.time | divided_by: 60 | floor %}
+    {% assign m = time.time | modulo: 60 | floor %}
+    {{ h | prepend: "0" | slice: -2, 2 }}:{{ m | prepend: "0" | slice: -2, 2 }}
+    {% assign massdays = time.days | size %}
+    {% if massdays == 6 %}
+      alle weekdagen
+    {% else %}
+      {{ time.days | join: ", " | replace: "mon", "maandag" | replace: "tue", "dinsdag" | replace: "wed", "woensdag" | replace: "thu", "donderdag" | replace: "fri", "vrijdag" | replace: "sat", "zaterdag" | replace: "sun", "zondag" }}
+    {% endif %}
+  </span>
+</div>
