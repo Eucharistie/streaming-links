@@ -1,0 +1,25 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+<div class="Box">
+  <div class="Box-header">
+    Zondagsmis
+  </div>
+  <div class="Box-body text-small">
+    Hieronder vind je enkele links om de Eucharistie live te volgen.
+  </div>
+  {% for link in site.streaming_links %}
+  <div class="Box-row d-flex flex-items-center">
+    <div class="flex-auto">
+      <strong>{{ link.place }}</strong>
+      <div class="text-small text-gray-light">
+        {{ link.responsible }}
+      </div>
+    </div>
+    <a href="{{ link.facebook }}"><i class="fab fa-facebook-square fa-2x"></i></a>
+  </div>
+  {% endfor %}
+</div>
