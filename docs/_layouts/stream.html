@@ -1,33 +1,49 @@
 ---
 layout: home
 ---
-<strong><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></strong>
-<br>
-<span class="text-small text-gray-light">
-  {{ page.content | strip_html }}
-</span>
+<div class="col-8">
+  <div class="d-block box-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
+    <div class="bg-blue position-absolute top-0 left-0 py-1 width-full"></div>
+    <h3 class="text-gray-dark"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
+    <p class="text-gray">
+      {{ page.content | strip_html }}
+    </p>
+    <div class="pb-4">
+      {% for time in page.timetable.dominical %}
+      {% assign dominical = true %}
+      {% include time.html %}
+      {% endfor %}
 
-{% for time in page.timetable.dominical %}
-{% assign dominical = true %}
-{% include time.html %}
-{% endfor %}
-
-{% for time in page.timetable.weekdays %}
-{% assign dominical = false %}
-{% include time.html %}
-{% endfor %}
-
-{% if page.facebook %}
-<a href="{{ page.facebook }}"><i class="fab fa-facebook-square fa-fw"></i> {{ page.facebook | split: "/" | last }}</a>
-<br>
-{% endif %}
-
-{% if page.twitter %}
-<a href="{{ page.twitter }}"><i class="fab fa-twitter fa-fw"></i> {{ page.twitter | split: "/" | last }}</a>
-<br>
-{% endif %}
-
-{% if page.youtube %}
-<a href="{{ page.youtube }}"><i class="fab fa-youtube fa-fw"></i> {{ page.youtube | split: "/" | last }}</a>
-<br>
-{% endif %}
+      {% for time in page.timetable.weekdays %}
+      {% assign dominical = false %}
+      {% include time.html %}
+      {% endfor %}
+    </div>
+    <ul class="position-absolute bottom-0 pb-3 pl-0 mt-0 text-small text-gray list-style-none ">
+      {% if page.facebook %}
+      <li class="d-inline-block mr-1">
+        <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
+          <i class="fab fa-facebook-square fa-fw"></i>
+          {{ page.facebook | split: "/" | last }}
+        </a>
+      </li>
+      {% endif %}
+      {% if page.twitter %}
+      <li class="d-inline-block mr-1">
+        <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
+          <i class="fab fa-twitter fa-fw"></i>
+          {{ page.twitter | split: "/" | last }}
+        </a>
+      </li>
+      {% endif %}
+      {% if page.youtube %}
+      <li class="d-inline-block mr-1">
+        <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
+          <i class="fab fa-youtube fa-fw"></i>
+          {{ page.youtube | split: "/" | last }}
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
