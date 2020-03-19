@@ -8,7 +8,7 @@ layout: home
     <p class="text-gray">
       {{ page.content | strip_html }}
     </p>
-    <div class="pb-4">
+    <div class="mb-6">
       {% for time in page.timetable.dominical %}
       {% assign dominical = true %}
       {% include time.html %}
@@ -30,7 +30,7 @@ layout: home
       {% endif %}
       {% if page.twitter %}
       <li class="d-inline-block mr-1">
-        <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
+        <a href="{{ page.twitter }}" class="text-gray" style="text-decoration: none;">
           <i class="fab fa-twitter fa-fw"></i>
           {{ page.twitter | split: "/" | last }}
         </a>
@@ -38,7 +38,7 @@ layout: home
       {% endif %}
       {% if page.youtube %}
       <li class="d-inline-block mr-1">
-        <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
+        <a href="{{ page.youtube }}" class="text-gray" style="text-decoration: none;">
           <i class="fab fa-youtube fa-fw"></i>
           {{ page.youtube | split: "/" | last }}
         </a>
