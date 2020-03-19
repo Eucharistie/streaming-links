@@ -8,8 +8,20 @@
 
   <div class="flex-auto">
 
-    <strong><a href="{{ site.baseurl }}{{ stream.url }}">{{ stream.title }}</a></strong>
+    {% if stream.live %}
+    <span class="Label Label bg-red text-white">
+      {% octicon primitive-dot-stroke %} Nu live
+    </span>
+    {% endif %}
+    
+    <strong>
+      <a href="{{ site.baseurl }}{{ stream.url }}">
+        {{ stream.title }}
+      </a>
+    </strong>
+
     <br>
+
     <span class="text-small text-gray-light">
       {{ stream.content | strip_html }}
     </span>
