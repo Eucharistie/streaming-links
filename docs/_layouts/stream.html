@@ -20,6 +20,14 @@ layout: home
       {% endfor %}
     </div>
     <ul class="position-absolute bottom-0 pb-3 pl-0 mt-0 text-small text-gray list-style-none ">
+      {% if page.homepage %}
+      <li class="d-inline-block mr-1">
+        <a href="{{ page.homepage }}" class="text-gray" style="text-decoration: none;">
+          <i class="fas fa-home fa-fw"></i>
+          {{ page.homepage | remove_first: "http://www." | remove_first: "https://www." | remove_first: "http://" | remove_first: "https://" | split: "/" | first }}
+        </a>
+      </li>
+      {% endif %}
       {% if page.facebook %}
       <li class="d-inline-block mr-1">
         <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
