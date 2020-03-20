@@ -1,5 +1,5 @@
 <div class="">
-  <span title="Uur" class="Label Label--gray {% if dominical %}text-red{% endif %}">
+  <span title="Uur" class="Label Label--gray {% if time.kind == 'sundayMass' %}text-red{% endif %}">
     {% assign h = time.time | divided_by: 60 | floor %}
     {% assign m = time.time | modulo: 60 | floor %}
     {{ h | prepend: "0" | slice: -2, 2 }}:{{ m | prepend: "0" | slice: -2, 2 }}

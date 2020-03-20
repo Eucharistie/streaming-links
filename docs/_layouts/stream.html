@@ -9,14 +9,8 @@ layout: home
       {{ page.content | strip_html }}
     </p>
     <div class="mb-6">
-      {% for time in page.timetable.dominical %}
-      {% assign dominical = true %}
-      {% include time.html %}
-      {% endfor %}
-
-      {% for time in page.timetable.weekdays %}
-      {% assign dominical = false %}
-      {% include time.html %}
+      {% for time in page.timetable %}
+        {% include time.html %}
       {% endfor %}
     </div>
     {% if page.youtubeChannelID %}
