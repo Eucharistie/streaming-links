@@ -1,3 +1,70 @@
 ---
 layout: main
+days:
+- value: sun
+  nl: zondag
+- value: mon
+  nl: maandag
+- value: tue
+  nl: dinsdag
+- value: wed
+  nl: woensdag
+- value: thu
+  nl: donderdag
+- value: fri
+  nl: vrijdag
+- value: sat
+  nl: zaterdag
 ---
+<div class="Box Box">
+  {% for day in layout.days %}
+  {% assign timetable = "" | split: "," %}
+
+    <div class="Box-header day {{day.value}}" hidden>
+      {{ day.nl }}
+    </div>
+
+    {% for stream in site.streams %}
+      {% assign newtimes = stream.timetable | where: "days", day.value | map: "time" %}
+      {% assign timetable = timetable | concat: newtimes | uniq | sort %}
+    {% endfor %}
+
+    {% for time in timetable %}
+      <div class="Box-row day {{day.value}}" hidden>
+        {% include format_time.html time=time %}
+
+        {% for stream in site.streams %}
+          {% assign singleTime = stream.timetable | where: "days", day.value | where: "time", time %}
+          {% for currentTime in singleTime  %}
+              <a href="{{ site.baseurl }}{{ stream.url }}" class="Label Label--gray {%if currentTime.kind == 'sundayMass'%}text-red{%endif%}">
+                {{ stream.title | truncate: 40 }}
+              </a>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  {% endfor %}
+
+  <div class="Box-footer text-small bg-gray">
+    {% include timetable_legend.html %}
+  </div>
+
+</div>
+
+<script type="text/javascript">
+var days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+var d = new Date();
+var today = days[d.getDay()];
+function showDay(day) {
+  document.querySelectorAll(".day." + day).forEach(e => e.hidden = false);
+  document.querySelectorAll(".day:not(." + day + ")").forEach(e => e.hidden = true);
+  document.querySelector("#" + day).ariaCurrent = "page";
+  document.querySelectorAll(":not(#" + day + ")").forEach(e => e.ariaCurrent = "");
+}
+document.querySelectorAll(".SideNav.days .SideNav-subItem").forEach(function(e) {
+  e.onclick = function() {
+    showDay(e.id)
+  }
+})
+showDay(today)
+</script>
