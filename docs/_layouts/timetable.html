@@ -1,5 +1,6 @@
 ---
 layout: main
+sideNav: timetable
 days:
 - value: sun
   nl: zondag
@@ -59,7 +60,7 @@ function showDay(day) {
   document.querySelectorAll(".day." + day).forEach(e => e.hidden = false);
   document.querySelectorAll(".day:not(." + day + ")").forEach(e => e.hidden = true);
   document.querySelector("#" + day).ariaCurrent = "page";
-  document.querySelectorAll(":not(#" + day + ")").forEach(e => e.ariaCurrent = "");
+  document.querySelectorAll(".SideNav.days .SideNav-subItem:not(#" + day + ")").forEach(e => e.ariaCurrent = "");
 }
 document.querySelectorAll(".SideNav.days .SideNav-subItem").forEach(function(e) {
   e.onclick = function() {
