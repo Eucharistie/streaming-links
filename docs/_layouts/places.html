@@ -15,8 +15,6 @@ layout: main
   {% endfor %}
 
   <div class="Box-footer text-small bg-gray">
-    Legende:
-    <span title="Uur" class="Label Label--gray">weekmis</span>
-    <span title="Uur" class="Label Label--gray text-red">Zondagsmis</span>
+    {% include timetable_legend.html %}
   </div>
 </div>
