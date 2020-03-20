@@ -1,0 +1,22 @@
+---
+layout: main
+---
+
+<div class="Box Box">
+  <div class="Box-header text-small">
+    Alle plaatsen waar de eucharistie gestreamd wordt.<br>
+  </div>
+
+  {% for stream in site.streams %}
+    {% assign timetable = stream.timetable %}
+    {% if timetable %}
+      {% include mass_row.html %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="Box-footer text-small bg-gray">
+    Legende:
+    <span title="Uur" class="Label Label--gray">weekmis</span>
+    <span title="Uur" class="Label Label--gray text-red">Zondagsmis</span>
+  </div>
+</div>
