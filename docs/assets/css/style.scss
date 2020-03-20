@@ -8,6 +8,7 @@
 .videowrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: calc(56.25% + 22.5px); /* including negative margins */
   height: 0;
   margin-left: -20px;
   margin-right: -20px;
