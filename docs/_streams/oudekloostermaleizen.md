@@ -1,5 +1,5 @@
 ---
-title: Kapel
+title: Kapel Het Oude Klooster Maleizen
 community: Het Oude Klooster Maleizen
 priests: [Gert Verbeken]
 timetable:
@@ -10,7 +10,7 @@ timetable:
     days: [mon,tue,wed,thu,fri,sat]
     kind: weekMass
 facebook: https://www.facebook.com/Het-Oude-Klooster-104555811051318
-fbid:
+fbid: 104555811051318
 youtube: https://www.youtube.com/channel/UC7lUxNFc6p777LTjiz6MMTA
 homepage: http://www.hetoudekloostermaleizen.be
 stream:
