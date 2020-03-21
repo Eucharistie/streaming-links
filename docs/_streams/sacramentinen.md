@@ -11,6 +11,7 @@ timetable:
     days: [mon,tue,wed,thu,fri,sat]
     kind: weekMass
 facebook: https://www.facebook.com/Begijnhofhalle
+fbid: Begijnhofhalle
 stream: https://www.facebook.com/Begijnhofhalle
 ---
 pr. Serge De Cauwer

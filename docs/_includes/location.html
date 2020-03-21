@@ -1,10 +1,8 @@
-<div class="Box-row d-flex flex-items-center">
+<div class="Box-row d-flex flex-items-start">
 
-  {% comment %}
-  <a href="{{ stream.stream }}" class="mr-3 text-gray">
-    <i class="fas fa-play fa-2x"></i>
+  <a href="{{ site.baseurl }}{{ stream.url }}" class="mr-3 text-gray">
+    {% include avatar.html stream=stream %}
   </a>
-  {% endcomment %}
 
   <div class="flex-auto">
 
@@ -13,7 +11,7 @@
       {% octicon primitive-dot-stroke %} Nu live
     </span>
     {% endif %}
-    
+
     <strong>
       <a href="{{ site.baseurl }}{{ stream.url }}">
         {{ stream.title }}
@@ -22,9 +20,11 @@
 
     <br>
 
-    <span class="text-small text-gray-light">
-      {{ stream.content | strip_html }}
-    </span>
+    <div class="">
+      <p class="text-small text-gray-light">
+        {{ stream.content | strip_html }}
+      </p>
+    </div>
 
     {% for time in timetable %}
     {% include time.html %}
@@ -33,3 +33,11 @@
   </div>
 
 </div>
+
+{% comment %}
+
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+
+{% endcomment %}

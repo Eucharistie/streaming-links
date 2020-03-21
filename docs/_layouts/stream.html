@@ -3,37 +3,48 @@ layout: main
 ---
 <div class="d-block box-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
   <div class="bg-blue position-absolute top-0 left-0 py-1 width-full"></div>
-  <h3 class="text-gray-dark">
-    {% if page.live %}
-    <span class="Label Label bg-red text-white">
-      {% octicon primitive-dot-stroke %} Nu live
-    </span>
-    {% endif %}
-    <a href="{{ site.baseurl }}{{ page.url }}">
-      {{ page.title }}
-    </a>
-  </h3>
-  <p class="text-gray">
-    {{ page.content | strip_html }}
-  </p>
-  <div class="mb-6">
-    <div class="d-flex">
-      <div class="flex-auto">
-        {% for time in page.timetable %}
-          {% include time.html %}
-        {% endfor %}
-      </div>
-      <div class="text-small flex-self-end pl-3">
-        {% include timetable_legend.html %}
+
+  <div class="ml-2 mt-1 mb-2 d-flex flex-column flex-md-row flex-md-items-start">
+    <div class="mr-4 mb-2 d-flex flex-justify-center flex-md-justify-start">
+      {% include avatar.html stream=page %}
+    </div>
+    <div>
+      <h3 class="text-gray-dark mt-0">
+        {% if page.live %}
+        <span class="Label Label bg-red text-white">
+          {% octicon primitive-dot-stroke %} Nu live
+        </span>
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ page.url }}">
+          {{ page.title }}
+        </a>
+      </h3>
+      <p class="text-gray">
+        {{ page.content | strip_html }}
+      </p>
+      <div class="mb-6">
+        <div class="d-flex">
+          <div class="flex-auto">
+            {% for time in page.timetable %}
+              {% include time.html %}
+            {% endfor %}
+          </div>
+          <div class="text-small flex-self-end pl-3">
+            {% include timetable_legend.html %}
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+
+
   {% if page.youtubeChannelID %}
   <div class="videowrapper mb-6">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel={{page.youtubeChannelID}}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   {% endif %}
-  <ul class="position-absolute bottom-0 pb-3 pl-0 mt-0 text-small text-gray list-style-none ">
+  <ul class="position-absolute bottom-0 pb-3 pl-0 mt-0 ml-2 text-small text-gray list-style-none ">
     {% if page.homepage %}
     <li class="d-inline-block mr-1">
       <a href="{{ page.homepage }}" class="text-gray" style="text-decoration: none;">

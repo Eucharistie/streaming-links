@@ -11,7 +11,7 @@ sideNav: places
   {% for stream in site.streams %}
     {% assign timetable = stream.timetable %}
     {% if timetable %}
-      {% include mass_row.html %}
+      {% include location.html %}
     {% endif %}
   {% endfor %}
 

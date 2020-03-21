@@ -1,0 +1,5 @@
+<img
+  class="avatar"
+  src="{% if include.stream.fbid %}https://graph.facebook.com/v6.0/{{ include.stream.fbid }}/picture?type=large{% else %}{{ site.baseurl }}/android-chrome-512x512.png{% endif %}"
+  alt="{{include.stream.title}}"
+  style="max-width:100px; max-height:100px;">

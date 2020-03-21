@@ -1,5 +1,5 @@
-<nav class="SideNav border">
-  <a class="SideNav-item" href="{{ site.baseurl }}/" aria-current="{% if layout.sideNav == 'timetable' %}page{% endif %}">
+<nav class="SideNav border {% comment %} hide-sm hide-md {% endcomment %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/" aria-current="{% if layout.sideNav == 'timetable' %}page{% endif %}">
     {% octicon clock class:"mr-2" %}
     Uurregeling
   </a>
@@ -14,8 +14,8 @@
     <a class="SideNav-subItem" id="sat" href="#">Zaterdag</a>
   </nav>
   {% endif %}
-  <a class="SideNav-item" href="{{ site.baseurl }}/places" aria-current="{% if layout.sideNav == 'places' %}page{% endif %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/places" aria-current="{% if layout.sideNav == 'places' %}page{% endif %}">
     {% octicon globe class:"mr-2" %}
-    Plaatsen
+    Locaties
   </a>
 </nav>

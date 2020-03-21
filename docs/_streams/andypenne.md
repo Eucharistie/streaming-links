@@ -11,5 +11,6 @@ timetable:
     days: [mon,wed,thu]
     kind: weekMass
 facebook: https://www.facebook.com/andy.penne.5
+fbid: 1629533551
 stream: https://www.facebook.com/andy.penne.5
 ---
