@@ -18,11 +18,28 @@ days:
   nl: zaterdag
 ---
 <div class="Box Box border-0 border-md rounded-0 rounded-md-2">
-  {% for day in layout.days %}
-  {% assign timetable = "" | split: "," %}
+  {% for i in (0..6) %}
+    {% assign day = layout.days[i] %}
+    {% assign yesterday = i|minus:1 %}
+    {% assign tomorrow = i|plus:1 %}
+    {% if yesterday==-1 %}
+      {% assign yesterday=6 %}
+    {% endif %}
+    {% if tomorrow==7 %}
+      {% assign tomorrow=0 %}
+    {% endif %}
+    {% assign timetable = "" | split: "," %}
 
-    <div class="Box-header day {{day.value}} border-0 border-md rounded-0 rounded-md-2" hidden>
-      {{ day.nl }}
+    <div class="Box-header day {{day.value}} border-0 border-md rounded-0 rounded-md-2 d-flex" hidden>
+      <button onclick="showDay('{{layout.days[yesterday].value}}')" class="btn-octicon m-0" type="button" aria-label="Chevron left icon">
+        {% octicon chevron-left %}
+      </button>
+      <div class="flex-auto text-center">
+        {{layout.days[h].value}} {{ day.nl }} {{layout.days[j].value}}
+      </div>
+      <button onclick="showDay('{{layout.days[tomorrow].value}}')" class="btn-octicon m-0" type="button" aria-label="Chevron right icon">
+        {% octicon chevron-right %}
+      </button>
     </div>
 
     {% for stream in site.streams %}
