@@ -1,9 +1,18 @@
 ---
 ---
-
 @import "{{ site.theme }}";
-@import "primer";
+// @import "primer";
+@import '@primer/css/core/index.scss';
+@import '@primer/css/product/index.scss';
+@import '@primer/css/marketing/index.scss';
+
 @import "fontawesome";
+
+// $blue: #3172b8; 
+//
+// .bg-blue {
+//   background: $blue !important;
+// }
 
 .videowrapper {
   position: relative;
