@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=4" color="#3172b8">
+    {% assign v = 5 %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png?v={{v}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png?v={{v}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon-16x16.png?v={{v}}">
+    <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest?v={{v}}">
+    <link rel="mask-icon" href="{{ site.baseurl }}/safari-pinned-tab.svg?v={{v}}" color="#3172b8">
     <meta name="apple-mobile-web-app-title" content="Eucharistie">
     <meta name="application-name" content="Eucharistie">
     <meta name="msapplication-TileColor" content="#3172b8">
