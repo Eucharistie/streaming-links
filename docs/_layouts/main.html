@@ -2,19 +2,13 @@
 layout: home
 ---
 <div class="container-lg clearfix d-flex flex-column flex-md-row flex-items-stretch">
-  <div class="" id="SideNav">
+  <div class="d-md-block unhide" id="SideNav">
     {% include sidenav.html %}
   </div>
   <div class="m-md-3 flex-auto">
     {{ content }}
   </div>
 </div>
-
-<script type="text/javascript">
-  const sideNav = document.querySelector('#SideNav');
-  function toggleNav() {sideNav.hidden = !sideNav.hidden;}
-  document.querySelector('#SideNav').hidden = !window.matchMedia( "(min-width: 768px)" ).matches
-</script>
 
 
 {% include toast.html %}
