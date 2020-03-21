@@ -7,7 +7,7 @@ timetable:
     days: [sun]
     kind: sundayMass
 facebook: https://www.facebook.com/Johannes-XXIII-Seminarie-309563685301/
-fbid:
+fbid: 309563685301
 youtube: 
 homepage: 
 stream:
