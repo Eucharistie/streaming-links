@@ -17,11 +17,11 @@ days:
 - value: sat
   nl: zaterdag
 ---
-<div class="Box Box">
+<div class="Box Box border-0 border-md rounded-0 rounded-md-2">
   {% for day in layout.days %}
   {% assign timetable = "" | split: "," %}
 
-    <div class="Box-header day {{day.value}}" hidden>
+    <div class="Box-header day {{day.value}} border-0 border-md rounded-0 rounded-md-2" hidden>
       {{ day.nl }}
     </div>
 
