@@ -12,6 +12,12 @@ $blue-500: #3172b8;
 
 @import "fontawesome";
 
+@media (min-width: 768px) {
+  [hidden].d-md-block.unhide,
+  [hidden][hidden].d-md-block.unhide {
+    display: block !important;
+  }
+}
 .videowrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
