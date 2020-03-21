@@ -3,6 +3,8 @@
 # It is written in the YAML language
 
 title: Dummy parochie met veel te lange titel die beter en goe stukske zou worden ingekort, vindt ge da nu ook ni?
+community:
+priests: []
 timetable:
   - time: 10:00
     days: [sun]
