@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=4" color="#3172b8">
+    {% assign v = 5 %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png?v={{v}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png?v={{v}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon-16x16.png?v={{v}}">
+    <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest?v={{v}}">
+    <link rel="mask-icon" href="{{ site.baseurl }}/safari-pinned-tab.svg?v={{v}}" color="#3172b8">
     <meta name="apple-mobile-web-app-title" content="Eucharistie">
     <meta name="application-name" content="Eucharistie">
     <meta name="msapplication-TileColor" content="#3172b8">
@@ -22,21 +23,23 @@
     <div class="markdown-body">
       {% if site.title and site.title != page.title %}
 
-      <div class="Header bg-blue">
-        <div class="Header-item Header-item--full">
-          <a href="{{site.baseurl}}/" class="Header-link f4 d-flex flex-items-center">
-            <img src="{{site.baseurl}}/eucharistie-white.png" class="mr-2" style="background-color: transparent;" alt="Eucharistie" height="32" width="32">
-            <span>{{ site.title }}</span>
+      <div class="bg-blue">
+        <div class="container-lg clearfix Header bg-blue">
+          <div class="Header-item Header-item--full">
+            <a href="{{site.baseurl}}/" class="Header-link f4 d-flex flex-items-center">
+              <img src="{{site.baseurl}}/eucharistie-white.png" class="mr-2" style="background-color: transparent;" alt="Eucharistie" height="32" width="32">
+              <span>{{ site.title }}</span>
+            </a>
+          </div>
+              {% comment %}
+          <div class="Header-item">
+            About
+          </div>
+          {% endcomment %}
+          <a href="#" onclick="toggleNav()" class="Header-item mr-0 text-white d-md-none">
+            {% octicon three-bars height:32 %}
           </a>
         </div>
-            {% comment %}
-        <div class="Header-item">
-          About
-        </div>
-        {% endcomment %}
-        <a href="#" onclick="toggleNav()" class="Header-item mr-0 text-white">
-          {% octicon three-bars height:32 %}
-        </a>
       </div>
       {% endif %}
 
@@ -60,5 +63,6 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
+    {% include script.html %}
   </body>
 </html>

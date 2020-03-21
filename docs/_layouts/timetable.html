@@ -51,21 +51,3 @@ days:
   </div>
 
 </div>
-
-<script type="text/javascript">
-  var days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  var d = new Date();
-  var today = days[d.getDay()];
-  function showDay(day) {
-    document.querySelectorAll(".day." + day).forEach(e => e.hidden = false);
-    document.querySelectorAll(".day:not(." + day + ")").forEach(e => e.hidden = true);
-    document.querySelector("#" + day).setAttribute('aria-current', 'page');
-    document.querySelectorAll(".SideNav.days .SideNav-subItem:not(#" + day + ")").forEach(e => e.removeAttribute('aria-current'));
-  }
-  document.querySelectorAll(".SideNav.days .SideNav-subItem").forEach(function(e) {
-    e.onclick = function() {
-      showDay(e.id)
-    }
-  })
-showDay(today)
-</script>

@@ -1,19 +1,23 @@
 ---
 ---
-@import "{{ site.theme }}";
+// @import "{{ site.theme }}";
 // @import "primer";
+
+// Override default blue
+$blue-500: #3172b8;
+
 @import '@primer/css/core/index.scss';
 @import '@primer/css/product/index.scss';
 @import '@primer/css/marketing/index.scss';
 
 @import "fontawesome";
 
-// $blue: #3172b8; 
-//
-// .bg-blue {
-//   background: $blue !important;
-// }
-
+@media (min-width: 768px) {
+  [hidden].d-md-block.unhide,
+  [hidden][hidden].d-md-block.unhide {
+    display: block !important;
+  }
+}
 .videowrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
@@ -32,9 +36,9 @@
 
 /* Fontawesome Social Media icons */
 a:hover.text-gray {
-  color: #0366d6 !important;
+  color: $blue !important;
   .fa-home {
-    color: #0366d6;
+    color: $blue;
   }
   .fa-facebook, .fa-facebook-square {
       color: #3b5998
