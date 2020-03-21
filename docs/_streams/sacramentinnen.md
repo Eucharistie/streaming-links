@@ -1,5 +1,7 @@
 ---
 title: Begijnhof O.L.Vrouw ter Engelen (Sacramentinnen) Halle
+community:
+priests: [Serge De Cauwer]
 timetable:
   - time: 08:30
     days: [sun]
