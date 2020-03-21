@@ -33,7 +33,9 @@ collections:
     output: true
 
 sass:
-    sass_dir: "assets/css"
+  sass_dir: assets/css/
+  load_paths:
+    - node_modules/
 
 gems:
   - jekyll-octicons
