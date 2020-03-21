@@ -22,21 +22,23 @@
     <div class="markdown-body">
       {% if site.title and site.title != page.title %}
 
-      <div class="Header bg-blue">
-        <div class="Header-item Header-item--full">
-          <a href="{{site.baseurl}}/" class="Header-link f4 d-flex flex-items-center">
-            <img src="{{site.baseurl}}/eucharistie-white.png" class="mr-2" style="background-color: transparent;" alt="Eucharistie" height="32" width="32">
-            <span>{{ site.title }}</span>
+      <div class="bg-blue">
+        <div class="container-lg clearfix Header bg-blue">
+          <div class="Header-item Header-item--full">
+            <a href="{{site.baseurl}}/" class="Header-link f4 d-flex flex-items-center">
+              <img src="{{site.baseurl}}/eucharistie-white.png" class="mr-2" style="background-color: transparent;" alt="Eucharistie" height="32" width="32">
+              <span>{{ site.title }}</span>
+            </a>
+          </div>
+              {% comment %}
+          <div class="Header-item">
+            About
+          </div>
+          {% endcomment %}
+          <a href="#" onclick="toggleNav()" class="Header-item mr-0 text-white">
+            {% octicon three-bars height:32 %}
           </a>
         </div>
-            {% comment %}
-        <div class="Header-item">
-          About
-        </div>
-        {% endcomment %}
-        <a href="#" onclick="toggleNav()" class="Header-item mr-0 text-white">
-          {% octicon three-bars height:32 %}
-        </a>
       </div>
       {% endif %}
 
