@@ -1,5 +1,5 @@
 ---
-title: Begijnhof O.L.Vrouw ter Engelen (Sacramentinen) Halle
+title: Begijnhof O.L.Vrouw ter Engelen (Sacramentinnen) Halle
 timetable:
   - time: 08:30
     days: [sun]
