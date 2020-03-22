@@ -6,11 +6,14 @@ timetable:
   - time: 08:30
     days: [sun]
     kind: sundayMass
+  - time: 19:00
+    days: [sat]
+    kind: sundayMass
   - time: 08:00
     days: [mon,tue,wed,thu,fri,sat]
     kind: weekMass
   - time: 19:00
-    days: [mon,tue,wed,thu,fri,sat]
+    days: [mon,tue,wed,thu,fri]
     kind: weekMass
 facebook: https://www.facebook.com/Begijnhofhalle
 fbid: Begijnhofhalle
