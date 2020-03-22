@@ -7,8 +7,9 @@ timetable:
     days: [sun]
     kind: sundayMass
 facebook:
-fbid: 
+fbid:
 youtube: https://www.youtube.com/channel/UCgSlnj1B0JoiCDfyoFJH-6g
+youtubeChannelID: UCgSlnj1B0JoiCDfyoFJH-6g
 homepage:
-stream: 
+stream:
 ---
