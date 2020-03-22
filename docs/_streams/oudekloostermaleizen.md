@@ -7,7 +7,7 @@ timetable:
     days: [sun]
     kind: sundayMass
   - time: 17:00
-    days: [mon,tue,wed,thu,fri,sat]
+    days: [mon,tue,wed,thu,fri]
     kind: weekMass
 facebook: https://www.facebook.com/Het-Oude-Klooster-104555811051318
 fbid: 104555811051318
