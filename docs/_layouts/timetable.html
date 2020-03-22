@@ -17,7 +17,7 @@ days:
 - value: sat
   nl: zaterdag
 ---
-<div class="Box Box border-0 border-md rounded-0 rounded-md-2">
+<div class="Box border-left-0 border-right-0 border-md rounded-0 rounded-md-2">
   {% for i in (0..6) %}
     {% assign day = layout.days[i] %}
     {% assign yesterday = i|minus:1 %}
@@ -31,13 +31,13 @@ days:
     {% assign timetable = "" | split: "," %}
 
     <div class="Box-header day {{day.value}} border-0 border-md rounded-0 rounded-md-2 d-flex" hidden>
-      <button onclick="showDay('{{layout.days[yesterday].value}}')" class="btn-octicon m-0" type="button" aria-label="Chevron left icon">
+      <button onclick="showDay('{{layout.days[yesterday].value}}')" class="btn-octicon m-0 hide-lg hide-xl" type="button" aria-label="Chevron left icon">
         {% octicon chevron-left %}
       </button>
       <div class="flex-auto text-center">
         {{layout.days[h].value}} {{ day.nl }} {{layout.days[j].value}}
       </div>
-      <button onclick="showDay('{{layout.days[tomorrow].value}}')" class="btn-octicon m-0" type="button" aria-label="Chevron right icon">
+      <button onclick="showDay('{{layout.days[tomorrow].value}}')" class="btn-octicon m-0 hide-lg hide-xl" type="button" aria-label="Chevron right icon">
         {% octicon chevron-right %}
       </button>
     </div>
