@@ -18,6 +18,16 @@ $blue-500: #3172b8;
     display: block !important;
   }
 }
+
+#main {
+  min-height: 100vh;
+  min-height: calc(100vh - 64px);
+  margin-bottom: -150px;
+  padding-bottom: 150px;
+}
+#SideNav .SideNav {
+  margin-left: -1px;
+}
 .videowrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
