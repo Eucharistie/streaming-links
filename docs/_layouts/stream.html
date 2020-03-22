@@ -1,42 +1,57 @@
 ---
 layout: main
 ---
-<div class="d-block px-3 pt-4 pb-6 position-relative border-md rounded-md-2 overflow-hidden no-underline" href="#">
+<div class="d-block p-0 position-relative border-md rounded-md-2 overflow-hidden no-underline" href="#">
   <div class="bg-blue position-absolute top-0 left-0 py-1 width-full hide-sm hide-md"></div>
 
-  <div class="ml-2 mt-1 mb-2 d-flex flex-column flex-md-row flex-md-items-start">
-    <div class="mr-4 mb-2 d-flex flex-justify-center flex-md-justify-start">
-      {% include avatar.html stream=page %}
-    </div>
-    <div>
-      <h3 class="text-gray-dark mt-0">
-        {% if page.live %}
-        <span class="Label Label bg-red text-white">
-          {% octicon primitive-dot-stroke %} Nu live
-        </span>
-        {% endif %}
-        <a href="{{ site.baseurl }}{{ page.url }}">
-          {{ page.title }}
-        </a>
-      </h3>
-      <div class="text-gray">
-        {{ page.content }}
+  <div class="p-3">
+    <div class="pb-2 d-flex flex-row flex-md-items-start">
+      <div class="pr-2 d-flex flex-justify-center flex-md-justify-start">
+        {% include avatar.html stream=page %}
       </div>
-      <div class="mb-6">
-        <div class="d-flex">
-          <div class="flex-auto">
-            {% for time in page.timetable %}
-              {% include time.html %}
-            {% endfor %}
-          </div>
-          <div class="text-small flex-self-end pl-3">
-            {% include timetable_legend.html %}
-          </div>
+      <div class="pr-2 social d-flex flex-column">
+        {% if page.homepage %}
+          <a href="{{ page.homepage }}" style="text-decoration: none;">
+            <i class="fas fa-home fa-fw fa-2x"></i>
+          </a>
+        {% endif %}
+        {% if page.facebook %}
+          <a href="{{ page.facebook }}" style="text-decoration: none;">
+            <i class="fab fa-facebook-square fa-fw fa-2x"></i>
+          </a>
+        {% endif %}
+        {% if page.twitter %}
+          <a href="{{ page.twitter }}" style="text-decoration: none;">
+            <i class="fab fa-twitter fa-fw fa-2x"></i>
+          </a>
+        {% endif %}
+        {% if page.youtube %}
+          <a href="{{ page.youtube }}" style="text-decoration: none;">
+            <i class="fab fa-youtube fa-fw fa-2x"></i>
+          </a>
+        {% endif %}
+      </div>
+      <div class="pt-1">
+        <h3 class="text-gray-dark mt-0">
+          {% if page.live %}
+          <span class="Label Label bg-red text-white">
+            {% octicon primitive-dot-stroke %} Nu live
+          </span>
+          {% endif %}
+          <a href="{{ site.baseurl }}{{ page.url }}">
+            {{ page.title }}
+          </a>
+        </h3>
+        <div class="text-gray">
+          {{ page.content }}
         </div>
       </div>
     </div>
-  </div>
 
+    Uurregeling:
+    {% for time in page.timetable %}
+      {% include time.html %}
+    {% endfor %}  </div>
 
 
   {% if page.youtubeChannelID %}
@@ -44,38 +59,4 @@ layout: main
     <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel={{page.youtubeChannelID}}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   {% endif %}
-  <ul class="social list-style-none">
-    {% if page.homepage %}
-    <li class="">
-      <a href="{{ page.homepage }}" class="text-gray" style="text-decoration: none;">
-        <i class="fas fa-home fa-fw"></i>
-        {{ page.homepage | remove_first: "http://www." | remove_first: "https://www." | remove_first: "http://" | remove_first: "https://" | split: "/" | first }}
-      </a>
-    </li>
-    {% endif %}
-    {% if page.facebook %}
-    <li class="">
-      <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
-        <i class="fab fa-facebook-square fa-fw"></i>
-        {{ page.facebook | split: "/" | last }}
-      </a>
-    </li>
-    {% endif %}
-    {% if page.twitter %}
-    <li class="">
-      <a href="{{ page.twitter }}" class="text-gray" style="text-decoration: none;">
-        <i class="fab fa-twitter fa-fw"></i>
-        {{ page.twitter | split: "/" | last }}
-      </a>
-    </li>
-    {% endif %}
-    {% if page.youtube %}
-    <li class="">
-      <a href="{{ page.youtube }}" class="text-gray" style="text-decoration: none;">
-        <i class="fab fa-youtube fa-fw"></i>
-        {{ page.youtube | split: "/" | last }}
-      </a>
-    </li>
-    {% endif %}
-  </ul>
 </div>
