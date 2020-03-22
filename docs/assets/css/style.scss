@@ -6,9 +6,10 @@
 // Override default blue
 $blue-500: #3172b8;
 
-@import '@primer/css/core/index.scss';
-@import '@primer/css/product/index.scss';
-@import '@primer/css/marketing/index.scss';
+@import "primer.css";
+// @import '@primer/css/core/index.scss';
+// @import '@primer/css/product/index.scss';
+// @import '@primer/css/marketing/index.scss';
 
 @import "fontawesome";
 
@@ -50,10 +51,10 @@ $blue-500: #3172b8;
 /* Fontawesome Social Media icons */
 ul.social {
   a:hover {
-    color: $blue !important;
+    color: $blue-500 !important;
   }
   .fa-home {
-    color: $blue;
+    color: $blue-500;
   }
   .fa-facebook, .fa-facebook-square {
       color: #3b5998
