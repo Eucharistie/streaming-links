@@ -1,3 +1,6 @@
+{% assign live_streams = site.streams | where: "live", true %}
+
+{% if live_streams.size > 0 %}
 <div style="height:150px">
   <div class="position-fixed bottom-0 left-0 mb-3 ml-3">
     <div class="Toast Toast--loading">
@@ -6,12 +9,11 @@
       </span>
       <span class="Toast-content text-red">
         Nu live:
-        {% for stream in site.streams %}
-          {% if stream.live %}
-          <a href="{{ site.baseurl }}{{ stream.url }}" class="Label Label--gray text-red">{{ stream.title | truncate: 20 }}</a>
-          {% endif %}
+        {% for stream in live_streams %}
+        <a href="{{ site.baseurl }}{{ stream.url }}" class="Label Label--gray text-red">{{ stream.title | truncate: 20 }}</a>
         {% endfor %}
       </span>
     </div>
   </div>
 </div>
+{% endif %}
