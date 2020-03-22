@@ -44,9 +44,9 @@ layout: main
     <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel={{page.youtubeChannelID}}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   {% endif %}
-  <ul class="position-absolute bottom-0 pb-3 pl-0 mt-0 ml-2 text-small text-gray list-style-none ">
+  <ul class="social list-style-none">
     {% if page.homepage %}
-    <li class="d-inline-block mr-1">
+    <li class="">
       <a href="{{ page.homepage }}" class="text-gray" style="text-decoration: none;">
         <i class="fas fa-home fa-fw"></i>
         {{ page.homepage | remove_first: "http://www." | remove_first: "https://www." | remove_first: "http://" | remove_first: "https://" | split: "/" | first }}
@@ -54,7 +54,7 @@ layout: main
     </li>
     {% endif %}
     {% if page.facebook %}
-    <li class="d-inline-block mr-1">
+    <li class="">
       <a href="{{ page.facebook }}" class="text-gray" style="text-decoration: none;">
         <i class="fab fa-facebook-square fa-fw"></i>
         {{ page.facebook | split: "/" | last }}
@@ -62,7 +62,7 @@ layout: main
     </li>
     {% endif %}
     {% if page.twitter %}
-    <li class="d-inline-block mr-1">
+    <li class="">
       <a href="{{ page.twitter }}" class="text-gray" style="text-decoration: none;">
         <i class="fab fa-twitter fa-fw"></i>
         {{ page.twitter | split: "/" | last }}
@@ -70,7 +70,7 @@ layout: main
     </li>
     {% endif %}
     {% if page.youtube %}
-    <li class="d-inline-block mr-1">
+    <li class="">
       <a href="{{ page.youtube }}" class="text-gray" style="text-decoration: none;">
         <i class="fab fa-youtube fa-fw"></i>
         {{ page.youtube | split: "/" | last }}
