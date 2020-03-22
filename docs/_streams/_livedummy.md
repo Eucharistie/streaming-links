@@ -26,6 +26,7 @@ homepage: https://www.brave.com
 youtubeChannelID: UCg0L6cPMNLv1gjsyzYqMG7g
 fbid_: 10154142832119335
 live: true
+draft: true
 ##########################################
 
 # Here ends the YAML part (note the three dashes).
