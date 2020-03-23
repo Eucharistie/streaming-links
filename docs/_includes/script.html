@@ -1,45 +1,64 @@
+{% include polyfills.html %}
 <script type="text/javascript">
+
   const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const d = new Date();
-  const today = days[d.getDay()];
+  const d = new Date('2020-01-01T17:00:00');
+  const today = days[d.getDay()]; //
   const loadTime = (d.getHours() * 60) + d.getMinutes()
 
   const sideNav = document.querySelector('#SideNav');
   const todayNav = document.querySelector("[data-day='" + today + "']")
   const todayBullets = document.querySelectorAll("[data-day='" + today + "'] .today-bullet")
 
+  // toggle nav menu collapse
   function toggleNav() {
     sideNav.hidden = !sideNav.hidden;
   }
 
+
   function showDay(day) {
-    document.querySelector('#live-soon').hidden = (day != today);
-    document.querySelectorAll("[data-day='" + day + "']").forEach(e => e.hidden = false);
-    document.querySelectorAll(".day-row:not([data-day='" + day + "'])").forEach(e => e.hidden = true);
-    document.querySelectorAll(".SideNav.days .SideNav-subItem:not([data-day='" + day + "'])").forEach(e => e.removeAttribute('aria-current'));
-    const dayNav = document.querySelector("[data-day='" + day + "']")
-    if (dayNav) {dayNav.setAttribute('aria-current', 'page');}
-  }
 
-  function showLiveSoon() {
-    document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row").forEach(function (row) {
+    const todayRows = document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row");
+    const lastBroadcast = parseInt(todayRows[todayRows.length - 1].dataset.time, 10);
+    const showLiveSoon = ((day === today) && (loadTime < lastBroadcast));
+
+    // Only show "live soon" on today and if before the last broadcast
+    document.querySelector('#live-soon').hidden = !showLiveSoon;
+
+    // When showing "live soon", move it to the correct position
+    // and make previous rows grayed out.
+    if (showLiveSoon) {
       var liveRowNumber = 0
-    	if (parseInt(row.dataset.time) < loadTime) {
-        if (liveRowNumber===0) row.after(document.querySelector('#live-soon'));
-        liveRowNumber++
-        row.classList.add('Box-row--gray');
-    		// row.classList.add('text-gray');
-    		// row.querySelectorAll(".Label").forEach(label=>label.classList.add('Label--outline'))
-      // } else {
-      //   row.classList.add('Box-row--blue');
-      }
-    })
+      document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row").forEach(function (row) {
+      	if (parseInt(row.dataset.time, 10) <= loadTime) {
+          row.classList.add('Box-row--gray');
+        } else {
+          if (liveRowNumber===0) row.before(document.querySelector('#live-soon'));
+          liveRowNumber++
+        }
+      })
+    }
+
+    // show the rows for the selected day
+    document.querySelectorAll("[data-day='" + day + "']").forEach(function (e) {e.hidden = false});
+
+    // hide the rows for the other days
+    document.querySelectorAll(".day-row:not([data-day='" + day + "'])").forEach(function (e) {e.hidden = true});
+
+    // highlight nav for selected day
+    const dayNav = document.querySelector(".SideNav [data-day='" + day + "']")
+    if (dayNav) {dayNav.setAttribute('aria-current', 'page');}
+
+    // unhighlight all other navs
+    document.querySelectorAll(".SideNav.days .SideNav-subItem:not([data-day='" + day + "'])").forEach(function (e) {e.removeAttribute('aria-current')});
   }
 
-  if (todayBullets.length) todayBullets.forEach(bullet=>bullet.hidden = false)
+  if (todayBullets.length) todayBullets.forEach(function (bullet) {bullet.hidden = false} )
 
+  // When loading page on mobile, collapse the nav menu
   SideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches
 
+  // click events for day navs
   document.querySelectorAll(".SideNav.days .SideNav-subItem").forEach(function(e) {
     e.onclick = function() {
       showDay(e.dataset.day)
@@ -47,6 +66,5 @@
   })
 
   showDay(today)
-  showLiveSoon()
 
 </script>
