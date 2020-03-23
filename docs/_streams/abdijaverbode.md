@@ -1,7 +1,10 @@
 ---
 title: Abdij Averbode
-community:
+community: Norbertijnen
 priests: []
+diocese: Mechelen-Brussel
+city: Averbode
+language: NL
 timetable:
   - time: 11:00
     days: [sun]

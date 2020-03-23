@@ -1,7 +1,10 @@
 ---
-title: Radio Maria
-community: Vlaanderen
+title: Radio Maria Vlaanderen
+community: 
 priests: []
+diocese: 
+city: 
+language: NL
 timetable:
   - time: 10:00
     days: [sun]

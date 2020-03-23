@@ -5,6 +5,9 @@
 title: Dummy parochie met veel te lange titel die beter en goe stukske zou worden ingekort, vindt ge da nu ook ni?
 community:
 priests: []
+diocese:
+city:
+language:
 timetable:
   - time: 10:00
     days: [sun]
