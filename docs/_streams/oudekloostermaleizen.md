@@ -1,7 +1,7 @@
 ---
 title: Het Oude Klooster Maleizen
 community: SJM
-priests: [Gert Verbeken]
+priests: [pater Gert Verbeken]
 diocese: Mechelen-Brussel
 city: Overijse
 language: LAT

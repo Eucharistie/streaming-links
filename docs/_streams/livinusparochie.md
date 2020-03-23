@@ -1,7 +1,7 @@
 ---
 title: 
 community: Livinusparochie in Herzele & Sint-Lievens-Houtem
-priests:
+priests: [pastoor Herbert Vandersmissen]
 diocese: Gent
 city: Herzele
 language: NL

@@ -1,7 +1,7 @@
 ---
 title: Vieren met de bisschop
 community: Kathedraal Antwerpen
-priests: [Bisschop Bonny,Bart Paepen]
+priests: [Bisschop Bonny,pastoor Bart Paepen]
 diocese: Antwerpen
 city: Antwerpen
 language: NL

@@ -1,7 +1,7 @@
 ---
 title: Sint-Martinus Basiliek Halle
 community:
-priests: [Servaas Bosch]
+priests: [priester Servaas Bosch]
 diocese: Mechelen-Brussel
 city: Halle
 language: NL
