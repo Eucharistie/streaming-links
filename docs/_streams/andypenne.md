@@ -1,7 +1,7 @@
 ---
 title: Pastoor Andy Penne
 community:
-priests: [Andy Penne]
+priests: [pastoor Andy Penne]
 diocese: Mechelen-Brussel
 city: Holsbeek
 language: NL

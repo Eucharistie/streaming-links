@@ -1,7 +1,7 @@
 ---
 title: Pastoor Wim Simons
 community: 
-priests: [Wim Simons]
+priests: [pastoor Wim Simons]
 diocese: Hasselt
 city: Herk-de-Stad
 language: NL

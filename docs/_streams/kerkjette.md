@@ -1,7 +1,7 @@
 ---
 title: Sint-Pieterskerk Jette
 community: Kerk Jette
-priests: [Dirk Vannetelbosch]
+priests: [pastoor Dirk Vannetelbosch]
 diocese: Mechelen-Brussel
 city: Jette
 language: NL

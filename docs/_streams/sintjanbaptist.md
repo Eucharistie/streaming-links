@@ -1,7 +1,7 @@
 ---
 title: Sint-Jan-Baptist Kachtem
 community:
-priests: [Matthias Noë]
+priests: [pastoor Matthias Noë]
 diocese: Brugge
 city: Herzele
 language: NL

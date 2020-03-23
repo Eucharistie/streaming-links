@@ -1,7 +1,7 @@
 ---
 title: Johannes XXIII Seminarie
 community:
-priests: [Filip Hacour]
+priests: [priester Filip Hacour]
 diocese: Mechelen-Brussel
 city: Leuven
 language: NL

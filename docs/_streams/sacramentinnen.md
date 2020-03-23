@@ -1,7 +1,7 @@
 ---
 title: Begijnhof O.L.Vrouw ter Engelen (Sacramentinnen) Halle
 community:
-priests: [Serge De Cauwer]
+priests: [priester Serge De Cauwer]
 diocese: Mechelen-Brussel
 city: Halle
 language: NL

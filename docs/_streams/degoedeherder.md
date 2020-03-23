@@ -1,7 +1,7 @@
 ---
 title:
 community: Parochie De Goede Herder - Gent-West
-priests: [Patrick De Baets]
+priests: [pastoor Patrick De Baets]
 diocese: Gent
 city: Gent
 language: NL
