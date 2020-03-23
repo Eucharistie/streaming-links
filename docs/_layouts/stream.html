@@ -12,7 +12,7 @@ layout: main
       <div class="pr-2 social d-flex flex-column">
         {% if page.homepage %}
           <a href="{{ page.homepage }}" style="text-decoration: none;">
-            <i class="fas fa-home fa-fw fa-2x"></i>
+            <i class="fas fa-link fa-fw fa-2x"></i>
           </a>
         {% endif %}
         {% if page.facebook %}
@@ -55,8 +55,9 @@ layout: main
 
 
   {% if page.youtubeChannelID %}
-  <div class="videowrapper mb-6">
+  <div class="videowrapper mb-md-3">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel={{page.youtubeChannelID}}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
+  <div class="bg-gray-dark position-absolute bottom-0 left-0 py-2 width-full hide-sm hide-md"></div>
   {% endif %}
 </div>
