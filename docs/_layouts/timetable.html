@@ -18,9 +18,9 @@ days:
   nl: zaterdag
 ---
 <div class="Box border-left-0 border-right-0 border-md rounded-0 rounded-md-2 overflow-hidden">
-  <!-- <div class="Box-row Box-row--condensed bg-blue text-white">
-    Binnenkort live
-  </div> -->
+  <div class="flash flash-full py-1" hidden id="live-soon">
+    Volgende uitzendingen:
+  </div>
   {% for i in (0..6) %}
     {% assign day = layout.days[i] %}
     {% assign yesterday = i|minus:1 %}
@@ -33,12 +33,14 @@ days:
     {% endif %}
     {% assign timetable = "" | split: "," %}
 
-    <div class="Box-header day {{day.value}} border-0 border-md rounded-0 rounded-md-top-2 d-flex Box-header--blue" hidden>
+    <div class="Box-header day-row border-0 border-md rounded-0 rounded-md-top-2 d-flex Box-header--blue" data-day="{{day.value}}" hidden>
       <button onclick="showDay('{{layout.days[yesterday].value}}')" class="btn-octicon m-0 hide-lg hide-xl" type="button" aria-label="Chevron left icon">
         {% octicon chevron-left %}
       </button>
       <div class="flex-auto text-center">
-        {{layout.days[h].value}} {{ day.nl }} {{layout.days[j].value}}
+        <span class="today-bullet" hidden>•</span>
+        {{ day.nl }}
+        <span class="today-bullet" hidden>•</span>
       </div>
       <button onclick="showDay('{{layout.days[tomorrow].value}}')" class="btn-octicon m-0 hide-lg hide-xl" type="button" aria-label="Chevron right icon">
         {% octicon chevron-right %}
@@ -51,7 +53,7 @@ days:
     {% endfor %}
 
     {% for time in timetable %}
-      <div class="Box-row day {{day.value}}" hidden>
+      <div class="Box-row day-row" data-day="{{day.value}}" data-time="{{time|ceil}}" hidden>
         {% include format_time.html time=time %}
 
         {% for stream in site.streams %}

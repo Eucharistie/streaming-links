@@ -1,21 +1,52 @@
 <script type="text/javascript">
-  const sideNav = document.querySelector('#SideNav');
-  function toggleNav() {sideNav.hidden = !sideNav.hidden;}
-  document.querySelector('#SideNav').hidden = !window.matchMedia( "(min-width: 768px)" ).matches
-
   const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
   const d = new Date();
   const today = days[d.getDay()];
-  function showDay(day) {
-    document.querySelectorAll(".day." + day).forEach(e => e.hidden = false);
-    document.querySelectorAll(".day:not(." + day + ")").forEach(e => e.hidden = true);
-    document.querySelector("#" + day).setAttribute('aria-current', 'page');
-    document.querySelectorAll(".SideNav.days .SideNav-subItem:not(#" + day + ")").forEach(e => e.removeAttribute('aria-current'));
+  const loadTime = (d.getHours() * 60) + d.getMinutes()
+
+  const sideNav = document.querySelector('#SideNav');
+  const todayNav = document.querySelector("[data-day='" + today + "']")
+  const todayBullets = document.querySelectorAll("[data-day='" + today + "'] .today-bullet")
+
+  function toggleNav() {
+    sideNav.hidden = !sideNav.hidden;
   }
+
+  function showDay(day) {
+    document.querySelector('#live-soon').hidden = (day != today);
+    document.querySelectorAll("[data-day='" + day + "']").forEach(e => e.hidden = false);
+    document.querySelectorAll(".day-row:not([data-day='" + day + "'])").forEach(e => e.hidden = true);
+    document.querySelectorAll(".SideNav.days .SideNav-subItem:not([data-day='" + day + "'])").forEach(e => e.removeAttribute('aria-current'));
+    const dayNav = document.querySelector("[data-day='" + day + "']")
+    if (dayNav) {dayNav.setAttribute('aria-current', 'page');}
+  }
+
+  function showLiveSoon() {
+    document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row").forEach(function (row) {
+      var liveRowNumber = 0
+    	if (parseInt(row.dataset.time) < loadTime) {
+        if (liveRowNumber===0) row.after(document.querySelector('#live-soon'));
+        liveRowNumber++
+        row.classList.add('Box-row--gray');
+    		// row.classList.add('text-gray');
+    		// row.querySelectorAll(".Label").forEach(label=>label.classList.add('Label--outline'))
+      // } else {
+      //   row.classList.add('Box-row--blue');
+      }
+    })
+  }
+
+  if (todayBullets.length) todayBullets.forEach(bullet=>bullet.hidden = false)
+
+  SideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches
+
   document.querySelectorAll(".SideNav.days .SideNav-subItem").forEach(function(e) {
     e.onclick = function() {
-      showDay(e.id)
+      showDay(e.dataset.day)
     }
   })
-showDay(today)
+
+  showDay(today)
+  showLiveSoon()
+
 </script>
