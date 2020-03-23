@@ -2,6 +2,9 @@
 title: Johannes XXIII Seminarie
 community:
 priests: [Filip Hacour]
+diocese: Mechelen-Brussel
+city: Leuven
+language: NL
 timetable:
   - time: 09:30
     days: [sun]

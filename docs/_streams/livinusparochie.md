@@ -1,5 +1,10 @@
 ---
-title: Livinusparochie in Herzele & Sint-Lievens-Houtem
+title: 
+community: Livinusparochie in Herzele & Sint-Lievens-Houtem
+priests:
+diocese: Gent
+city: Herzele
+language: NL
 timetable:
   - time: 09:00
     days: [sun]

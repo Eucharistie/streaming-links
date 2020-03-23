@@ -1,5 +1,10 @@
 ---
 title: Pastoor Wim Simons
+community: 
+priests: [Wim Simons]
+diocese: Hasselt
+city: Herk-de-Stad
+language: NL
 timetable:
   - time: 09:00
     days: [sun]

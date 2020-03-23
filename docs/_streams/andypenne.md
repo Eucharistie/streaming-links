@@ -1,5 +1,10 @@
 ---
 title: Pastoor Andy Penne
+community:
+priests: [Andy Penne]
+diocese: Mechelen-Brussel
+city: Holsbeek
+language: NL
 timetable:
   - time: 09:00
     days: [sun]

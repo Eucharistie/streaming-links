@@ -1,7 +1,10 @@
 ---
 title: Sint-Jan-Baptist Kachtem
 community:
-priests: [Matthias Noe]
+priests: [Matthias Noë]
+diocese: Brugge
+city: Herzele
+language: NL
 timetable:
   - time: 10:30
     days: [sun]

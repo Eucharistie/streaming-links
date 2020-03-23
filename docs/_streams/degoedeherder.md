@@ -1,7 +1,10 @@
 ---
-title: Parochie De Goede Herder - Gent-West
-community:
-priests:
+title:
+community: Parochie De Goede Herder - Gent-West
+priests: [Patrick De Baets]
+diocese: Gent
+city: Gent
+language: NL
 timetable:
   - time: 09:00
     days: [sun]

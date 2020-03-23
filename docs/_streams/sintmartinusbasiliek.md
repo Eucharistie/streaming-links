@@ -1,7 +1,10 @@
 ---
-title: Sint-Martinusbasiliek
-community: Halle
+title: Sint-Martinus Basiliek Halle
+community:
 priests: [Servaas Bosch]
+diocese: Mechelen-Brussel
+city: Halle
+language: NL
 timetable:
   - time: 10:00
     days: [sun]

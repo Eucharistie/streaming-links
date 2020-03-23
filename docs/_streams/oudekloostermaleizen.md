@@ -1,7 +1,10 @@
 ---
-title: Kapel Het Oude Klooster Maleizen
-community: Het Oude Klooster Maleizen
+title: Het Oude Klooster Maleizen
+community: SJM
 priests: [Gert Verbeken]
+diocese: Mechelen-Brussel
+city: Overijse
+language: LAT
 timetable:
   - time: 10:00
     days: [sun]
@@ -13,5 +16,5 @@ facebook: https://www.facebook.com/Het-Oude-Klooster-104555811051318
 fbid: 104555811051318
 youtube: https://www.youtube.com/channel/UC7lUxNFc6p777LTjiz6MMTA
 homepage: http://www.hetoudekloostermaleizen.be
-stream:
+stream: 
 ---

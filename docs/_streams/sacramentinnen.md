@@ -2,6 +2,9 @@
 title: Begijnhof O.L.Vrouw ter Engelen (Sacramentinnen) Halle
 community:
 priests: [Serge De Cauwer]
+diocese: Mechelen-Brussel
+city: Halle
+language: NL
 timetable:
   - time: 08:30
     days: [sun]

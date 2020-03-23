@@ -1,5 +1,10 @@
 ---
 title: Vieren met de bisschop
+community: Kathedraal Antwerpen
+priests: [Bisschop Bonny,Bart Paepen]
+diocese: Antwerpen
+city: Antwerpen
+language: NL
 timetable:
   - time: 10:00
     days: [sun]
