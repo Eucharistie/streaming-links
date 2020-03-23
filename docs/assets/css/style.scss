@@ -4,7 +4,7 @@
 // @import "primer";
 
 // Override default blue
-$blue-000: #fafcff;
+// $blue-000: #fafcff; // .bg-blue-light
 $blue-500: #3172b8;
 
 // @import "primer.css";
@@ -13,6 +13,10 @@ $blue-500: #3172b8;
 @import '@primer/css/marketing/index.scss';
 
 @import "fontawesome";
+
+body {
+  background: #fafcff;
+}
 
 @media (min-width: 768px) {
   [hidden].d-md-block.unhide,

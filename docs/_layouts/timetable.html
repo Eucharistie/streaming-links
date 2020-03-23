@@ -33,7 +33,7 @@ days:
     {% endif %}
     {% assign timetable = "" | split: "," %}
 
-    <div class="Box-header day-row border-0 border-md rounded-0 rounded-md-top-2 d-flex bg-blue text-white" data-day="{{day.value}}" hidden>
+    <div class="Box-header day-row border-0 border-md rounded-0 rounded-md-top-2 d-flex Box-header--blue hide-lg hide-xl" data-day="{{day.value}}" hidden>
       <button onclick="showDay('{{layout.days[yesterday].value}}')" class="btn-octicon m-0 hide-lg hide-xl" type="button" aria-label="Chevron left icon">
         {% octicon chevron-left %}
       </button>
