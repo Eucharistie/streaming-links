@@ -18,7 +18,11 @@
     {% octicon globe class:"mr-2" %}
     Kanalen
   </a>
-  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/over" aria-current="{% if layout.sideNav == 'about' %}page{% endif %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/missaal" aria-current="{% if page.sideNav == 'texts' %}page{% endif %}">
+    {% octicon book class:"mr-2" %}
+    Missaal
+  </a>
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/over" aria-current="{% if page.sideNav == 'about' %}page{% endif %}">
     {% octicon info class:"mr-2" %}
     Over
   </a>
