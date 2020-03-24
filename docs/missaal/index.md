@@ -2,8 +2,6 @@
 layout: main
 sideNav: texts
 ---
-# Waar vind ik misteksten?
-
 ## Lezingen van de dag
 
 **Apps**
@@ -17,4 +15,5 @@ sideNav: texts
 
 ## Andere gebeden
 
-https://dagelijksevangelie.org/NL/prayer
+- [DagelijksEvangelie.org](https://dagelijksevangelie.org/NL/prayer)
+
