@@ -1,9 +1,11 @@
 ---
-title: Abdij Averbode
+channel: Abdij Averbode
 community: Norbertijnen
 priests: []
 diocese: Mechelen-Brussel
-city: Averbode
+locations:
+- city: Averbode
+  country: BE
 language: NL
 timetable:
   - time: 11:00

@@ -1,0 +1,15 @@
+{% capture longTitle %}{% if include.channel.channel %}
+    {{ include.channel.channel }}
+  {% elsif include.channel.community %}
+    {{ include.channel.community }}
+  {% else if include.channel.priests.size > 0 %}
+    {{ include.channel.priests | join: ", " }}
+  {% endif %}
+{% endcapture %}
+<span class="capitalize-first-letter">
+  {% if include.truncate %}
+    {{ longTitle | truncate: include.truncate  }}
+  {% else %}
+    {{ longTitle }}
+  {% endif %}
+</span>

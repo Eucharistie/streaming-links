@@ -4,6 +4,67 @@ layout: main
 <div class="d-block p-0 position-relative border-md rounded-md-2 overflow-hidden no-underline bg-white" href="#">
   <div class="bg-blue position-absolute top-0 left-0 py-1 width-full hide-sm hide-md"></div>
 
+  {% capture includeContent %}
+    <div class="">
+      <h3 class="text-gray-dark mt-0">
+        {% if page.live %}
+        <span class="Label Label bg-red text-white">
+          {% octicon primitive-dot-stroke %} Nu live
+        </span>
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ page.url }}">
+          {% include title.html channel=page %}
+        </a>
+      </h3>
+
+      <div class="text-gray">
+        {{ page.content }}
+      </div>
+
+      <h6 class="mb-0 mt-2">
+        Info
+      </h6>
+
+      {% if page.community %}
+        <p class="f5 mb-0">
+          <span class="text-gray position-absolute">
+            Gemeenschap
+          </span>
+          <span class="pl-11">{{page.community}}</span>
+        </p>
+      {% endif %}
+
+      {% if page.priests.size > 0 %}
+        <p class="f5 mb-0">
+          <span class="text-gray position-absolute">
+            Priester{% if page.priests.size > 1 %}s{% endif %}
+          </span>
+          <span class="pl-11">
+            {{ page.priests | join: ", " }}
+          </span>
+        </p>
+      {% endif %}
+
+      {% if page.locations.size > 0 %}
+        <p class="f5 mb-0">
+          <span class="text-gray position-absolute">
+            Locatie{% if page.locations.size > 1 %}s{% endif %}
+          </span>
+          <span class="pl-11">
+            {{ page.locations | map: "city" | join: ", " }}
+          </span>
+        </p>
+      {% endif %}
+
+      {% include time.html timetable=page.timetable %}
+    </div>
+  {% endcapture %}
+
+  <div class="my-4 mx-3">
+    {% include channel.html channel=page includeContent=includeContent %}
+  </div>
+
+  {% comment %}
   <div class="p-3">
     <div class="pb-2 d-flex flex-row flex-md-items-start">
       <div class="pr-2 d-flex flex-justify-center flex-md-justify-start">
@@ -32,26 +93,11 @@ layout: main
         {% endif %}
       </div>
       <div class="pt-1">
-        <h3 class="text-gray-dark mt-0">
-          {% if page.live %}
-          <span class="Label Label bg-red text-white">
-            {% octicon primitive-dot-stroke %} Nu live
-          </span>
-          {% endif %}
-          <a href="{{ site.baseurl }}{{ page.url }}">
-            {{ page.title }}
-          </a>
-        </h3>
-        <div class="text-gray">
-          {{ page.content }}
-        </div>
       </div>
     </div>
 
-    Uurregeling:
-    {% for time in page.timetable %}
-      {% include time.html %}
-    {% endfor %}  </div>
+  </div>
+  {% endcomment %}
 
 
   {% if page.youtubeChannelID %}

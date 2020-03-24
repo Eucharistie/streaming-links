@@ -47,7 +47,7 @@ days:
       </button>
     </div>
 
-    {% for stream in site.streams %}
+    {% for stream in site.kanalen %}
       {% assign newtimes = stream.timetable | where: "days", day.value | map: "time" %}
       {% assign timetable = timetable | concat: newtimes | uniq | sort %}
     {% endfor %}
@@ -56,11 +56,11 @@ days:
       <div class="Box-row day-row" data-day="{{day.value}}" data-time="{{time|ceil}}" hidden>
         {% include format_time.html time=time %}
 
-        {% for stream in site.streams %}
+        {% for stream in site.kanalen %}
           {% assign singleTime = stream.timetable | where: "days", day.value | where: "time", time %}
           {% for currentTime in singleTime  %}
-              <a href="{{ site.baseurl }}{{ stream.url }}" class="Label Label--gray {%if currentTime.kind == 'sundayMass'%}text-red{%endif%}">
-                {{ stream.title | truncate: 40 }}
+              <a href="{{ site.baseurl }}{{ stream.url }}" class="Label Label--gray {%if currentTime.kind == 'sundayMass'%}text-blue{%endif%}">
+                {% include title.html channel=stream truncate=40 %}
               </a>
           {% endfor %}
         {% endfor %}

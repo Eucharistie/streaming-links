@@ -1,9 +1,9 @@
 ---
-title: Radio Maria Vlaanderen
-community: 
+channel: Radio Maria Vlaanderen
+community:
 priests: []
-diocese: 
-city: 
+diocese:
+city:
 language: NL
 timetable:
   - time: 10:00

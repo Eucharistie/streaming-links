@@ -1,9 +1,9 @@
 ---
-title: Pastoor Wim Simons
-community: 
 priests: [pastoor Wim Simons]
 diocese: Hasselt
-city: Herk-de-Stad
+locations:
+- city: Herk-de-Stad
+  country: BE
 language: NL
 timetable:
   - time: 09:00
@@ -15,7 +15,6 @@ timetable:
   - time: 17:00
     days: [sat]
     kind: sundayMass
-facebook: https://www.facebook.com/wim.simons.71 
+facebook: https://www.facebook.com/wim.simons.71
 stream: https://www.facebook.com/wim.simons.71
 ---
-pr. Wim Simons

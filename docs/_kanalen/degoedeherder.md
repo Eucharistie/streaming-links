@@ -1,9 +1,10 @@
 ---
-title:
 community: Parochie De Goede Herder - Gent-West
 priests: [pastoor Patrick De Baets]
 diocese: Gent
-city: Gent
+locations:
+- city: Gent
+  country: BE
 language: NL
 timetable:
   - time: 09:00

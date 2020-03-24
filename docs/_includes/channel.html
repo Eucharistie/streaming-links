@@ -1,0 +1,43 @@
+
+<div class="d-flex flex-row flex-items-start">
+  <div class="d-flex flex-column flex-md-row flex-md-items-start flex-items-center">
+    <a href="{{ site.baseurl }}{{ include.channel.url }}" class="mr-3 text-gray">
+      {% include avatar.html stream=include.channel maxsize="80px" %}
+    </a>
+
+    <div style="max-width: 80px;" class="mt-2 mt-md-0 mr-3 social d-flex flex-row flex-md-column flex-order-1 flex-md-order-none flex-wrap flex-justify-center">
+      {% if include.channel.facebook %}
+        <a href="{{ include.channel.facebook }}" style="text-decoration: none;">
+          <i class="fab fa-facebook-square fa-fw fa-2x"></i>
+        </a>
+      {% endif %}
+      {% if include.channel.twitter %}
+        <a href="{{ include.channel.twitter }}" style="text-decoration: none;">
+          <i class="fab fa-twitter fa-fw fa-2x"></i>
+        </a>
+      {% endif %}
+      {% if include.channel.youtube %}
+        <a href="{{ include.channel.youtube }}" style="text-decoration: none;">
+          <i class="fab fa-youtube fa-fw fa-2x"></i>
+        </a>
+      {% endif %}
+      {% if include.channel.homepage %}
+        <a href="{{ include.channel.homepage }}" style="text-decoration: none;">
+          <i class="fas fa-link fa-fw fa-2x"></i>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="flex-auto pt-0 pt-md-1">
+    {{ include.includeContent }}
+  </div>
+</div>
+
+{% comment %}
+
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+
+{% endcomment %}

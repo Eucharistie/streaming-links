@@ -1,7 +1,7 @@
 <nav class="SideNav mt-md-3 border-0 border-md overflow-hidden">
   <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/" aria-current="{% if layout.sideNav == 'timetable' %}page{% endif %}">
     {% octicon clock class:"mr-2" %}
-    Uurregeling
+    Uitzendingen
   </a>
   {% if layout.sideNav == 'timetable' %}
   <nav class="SideNav bg-white border-top py-3 pl-6 days hide-sm hide-md">
@@ -14,8 +14,12 @@
     <a class="SideNav-subItem" data-day="sat" href="#">zaterdag <span class="today-bullet" hidden>•</span></a>
   </nav>
   {% endif %}
-  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/places" aria-current="{% if layout.sideNav == 'places' %}page{% endif %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/kanalen" aria-current="{% if layout.sideNav == 'channels' %}page{% endif %}">
     {% octicon globe class:"mr-2" %}
-    Locaties
+    Kanalen
+  </a>
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/over" aria-current="{% if layout.sideNav == 'about' %}page{% endif %}">
+    {% octicon info class:"mr-2" %}
+    Over
   </a>
 </nav>

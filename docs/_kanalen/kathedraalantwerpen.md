@@ -1,9 +1,11 @@
 ---
 title: Vieren met de bisschop
 community: Kathedraal Antwerpen
-priests: [Bisschop Bonny,pastoor Bart Paepen]
+priests: [bisschop Bonny,pastoor Bart Paepen]
 diocese: Antwerpen
-city: Antwerpen
+locations:
+- city: Antwerpen
+  country: BE
 language: NL
 timetable:
   - time: 10:00
@@ -15,4 +17,3 @@ youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg
 homepage: https://www.kerknet.be/bisdom-antwerpen/artikel/vieren-met-de-bisschop?microsite=203
 youtubeChannelID: UCoBsBL5PSYnOKZVwu2r0Drg
 ---
-Kathedraal Antwerpen – Bisschop Bonny

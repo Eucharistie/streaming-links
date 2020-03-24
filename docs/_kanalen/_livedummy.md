@@ -2,7 +2,7 @@
 # The first part of this document is between three dashes (---).
 # It is written in the YAML language
 
-title: Dummy parochie met veel te lange titel die beter en goe stukske zou worden ingekort, vindt ge da nu ook ni?
+channel: Dummy parochie met veel te lange titel die beter en goe stukske zou worden ingekort, vindt ge da nu ook ni?
 community:
 priests: []
 diocese:
@@ -38,13 +38,16 @@ draft: true
 written in Markdown.
 
 This text is rendered into [this].
+
 [this]: https://eucharistie.github.io/streaming-links/streams/livedummy.html
 
 This text is interpreted as "markdown".
 You can learn how this works on the [kramdown homepage].
-[kramdown homepage]: http://kramdown.gettalong.org
+
+[kramdown homepage]: https://kramdown.gettalong.org/quickref.html
 
 You could also use an online editor that immediately renders your markdown
 like [dillinger] or [stackedit].
+
 [dillinger]: https://dillinger.io
 [stackedit]: https://stackedit.io

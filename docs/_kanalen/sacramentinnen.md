@@ -1,9 +1,10 @@
 ---
-title: Begijnhof O.L.Vrouw ter Engelen (Sacramentinnen) Halle
-community:
+community: Begijnhof O.L.Vrouw ter Engelen
 priests: [priester Serge De Cauwer]
 diocese: Mechelen-Brussel
-city: Halle
+locations:
+- city: Halle
+  country: BE
 language: NL
 timetable:
   - time: 08:30
@@ -22,4 +23,4 @@ facebook: https://www.facebook.com/Begijnhofhalle
 fbid: Begijnhofhalle
 stream: https://www.facebook.com/Begijnhofhalle
 ---
-pr. Serge De Cauwer
+De vroegere Sacramentinnen

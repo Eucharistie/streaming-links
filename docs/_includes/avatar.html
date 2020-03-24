@@ -2,4 +2,4 @@
   class="avatar"
   src="{% if include.stream.fbid %}https://graph.facebook.com/v6.0/{{ include.stream.fbid }}/picture?type=large{% else %}{{ site.baseurl }}/android-chrome-512x512.png{% endif %}"
   alt="{{include.stream.title}}"
-  style="max-width:{%if include.maxsize%}{{include.maxsize}}{%else%}100px{%endif%}; max-height:{%if include.maxsize%}{{include.maxsize}}{%else%}100px{%endif%};top:-4px;position:relative;">
+  style="max-width:{%if include.maxsize%}{{include.maxsize}}{%else%}100px{%endif%}; max-height:{%if include.maxsize%}{{include.maxsize}}{%else%}100px{%endif%};">

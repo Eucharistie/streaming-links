@@ -1,15 +1,16 @@
 ---
-title: Sint-Jan-Baptist Kachtem
-community:
+community: Sint-Jan-Baptist Kachtem
 priests: [pastoor Matthias Noë]
 diocese: Brugge
-city: Herzele
+locations:
+- country: BE
+  city: Herzele
 language: NL
 timetable:
   - time: 10:30
     days: [sun]
     kind: sundayMass
 facebook: https://www.facebook.com/Pastoor.Matthias.Noe
-fbid: 
-stream: 
+fbid:
+stream:
 ---

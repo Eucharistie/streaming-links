@@ -1,17 +1,40 @@
 ---
 layout: main
-sideNav: places
+sideNav: channels
 ---
-
 <div class="Box Box border-0 border-md rounded-0 rounded-md-2">
   <div class="Box-header border-0 border-md rounded-0 rounded-md-2 text-small">
-    Alle plaatsen waar de eucharistie gestreamd wordt.<br>
+    Alle kanalen die eucharistie uitzenden.<br>
   </div>
 
-  {% for stream in site.streams %}
+  {% for stream in site.kanalen %}
     {% assign timetable = stream.timetable %}
     {% if timetable %}
-      {% include location.html %}
+      {% capture includeContent %}
+        {% if stream.live %}
+        <span class="Label Label bg-red text-white">
+          {% octicon primitive-dot-stroke %} Nu live
+        </span>
+        {% endif %}
+
+        <strong>
+          <a href="{{ site.baseurl }}{{ stream.url }}">{% include title.html channel=stream %}</a>
+        </strong>
+
+        {% assign stream_content = stream.content | strip %}
+        {% if stream_content.size > 0 %}
+        <p class="text-small text-gray-light">
+          {{ stream.content | strip_html }}
+        </p>
+        {% endif %}
+
+        {% include time.html timetable=timetable %}
+      {% endcapture %}
+
+
+      <div class="Box-row">
+        {% include channel.html channel=stream includeContent=includeContent %}
+      </div>
     {% endif %}
   {% endfor %}
 

@@ -29,7 +29,7 @@ plugins:
   - jekyll-feed
 
 collections:
-  streams:
+  kanalen:
     output: true
 
 sass:
@@ -43,7 +43,7 @@ gems:
 defaults:
   - scope:
       path: ""
-      type: streams
+      type: kanalen
     values:
       layout: stream
 

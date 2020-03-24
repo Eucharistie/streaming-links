@@ -18,6 +18,13 @@ body {
   background: #fafcff;
 }
 
+.capitalize-first-letter {
+  display: inline-block;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
 @media (min-width: 768px) {
   [hidden].d-md-block.unhide,
   [hidden][hidden].d-md-block.unhide {

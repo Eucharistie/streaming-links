@@ -1,9 +1,10 @@
 ---
-title: Sint-Pieterskerk Jette
-community: Kerk Jette
+community: Sint-Pieterskerk Jette
 priests: [pastoor Dirk Vannetelbosch]
 diocese: Mechelen-Brussel
-city: Jette
+locations:
+- city: Jette
+  country: BE
 language: NL
 timetable:
   - time: 10:00

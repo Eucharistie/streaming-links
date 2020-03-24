@@ -1,9 +1,10 @@
 ---
-title: Johannes XXIII Seminarie
-community:
+community: Johannes XXIII Seminarie
 priests: [priester Filip Hacour]
 diocese: Mechelen-Brussel
-city: Leuven
+locations:
+- city: Leuven
+  country: BE
 language: NL
 timetable:
   - time: 09:30
@@ -11,7 +12,7 @@ timetable:
     kind: sundayMass
 facebook: https://www.facebook.com/Johannes-XXIII-Seminarie-309563685301/
 fbid: 309563685301
-youtube: 
-homepage: 
+youtube:
+homepage:
 stream:
 ---
