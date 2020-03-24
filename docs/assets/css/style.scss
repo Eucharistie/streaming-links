@@ -38,6 +38,11 @@ body {
   // margin-bottom: -150px;
   // padding-bottom: 150px;
 }
+
+.markdown-body {
+  min-height: calc(100vh - 61px);
+}
+
 #SideNav .SideNav {
   margin-left: -1px;
 }
@@ -58,6 +63,9 @@ body {
 .social {
   a:hover {
     color: $blue-500 !important;
+  }
+  .link-gray .fab:not(:hover) {
+    color: #586069;
   }
   .fa-home {
     color: $blue-500;
