@@ -3,10 +3,12 @@
 # It is written in the YAML language
 
 channel: Dummy parochie met veel te lange titel die beter en goe stukske zou worden ingekort, vindt ge da nu ook ni?
-community:
-priests: []
+community: 
+priests: [1jfhdkglh,fjhgklsm,fjsdiq]
 diocese:
-city:
+location:
+- city: Halle
+  country: BE
 language:
 timetable:
   - time: 10:00
