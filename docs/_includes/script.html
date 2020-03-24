@@ -10,9 +10,7 @@
   const todayNav = document.querySelector("[data-day='" + today + "']")
   const todayBullets = document.querySelectorAll("[data-day='" + today + "'] .today-bullet")
   const siteFlash = document.querySelector('#siteFlash')
-
-  // show siteFlash unless user has hidden it before
-  siteFlash.hidden = (localStorage.getItem('hideSiteFlash') == "true");
+  const todayRows = document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row");
 
   function hideSiteFlash() {
     localStorage.setItem('hideSiteFlash', 'true');
@@ -27,7 +25,6 @@
 
   function showDay(day) {
 
-    const todayRows = document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row");
     const lastBroadcast = parseInt(todayRows[todayRows.length - 1].dataset.time, 10);
     const showLiveSoon = ((day === today) && (loadTime < lastBroadcast));
 
@@ -47,6 +44,9 @@
         }
       })
     }
+
+    // show siteFlash unless user has hidden it before
+    if (siteFlash) siteFlash.hidden = (localStorage.getItem('hideSiteFlash') == "true");
 
     // show the rows for the selected day
     document.querySelectorAll("[data-day='" + day + "']").forEach(function (e) {e.hidden = false});
@@ -74,6 +74,6 @@
     }
   })
 
-  showDay(today)
+  if (todayRows.length) showDay(today);
 
 </script>
