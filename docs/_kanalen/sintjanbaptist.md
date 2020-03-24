@@ -11,6 +11,6 @@ timetable:
     days: [sun]
     kind: sundayMass
 facebook: https://www.facebook.com/Pastoor.Matthias.Noe
-fbid:
+fbid: 392645767942453
 stream:
 ---

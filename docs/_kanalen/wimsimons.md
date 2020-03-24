@@ -17,4 +17,5 @@ timetable:
     kind: sundayMass
 facebook: https://www.facebook.com/wim.simons.71
 stream: https://www.facebook.com/wim.simons.71
+fbid: 791733874
 ---
