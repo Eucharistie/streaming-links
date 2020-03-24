@@ -9,6 +9,15 @@
   const sideNav = document.querySelector('#SideNav');
   const todayNav = document.querySelector("[data-day='" + today + "']")
   const todayBullets = document.querySelectorAll("[data-day='" + today + "'] .today-bullet")
+  const siteFlash = document.querySelector('#siteFlash')
+
+  // show siteFlash unless user has hidden it before
+  siteFlash.hidden = (localStorage.getItem('hideSiteFlash') == "true");
+
+  function hideSiteFlash() {
+    localStorage.setItem('hideSiteFlash', 'true');
+    siteFlash.hidden = true;
+  }
 
   // toggle nav menu collapse
   function toggleNav() {
