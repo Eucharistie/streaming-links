@@ -13,6 +13,7 @@ timetable:
     kind: sundayMass
   - time: 18:15
     days: [wed]
+    kind: weekMass
 facebook: https://www.facebook.com/EgliseSainteCatherine/
 fbid: 1100107513335259
 youtube: 
