@@ -2,7 +2,7 @@
 layout: main
 sideNav: texts
 ---
-## Lezingen van de dag
+# Lezingen van de dag
 
 **Apps**
 
