@@ -36,6 +36,9 @@
     <!-- End Matomo Code -->
   </head>
   <body>
+    <div hidden>
+      {% include logo.svg %}
+    </div>
     <div class="markdown-body">
       {% if site.title and site.title != page.title %}
 
@@ -43,7 +46,10 @@
         <div class="container-lg clearfix Header bg-blue">
           <div class="Header-item Header-item--full">
             <a href="{{site.baseurl}}/" class="Header-link f4 d-flex flex-items-center">
-              <img src="{{site.baseurl}}/eucharistie-white.png" class="mr-2" style="background-color: transparent;" alt="Eucharistie" height="32" width="32">
+              <svg viewBox="0 0 120 120" width="32" class="mr-2 logo">
+                <use xlink:href="#logoSquare" class="white"/>
+                <use xlink:href="#logoShape" class="blue"/>
+              </svg>
               <span>{{ site.title }}</span>
             </a>
           </div>

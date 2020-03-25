@@ -5,7 +5,7 @@
 
 // Override default blue
 // $blue-000: #fafcff; // .bg-blue-light
-$blue-500: #3172b8;
+$blue-500: #438dcc;
 
 // @import "primer.css";
 @import '@primer/css/core/index.scss';
@@ -29,6 +29,20 @@ body {
   [hidden].d-md-block.unhide,
   [hidden][hidden].d-md-block.unhide {
     display: block !important;
+  }
+}
+
+.logo {
+  &.avatar {
+    // background: $blue-500;
+  }
+  use {
+    &.blue {
+      fill: $blue-500;
+    }
+    &.white {
+      fill: white;
+    }
   }
 }
 
