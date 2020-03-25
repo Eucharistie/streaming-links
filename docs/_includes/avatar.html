@@ -4,7 +4,7 @@
     src="https://graph.facebook.com/v6.0/{{ include.stream.fbid }}/picture?type=large"
     alt="{{include.stream.title}}"
     style="max-width:{%if include.maxsize%}{{include.maxsize}}{%else%}100px{%endif%}; max-height:{%if include.maxsize%}{{include.maxsize}}{%else%}100px{%endif%};">
-{% else %}{{ site.baseurl }}
+{% else %}
   <svg
     viewBox="0 0 120 120"
     class="logo avatar"
