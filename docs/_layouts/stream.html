@@ -21,36 +21,36 @@ layout: main
         {{ page.content }}
       </div>
 
-      <h6 class="mb-0 mt-2">
+      <h6 class="mb-0 mt-2 hide-sm">
         Info
       </h6>
 
       {% if page.community %}
-        <p class="f5 mb-0">
-          <span class="text-gray position-absolute">
+        <p class="f5 mb-0 indent-after-wrap">
+          <span class="d-block d-sm-inline text-gray position-md-absolute">
             Gemeenschap
           </span>
-          <span class="pl-11">{{page.community}}</span>
+          <span class="pl-md-11">{{page.community}}</span>
         </p>
       {% endif %}
 
       {% if page.priests.size > 0 %}
-        <p class="f5 mb-0">
-          <span class="text-gray position-absolute">
+        <p class="f5 mb-0 indent-after-wrap">
+          <span class="d-block d-sm-inline text-gray position-md-absolute">
             Priester{% if page.priests.size > 1 %}s{% endif %}
           </span>
-          <span class="pl-11">
+          <span class="pl-md-11">
             {{ page.priests | join: ", " }}
           </span>
         </p>
       {% endif %}
 
       {% if page.locations.size > 0 %}
-        <p class="f5 mb-0">
-          <span class="text-gray position-absolute">
+        <p class="f5 mb-0 indent-after-wrap">
+          <span class="d-block d-sm-inline text-gray position-md-absolute">
             Locatie{% if page.locations.size > 1 %}s{% endif %}
           </span>
-          <span class="pl-11">
+          <span class="pl-md-11">
             {{ page.locations | map: "city" | join: ", " }}
           </span>
         </p>

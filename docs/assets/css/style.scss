@@ -18,10 +18,10 @@ body {
   background: #fafcff;
 }
 
-.capitalize-first-letter {
-  display: inline-block;
-  &::first-letter {
-    text-transform: uppercase;
+@media (max-width: 767px) {
+  .indent-after-wrap {
+    text-indent: -1em;
+    padding-left: 1em;
   }
 }
 
@@ -29,6 +29,18 @@ body {
   [hidden].d-md-block.unhide,
   [hidden][hidden].d-md-block.unhide {
     display: block !important;
+  }
+}
+
+div.nav-texts,
+div.nav-about {
+  padding: 0 1em;
+}
+
+.capitalize-first-letter {
+  display: inline-block;
+  &::first-letter {
+    text-transform: uppercase;
   }
 }
 

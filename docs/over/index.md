@@ -17,9 +17,10 @@ In de sectie [Missaal] vind je meer info over waar je lezingen en andere
 liturgische teksten kan terugvinden.
 
 Heb je zelf nuttige informatie die je graag wil delen met de gelovige
-gemeenschap? Stuur ons dan maar een mailtje.
+gemeenschap? Geef ons dan maar een seintje op Facebook of per mail.
 
 [Missaal]: {{ site.baseurl }}/missaal
 
 [<i class="fas fa-envelope fa-fw"></i> contact@eucharistie.info](mailto:contact@eucharistie.info)  
 [<i class="fab fa-facebook-square fa-fw"></i> eucharistie.info](https://www.facebook.com/eucharistie.info)
+{: .hide-sm .hide-md}
