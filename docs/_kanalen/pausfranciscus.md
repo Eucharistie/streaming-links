@@ -1,8 +1,8 @@
 ---
 title: Eucharistieviering met Paus Franciscus
-community: 
+community:
 priests: [Paus Franciscus]
-diocese: 
+diocese:
 locations:
 - city: Rome
   country: IT
@@ -14,10 +14,10 @@ timetable:
   - time: 07:00
     days: [mon,tue,wed,thu,fri,sat]
     kind: weekMass
-facebook:
-fbid:
+facebook: https://www.facebook.com/kto.television/
+fbid: 143654702340655
 youtube: https://www.youtube.com/user/KTOTV
 homepage: http://ktotv.com/
-stream: 
+youtubeChannelID: UCg0L6cPMNLv1gjsyzYqMG7g
 ---
 KTO tv: Franstalige commentaar
