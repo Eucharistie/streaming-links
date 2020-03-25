@@ -20,4 +20,4 @@ youtube: https://www.youtube.com/channel/UC7lUxNFc6p777LTjiz6MMTA
 homepage: http://www.hetoudekloostermaleizen.be
 stream:
 ---
-Tidentijnse ritus
+Tridentijnse ritus
