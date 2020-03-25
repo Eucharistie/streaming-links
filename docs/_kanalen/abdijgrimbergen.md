@@ -12,9 +12,8 @@ timetable:
     days: [sun]
     kind: sundayMass
 facebook: https://www.facebook.com/groups/61593270750
-fbid: 61593270750
 youtube: https://www.youtube.com/channel/UCeWiKhPkh1RP0309DJE1MFg
-youtubeChannelID: 
+youtubeChannelID:
 homepage:
 stream:
 ---
