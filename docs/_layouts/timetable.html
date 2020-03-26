@@ -62,6 +62,7 @@ days:
           {% for currentTime in singleTime  %}
               <a href="{{ site.baseurl }}{{ stream.url }}" class="Label Label--gray {%if currentTime.kind == 'sundayMass'%}text-blue{%endif%}">
                 {% include title.html channel=stream truncate=40 %}
+                <span class="Counter Counter--gray">{{currentTime.language}}</span>
               </a>
           {% endfor %}
         {% endfor %}
