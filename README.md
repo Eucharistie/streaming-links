@@ -3,7 +3,7 @@ Streaming Links website in Github Pages / Jekyll
 
 #### Development
 ```
-bundle exec jekyll serve -lH thomas-pro.fritz.box -b "" --config _config.yml,_config-dev.yml
+bundle exec jekyll serve -l -b "" --config _config.yml,_config-dev.yml
 ```
 
 **Netlify**
