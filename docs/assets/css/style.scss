@@ -35,6 +35,10 @@ body {
   }
 }
 
+.day-row[data-events='0'] {
+  display: none;
+}
+
 .logo {
   &.avatar {
     // background: $blue-500;

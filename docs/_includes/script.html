@@ -1,8 +1,18 @@
 {% include polyfills.html %}
+
+{% comment %}
+Get all languages, use split to create empty array. {% endcomment %}
+{% assign languages = "" | split: "" %}
+{% for channel in site.kanalen %}
+  {% assign newLanguages = channel.timetable|map: "language" %}
+  {% assign languages = languages | concat: newLanguages | uniq %}
+{% endfor %}
+
 <script type="text/javascript">
 
   const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const d = new Date();
+  const daysTranslated = {nl: ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag']}
+  const d = new Date(); //=now
   const today = days[d.getDay()];
   const loadTime = (d.getHours() * 60) + d.getMinutes()
 
@@ -12,6 +22,46 @@
   const siteFlash = document.querySelector('#siteFlash')
   const todayRows = document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row");
 
+  var selectedDay,
+      langFilter = {};
+
+  // setting/getting language filter settings
+  // default value = true (all languages visible)
+  langFilter.get = function (lang) {
+    if (localStorage.getItem('lang-filter-' + lang) == "false") {
+      return "false";
+    } else {
+      return "true";
+    }
+  }
+  langFilter.set = function (lang, value) {
+    localStorage.setItem('lang-filter-' + lang, value)
+  }
+  langFilter.toggle = function (lang) {
+    const key = 'lang-filter-' + lang;
+    var value;
+    if (localStorage.getItem(key) == "false") value = "true"
+    else value = "false"
+    localStorage.setItem(key, value);
+    return value;
+  }
+  langFilter.updateTimeTable = function (lang, value) {
+    // event visibility
+    document.querySelectorAll('.event[data-lang="' + lang + '"]').forEach(function(event) {
+      event.hidden = ( value === "false" )
+    });
+    // filter menu selectedness
+    document.querySelectorAll('.language-filter[data-lang="' + lang + '"]').forEach(function(filter) {
+      filter.setAttribute('aria-checked', value )
+    });
+    // count number of events in row,
+    // this hides empty rows with css
+    document.querySelectorAll(".day-row").forEach(function(row){
+      row.dataset.events = row.querySelectorAll(".event:not([hidden])").length;
+    })
+  }
+
+  // hide sideflash
   function hideSiteFlash() {
     localStorage.setItem('hideSiteFlash', 'true');
     siteFlash.hidden = true;
@@ -25,8 +75,24 @@
 
   function showDay(day) {
 
+    if ( day == 'previous' )  {
+      var i = days.indexOf(selectedDay) - 1;
+      if (i === -1) i = days.length - 1
+      day = days[i];
+    }
+    else if ( day == 'next' ) {
+      var i = days.indexOf(selectedDay) + 1;
+      if (i === days.length) i = 0
+      day = days[i];
+    }
+
     const lastBroadcast = parseInt(todayRows[todayRows.length - 1].dataset.time, 10);
     const showLiveSoon = ((day === today) && (loadTime < lastBroadcast));
+
+    selectedDay = day;
+
+    // Write the name of the day in the mobile day switcher.
+    document.querySelector('#currentDay').innerText = daysTranslated.nl[days.indexOf(day)];
 
     // Only show "live soon" on today and if before the last broadcast
     document.querySelector('#live-soon').hidden = !showLiveSoon;
@@ -62,7 +128,8 @@
     document.querySelectorAll(".SideNav.days .SideNav-subItem:not([data-day='" + day + "'])").forEach(function (e) {e.removeAttribute('aria-current')});
   }
 
-  if (todayBullets.length) todayBullets.forEach(function (bullet) {bullet.hidden = false} )
+  // TODO: this needs repair, maybe a bg color instead of bullets
+  //if (todayBullets.length) todayBullets.forEach(function (bullet) {bullet.hidden = false} )
 
   // When loading page on mobile, collapse the nav menu
   SideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches
@@ -75,5 +142,9 @@
   })
 
   if (todayRows.length) showDay(today);
+
+  languages.forEach(function(lang){
+    langFilter.updateTimeTable(lang, langFilter.get(lang))
+  })
 
 </script>
