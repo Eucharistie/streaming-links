@@ -35,6 +35,16 @@ body {
   }
 }
 
+.justify {
+  text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  // hyphenate-limit-chars: 10 4 4;
+}
+
 .day-row[data-events='0'] {
   display: none;
 }
