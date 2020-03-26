@@ -1,15 +1,4 @@
-{% include polyfills.html %}
-
-{% comment %}
-Get all languages, use split to create empty array. {% endcomment %}
-{% assign languages = "" | split: "" %}
-{% for channel in site.kanalen %}
-  {% assign newLanguages = channel.timetable|map: "language" %}
-  {% assign languages = languages | concat: newLanguages | uniq %}
-{% endfor %}
-
 <script type="text/javascript">
-
   const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
   const daysTranslated = {nl: ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag']}
   const d = new Date(); //=now
@@ -57,7 +46,7 @@ Get all languages, use split to create empty array. {% endcomment %}
     // count number of events in row,
     // this hides empty rows with css
     document.querySelectorAll(".day-row").forEach(function(row){
-      row.dataset.events = row.querySelectorAll(".event:not([hidden])").length;
+      row.setAttribute("data-events", row.querySelectorAll(".event:not([hidden])").length);
     })
   }
 

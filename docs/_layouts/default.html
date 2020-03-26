@@ -34,6 +34,11 @@
       })();
     </script>
     <!-- End Matomo Code -->
+    <script type="text/javascript">
+      // XXX Polyfills. Only loaded on IE
+      if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        document.write('<script src="{{site.baseurl}}/assets/js/polyfills.js"><\/script>');
+    </script>
   </head>
   <body>
     <div hidden>
@@ -46,7 +51,7 @@
         <div class="container-lg clearfix Header bg-blue">
           <div class="Header-item Header-item--full">
             <a href="{{site.baseurl}}/" class="Header-link f4 d-flex flex-items-center">
-              <svg viewBox="0 0 120 120" width="32" class="mr-2 logo">
+              <svg viewBox="0 0 120 120" height="32" width="32" class="mr-2 logo">
                 <use xlink:href="#logoCircle" class="white"/>
                 <use xlink:href="#logoShape" class="blue"/>
               </svg>
