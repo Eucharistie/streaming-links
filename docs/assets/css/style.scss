@@ -7,10 +7,13 @@
 // $blue-000: #fafcff; // .bg-blue-light
 $blue-500: #438dcc;
 
-// @import "primer.css";
-@import '@primer/css/core/index.scss';
-@import '@primer/css/product/index.scss';
-@import '@primer/css/marketing/index.scss';
+{% if page.dev == true %}
+  @import "primer.css";
+{% else %}
+  @import '@primer/css/core/index.scss';
+  @import '@primer/css/product/index.scss';
+  @import '@primer/css/marketing/index.scss';
+{% endif %}
 
 @import "fontawesome";
 
