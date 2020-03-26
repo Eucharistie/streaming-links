@@ -6,17 +6,19 @@ diocese:
 locations:
 - city: Thy-le-Château
   country: BE
-language: FR
 timetable:
   - time: 11:00
     days: [sun]
     kind: sundayMass
+    language: fr
   - time: 12:00
     days: [mon,tue,wed,fri,sat]
     kind: weekMass
+    language: fr
   - time: 18:00
     days: [thu]
     kind: weekMass
+    language: fr
 facebook: https://www.facebook.com/thybeatitudes
 fbid: 592802614102813
 youtube: https://www.youtube.com/channel/UC3lWbDfR3f32aHLuM8YMBnQ

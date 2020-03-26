@@ -5,11 +5,11 @@ diocese: Mechelen-Brussel
 locations:
 - city: Jette
   country: BE
-language: NL
 timetable:
   - time: 10:00
     days: [sun]
     kind: sundayMass
+    language: nl
 facebook: https://www.facebook.com/groups/43323561723/
 fbid:
 youtube: https://www.youtube.com/user/kerkjettevideo

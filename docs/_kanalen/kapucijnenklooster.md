@@ -1,20 +1,20 @@
 ---
-channel: 
+channel:
 community: Kapucijnen Klooster Meersel-Dreef
 priests: []
 diocese: Antwerpen
 locations:
 - city: Meersel-Dreef
   country: BE
-language: NL
 timetable:
   - time: 10:00
     days: [sun]
     kind: sundayMass
+    language: nl
 facebook: https://www.facebook.com/KapucijnenKlooster/
 fbid: 199307790194742
-youtube: 
-youtubeChannelID: 
+youtube:
+youtubeChannelID:
 homepage:
 stream:
 ---

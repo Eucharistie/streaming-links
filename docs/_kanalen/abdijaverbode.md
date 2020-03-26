@@ -6,9 +6,9 @@ diocese: Mechelen-Brussel
 locations:
 - city: Averbode
   country: BE
-language: NL
 timetable:
   - time: 11:00
+    language: nl
     days: [sun]
     kind: sundayMass
 facebook:

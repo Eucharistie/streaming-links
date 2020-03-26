@@ -5,11 +5,11 @@ diocese: Mechelen-Brussel
 locations:
 - city: Halle
   country: BE
-language: NL
 timetable:
   - time: 10:00
     days: [sun]
     kind: sundayMass
+    language: nl
 facebook: https://www.facebook.com/basiliekhalle
 fbid: 102495201397492
 youtube:
