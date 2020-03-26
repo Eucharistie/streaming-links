@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: text
 sideNav: about
 ---
 # Over eucharistie.info

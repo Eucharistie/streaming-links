@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: text
 sideNav: texts
 ---
 # Lezingen van de dag
@@ -17,4 +17,3 @@ sideNav: texts
 ## Andere gebeden
 
 - [DagelijksEvangelie.org](https://dagelijksevangelie.org/NL/prayer)
-
