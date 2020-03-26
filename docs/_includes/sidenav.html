@@ -14,7 +14,7 @@
     <a class="SideNav-subItem" data-day="sat" href="#">zaterdag <span class="today-bullet" hidden>•</span></a>
   </nav>
   {% endif %}
-  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/kanalen" aria-current="{% if layout.sideNav == 'channels' %}page{% endif %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/kanalen" aria-current="{% if layout.sideNav == 'channels' or layout.sideNav == 'channel' %}page{% endif %}">
     {% octicon globe class:"mr-2" %}
     Kanalen
   </a>
