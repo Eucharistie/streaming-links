@@ -6,8 +6,9 @@ sideNav: about
 {: .f00-light .border-0}
 
 Welkom op eucharistie.info, dé plaats waar we voor jullie zo veel mogelijk informatie over eucharistievieringen in Vlaanderen verzamelen en overzichtelijk weergeven.
-Voor de initiatiefnemers van eucharistie.info is het een missie om als gelovigen met de beschikbare communicatiemiddelen op een andere manier uiting te geven aan onze vreugde in Christus. 
 {: .lead}
+
+Voor de initiatiefnemers van eucharistie.info is het een missie om als gelovigen met de beschikbare communicatiemiddelen op een andere manier uiting te geven aan onze vreugde in Christus. 
 
 De maatregelen die het coronavirus bestrijden laten voor een hele tijd geen publieke samenkomsten meer toe en dat mag ons niet beangstigen.
 Heel wat priesters en parochies delen vieringen en gebedsmomenten via het internet, door middel van “videostreams”. 
