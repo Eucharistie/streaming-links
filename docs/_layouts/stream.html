@@ -58,7 +58,13 @@ sideNav: channel
       {% endif %}
 
       {% include time.html timetable=page.timetable %}
-    </div>
+
+      {% if page.youtubeChannelID %}
+        <a href="https://lectionary.netlify.com/custom-player.html?ytChannel={{page.youtubeChannelID}}" class="btn mt-4">
+          {% octicon book class:"mr-2" %} Lezingen van de dag
+        </a> 
+      {% endif %}
+      </div>
   {% endcapture %}
 
   <div class="my-4 mx-3">
