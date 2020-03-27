@@ -27,6 +27,8 @@ markdown: kramdown
 #remote_theme: pages-themes/primer
 plugins:
   - jekyll-feed
+  - jekyll-octicons
+  - jekyll-seo-tag
 
 collections:
   kanalen:
