@@ -2,40 +2,6 @@ body[data-page="home.html"] {
   background: #eee;
 }
 
-
-/*
-google-webfonts-helper
-A Hassle-Free Way to Self-Host Google Fonts
-https://google-webfonts-helper.herokuapp.com/fonts
-*/
-
-/* barlow-condensed-regular - latin */
-@font-face {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/webfonts/barlow-condensed-v4-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Barlow Condensed Regular'), local('BarlowCondensed-Regular'),
-       url('/assets/webfonts/barlow-condensed-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/webfonts/barlow-condensed-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/webfonts/barlow-condensed-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/assets/webfonts/barlow-condensed-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/webfonts/barlow-condensed-v4-latin-regular.svg#BarlowCondensed') format('svg'); /* Legacy iOS */
-}
-/* abril-fatface-regular - latin */
-@font-face {
-  font-family: 'Abril Fatface';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/webfonts/abril-fatface-v11-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Abril Fatface'), local('AbrilFatface-Regular'),
-       url('/assets/webfonts/abril-fatface-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/webfonts/abril-fatface-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/webfonts/abril-fatface-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/assets/webfonts/abril-fatface-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/webfonts/abril-fatface-v11-latin-regular.svg#AbrilFatface') format('svg'); /* Legacy iOS */
-}
-
 /*
 https://codepen.io/jupago/pen/GPxqLX
 https://freefrontend.com/css-quote-styles/
