@@ -1,6 +1,6 @@
 ---
-title:
-community: SPECIAL
+channel: SPECIAL
+community: 
 priests: [Paus Franciscus]
 diocese:
 locations:
@@ -8,7 +8,7 @@ locations:
   country: IT
 timetable:
   - time: 18:00
-    days: [fri]
+    days: []
     kind: weekMass
     language: en
 
