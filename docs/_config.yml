@@ -27,6 +27,7 @@ markdown: kramdown
 #remote_theme: pages-themes/primer
 plugins:
   - jekyll-feed
+  - jekyll-octicons
 
 collections:
   kanalen:
@@ -36,9 +37,6 @@ sass:
   sass_dir: assets/css/
   load_paths:
     - node_modules/
-
-gems:
-  - jekyll-octicons
 
 defaults:
   - scope:
