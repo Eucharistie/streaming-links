@@ -1,6 +1,6 @@
 ---
-title: SPECIAL - Urbi et Orbi
-community:
+title:
+community: SPECIAL
 priests: [Paus Franciscus]
 diocese:
 locations:
