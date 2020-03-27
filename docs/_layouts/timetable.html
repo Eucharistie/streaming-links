@@ -17,8 +17,6 @@ days:
 - value: sat
   nl: zaterdag
 ---
-{% include siteflash.html %}
-
 {% comment %}
 Get all languages,
 first use split to create empty array: {% endcomment %}
@@ -106,7 +104,7 @@ convert the array from liquid to js: {% endcomment %}
         {% for stream in site.kanalen %}
           {% assign singleTime = stream.timetable | where: "days", day.value | where: "time", time %}
           {% for currentTime in singleTime  %}
-              <a href="{{ site.baseurl }}{{ stream.url }}" data-lang="{{currentTime.language}}" class="event Label Label--gray {%if currentTime.kind == 'sundayMass'%}text-blue{%endif%}">
+              <a href="{{ site.baseurl }}{{ stream.url }}" data-lang="{{currentTime.language}}" class="capitalize-first-letter event Label Label--gray {%if currentTime.kind == 'sundayMass'%}text-blue{%endif%}">
                 {% include title.html channel=stream truncate=40 %}
                 <span class="Counter Counter--gray">{{currentTime.language}}</span>
               </a>

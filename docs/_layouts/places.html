@@ -18,7 +18,7 @@ sideNav: channels
         {% endif %}
 
         <strong>
-          <a href="{{ site.baseurl }}{{ stream.url }}">{% include title.html channel=stream %}</a>
+          <a href="{{ site.baseurl }}{{ stream.url }}" class="capitalize-first-letter">{% include title.html channel=stream %}</a>
         </strong>
 
         {% assign stream_content = stream.content | strip %}

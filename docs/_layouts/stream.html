@@ -13,7 +13,7 @@ sideNav: channel
           {% octicon primitive-dot-stroke %} Nu live
         </span>
         {% endif %}
-        <a href="{{ site.baseurl }}{{ page.url }}">
+        <a href="{{ site.baseurl }}{{ page.url }}" class="capitalize-first-letter">
           {% include title.html channel=page %}
         </a>
       </h3>
@@ -62,7 +62,7 @@ sideNav: channel
       {% if page.youtubeChannelID %}
         <a href="https://lectionary.netlify.com/custom-player.html?ytChannel={{page.youtubeChannelID}}" class="btn mt-4">
           {% octicon book class:"mr-2" %} Lezingen van de dag
-        </a> 
+        </a>
       {% endif %}
       </div>
   {% endcapture %}

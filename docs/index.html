@@ -1,3 +1,90 @@
 ---
-layout: timetable
+layout: default
+days:
+- value: sun
+  nl: zondag
+- value: mon
+  nl: maandag
+- value: tue
+  nl: dinsdag
+- value: wed
+  nl: woensdag
+- value: thu
+  nl: donderdag
+- value: fri
+  nl: vrijdag
+- value: sat
+  nl: zaterdag
 ---
+<div class="d-md-block hide-lg hide-xl" id="SideNav">
+  {% include sidenav.html %}
+</div>
+<div class="blockquote-wrapper bg-blue ">
+  <div class="blockquote">
+    <h1>
+      In deze pandemische situatie, worden we uitgenodigd om
+      <span style="color:#ffffff">de waarde van de communio te
+      herontdekken</span> en te verdiepen.
+    </h1>
+    <h4>&mdash;Paus Franciscus<br><em>Angelus, 15 Maart</em></h4>
+  </div>
+</div>
+<div class="container-lg clearfix limit-children">
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 float-left text-center" data-day="{{day.value}}" data-time="{{time}}">
+    <a href="{{ site.baseurl }}/uurrooster">
+      <div class="bg-blue rounded-md-2 my-md-6 mx-md-3 p-4">
+        <h6 class="m-0 text-white">
+          Volg de eucharistie live:
+        </h6>
+        <h4 class="text-white mt-2">
+          Uurrooster
+        </h4>
+        <svg viewBox="0 0 120 120" class="logo avatar" style="width:140px;">
+          <use xlink:href="#logoCircle" class="white"/>
+          <use xlink:href="#logoShape" class="blue"/>
+        </svg>
+      </div>
+    </a>
+  </div>
+
+
+  {% for i in (0..6) %}
+    {% assign day = page.days[i] %}
+    {% assign timetable = "" | split: "" %}
+
+    {% for stream in site.kanalen %}
+      {% assign newtimes = stream.timetable | where: "days", day.value | map: "time" %}
+      {% assign timetable = timetable | concat: newtimes | uniq | sort %}
+    {% endfor %}
+
+    {% for time in timetable %}
+      {% for stream in site.kanalen %}
+        {% assign singleTime = stream.timetable | where: "days", day.value | where: "time", time %}
+        {% for currentTime in singleTime  %}
+          {% if currentTime.language == "nl" %}
+            <div class="home-link col-12 col-sm-6 col-md-4 col-lg-3 float-left text-center" data-day="{{day.value}}" data-time="{{time}}">
+              <div class="bg-white rounded-md-2 my-md-6 mx-md-3 p-4">
+                <h6 class="m-0">
+                  {% capture formattedTime %}
+                    {% include format_time.html time=time %}
+                  {% endcapture %}
+                  {{day.nl}} om {{ formattedTime | strip }}u
+                </h6>
+                <a href="{{ site.baseurl }}{{ stream.url }}">
+                  <h4 class="css-truncate css-truncate-overflow mt-2">
+                    {% include title.html channel=stream %}
+                  </h4>
+                </a>
+                <a href="{{ site.baseurl }}{{ stream.url }}">
+                  {% include avatar.html stream=stream maxsize="140px" %}
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+
+</div>
