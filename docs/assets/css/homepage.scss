@@ -51,7 +51,6 @@ Author Juan Pablo January 4, 2019
    height: calc(30vw + 400px);
    padding: 0 20px;
 
-   background: url('/assets/img/eucharistie_home.1920.jpg');
    background-size: cover;
    background-position-y: bottom;
    .quote {
@@ -109,7 +108,7 @@ Author Juan Pablo January 4, 2019
     content:"";
     position: absolute;
     width: 80px;
-    border: 1.5px solid $blue-500;
+    border: 6px solid $blue-500;
     bottom: -3px;
     left: 50px;
     z-index: 2;

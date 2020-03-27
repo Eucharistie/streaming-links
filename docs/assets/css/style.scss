@@ -51,6 +51,10 @@ body {
   }
 }
 
+.blockquote-wrapper {
+  background-image: url('{{site.baseurl}}/assets/img/eucharistie_home.1920.jpg');
+}
+
 .justify {
   text-align: justify;
   overflow-wrap: break-word;
