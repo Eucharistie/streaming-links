@@ -1,0 +1,144 @@
+body[data-page="home.html"] {
+  background: #eee;
+}
+
+
+/*
+google-webfonts-helper
+A Hassle-Free Way to Self-Host Google Fonts
+https://google-webfonts-helper.herokuapp.com/fonts
+*/
+
+/* barlow-condensed-regular - latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/webfonts/barlow-condensed-v4-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Barlow Condensed Regular'), local('BarlowCondensed-Regular'),
+       url('/assets/webfonts/barlow-condensed-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/webfonts/barlow-condensed-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/webfonts/barlow-condensed-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/webfonts/barlow-condensed-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/webfonts/barlow-condensed-v4-latin-regular.svg#BarlowCondensed') format('svg'); /* Legacy iOS */
+}
+/* abril-fatface-regular - latin */
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/webfonts/abril-fatface-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Abril Fatface'), local('AbrilFatface-Regular'),
+       url('/assets/webfonts/abril-fatface-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/webfonts/abril-fatface-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/webfonts/abril-fatface-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/webfonts/abril-fatface-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/webfonts/abril-fatface-v11-latin-regular.svg#AbrilFatface') format('svg'); /* Legacy iOS */
+}
+
+/*
+https://codepen.io/jupago/pen/GPxqLX
+https://freefrontend.com/css-quote-styles/
+Pure CSS quote with speech bubble border.
+Author Juan Pablo January 4, 2019
+*/
+
+// edited for eucharistie.info
+
+/* center the blockquote in the page */
+.blockquote-wrapper {
+   display: flex;
+   height: calc(30vw + 400px);
+   padding: 0 20px;
+
+   background: url('/assets/img/eucharistie_home.1920.jpg');
+   background-size: cover;
+   background-position-y: bottom;
+   .quote {
+     font-family: Georgia;
+     &:first-child:first-letter {
+       color: #903;
+       -webkit-initial-letter: 2;
+     }
+   }
+}
+
+/* Blockquote main style */
+.blockquote {
+    position: relative;
+    max-width: 800px;
+    margin: 80px auto;
+    align-self: start;
+    h1, h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      text-shadow: 5px 5px 20px #235;
+    }
+}
+
+/* Blockquote header */
+.blockquote h1 {
+    font-family: 'Abril Fatface', cursive;
+    position: relative; /* for pseudos */
+    color: #ccc;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    border: 2px solid #fff;
+    border: solid 2px;
+    border-radius:20px;
+    padding: 25px;
+}
+
+/* Blockquote right double quotes */
+.blockquote h1:after {
+    content:"";
+    position: absolute;
+    border: 2px solid #ccc;
+    border-radius: 0 50px 0 0;
+    width: 60px;
+    height: 60px;
+    bottom: -62px;
+    left: 50px;
+    border-bottom: none;
+    border-left: none;
+    z-index: 3;
+}
+
+.blockquote h1:before {
+    content:"";
+    position: absolute;
+    width: 80px;
+    border: 1.5px solid $blue-500;
+    bottom: -3px;
+    left: 50px;
+    z-index: 2;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+    .blockquote h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+   }
+
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    padding-top: 15px;
+    z-index: 1;
+    margin-left:150px;
+    padding-left:12px;
+}
+
+
+.blockquote h4:first-letter {
+  margin-left:-12px;
+}

@@ -54,7 +54,7 @@ convert the array from liquid to js: {% endcomment %}
             {% for language in languages %}
               <button class="SelectMenu-item language-filter" role="menuitem" aria-checked="true" data-lang="{{language}}" onclick="langFilter.updateTimeTable('{{language}}', langFilter.toggle('{{language}}'))">
                 {% octicon check class:"SelectMenu-icon SelectMenu-icon--check" %}
-                {{ language | append: "_" |  replace: "nl_", "Nederlands" | replace: "fr_", "Frans" | replace: "la_", "Latijn"}}
+                {{ language | append: "_" |  replace: "nl_", "Nederlands" | replace: "fr_", "Frans" | replace: "la_", "Latijn" | replace: "en_", "Engels" }}
               </button>
             {% endfor %}
           </div>
