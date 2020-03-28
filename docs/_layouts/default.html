@@ -35,8 +35,7 @@
     </script>
     <!-- End Matomo Code -->
     <script type="text/javascript">
-      // XXX Polyfills. Only loaded on IE
-      if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+      // XXX Polyfills for older Browsers
         document.write('<script src="{{site.baseurl}}/assets/js/polyfills.js"><\/script>');
     </script>
   </head>
@@ -83,7 +82,7 @@
     </div>
     <div class="bg-gray">
       <div class="container-lg clearfix p-3 mt-3 d-flex flex-justify-end">
-        <a href="mailto:contact@eucharistie.info" class="mx-auto mt-1 pl-5 link-gray">contact@eucharistie.info</a>
+        <a href="mailto:contact@eucharistie.info" class="flex-auto text-center mt-1 pl-5 link-gray">contact@eucharistie.info</a>
         <a href="https://www.facebook.com/eucharistie.info" class="link-gray"><i class="fab fa-facebook fa-fw fa-2x"></i></a>
       </div>
     </div>
