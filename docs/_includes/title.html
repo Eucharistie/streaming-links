@@ -6,10 +6,9 @@
     {{ include.channel.priests | join: ", " }}
   {% endif %}
 {% endcapture %}
-<span class="capitalize-first-letter">
-  {% if include.truncate %}
-    {{ longTitle | truncate: include.truncate  }}
-  {% else %}
-    {{ longTitle }}
-  {% endif %}
-</span>
+
+{% if include.truncate %}
+  {{ longTitle | truncate: include.truncate  }}
+{% else %}
+  {{ longTitle }}
+{% endif %}

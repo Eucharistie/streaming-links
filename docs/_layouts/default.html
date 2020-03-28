@@ -34,8 +34,13 @@
       })();
     </script>
     <!-- End Matomo Code -->
+    <script type="text/javascript">
+      // XXX Polyfills for older Browsers
+        document.write('<script src="{{site.baseurl}}/assets/js/polyfills.js"><\/script>');
+    </script>
   </head>
-  <body>
+  <body data-page="{{page.name}}">
+    {% include siteflash.html %}
     <div hidden>
       {% include logo.svg %}
     </div>
@@ -46,19 +51,26 @@
         <div class="container-lg clearfix Header bg-blue">
           <div class="Header-item Header-item--full">
             <a href="{{site.baseurl}}/" class="Header-link f4 d-flex flex-items-center">
-              <svg viewBox="0 0 120 120" width="32" class="mr-2 logo">
+              <svg viewBox="0 0 120 120" height="32" width="32" class="mr-2 logo">
                 <use xlink:href="#logoCircle" class="white"/>
                 <use xlink:href="#logoShape" class="blue"/>
               </svg>
               <span>{{ site.title }}</span>
             </a>
           </div>
-              {% comment %}
-          <div class="Header-item">
-            About
+          <div class="Header-item hide-sm">
+            <a href="{{ site.baseurl }}/uurrooster/" class="Header-link {%if layout.sideNav == 'timetable'%}text-orange-light{%endif%}">Uurrooster</a>
           </div>
-          {% endcomment %}
-          <a href="#" onclick="toggleNav()" class="Header-item mr-0 text-white d-md-none">
+          <div class="Header-item hide-sm">
+            <a href="{{ site.baseurl }}/kanalen/" class="Header-link {%if layout.sideNav == 'channels'%}text-orange-light{%endif%}">Kanalen</a>
+          </div>
+          <div class="Header-item hide-sm">
+            <a href="{{ site.baseurl }}/missaal/" class="Header-link {%if page.sideNav == 'texts'%}text-orange-light{%endif%}">Missaal</a>
+          </div>
+          <div class="Header-item hide-sm">
+            <a href="{{ site.baseurl }}/over/" class="Header-link {%if page.sideNav == 'about'%}text-orange-light{%endif%}">Over</a>
+          </div>
+          <a href="#" onclick="toggleNav()" id="sandwich" class="Header-item mr-0 text-white d-sm-none">
             {% octicon three-bars height:32 %}
           </a>
         </div>
@@ -70,7 +82,7 @@
     </div>
     <div class="bg-gray">
       <div class="container-lg clearfix p-3 mt-3 d-flex flex-justify-end">
-        <a href="mailto:contact@eucharistie.info" class="mx-auto mt-1 pl-5 link-gray">contact@eucharistie.info</a>
+        <a href="mailto:contact@eucharistie.info" class="flex-auto text-center mt-1 pl-5 link-gray">contact@eucharistie.info</a>
         <a href="https://www.facebook.com/eucharistie.info" class="link-gray"><i class="fab fa-facebook fa-fw fa-2x"></i></a>
       </div>
     </div>

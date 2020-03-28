@@ -1,17 +1,55 @@
-{% include polyfills.html %}
 <script type="text/javascript">
-
   const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const d = new Date();
+  const daysTranslated = {nl: ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag']}
+  const d = new Date(); //=now
   const today = days[d.getDay()];
   const loadTime = (d.getHours() * 60) + d.getMinutes()
 
   const sideNav = document.querySelector('#SideNav');
   const todayNav = document.querySelector("[data-day='" + today + "']")
-  const todayBullets = document.querySelectorAll("[data-day='" + today + "'] .today-bullet")
   const siteFlash = document.querySelector('#siteFlash')
   const todayRows = document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row");
 
+  var selectedDay,
+      langFilter = {};
+
+  // setting/getting language filter settings
+  // default value = true (all languages visible)
+  langFilter.get = function (lang) {
+    if (localStorage.getItem('lang-filter-' + lang) == "false") {
+      return "false";
+    } else {
+      return "true";
+    }
+  }
+  langFilter.set = function (lang, value) {
+    localStorage.setItem('lang-filter-' + lang, value)
+  }
+  langFilter.toggle = function (lang) {
+    const key = 'lang-filter-' + lang;
+    var value;
+    if (localStorage.getItem(key) == "false") value = "true"
+    else value = "false"
+    localStorage.setItem(key, value);
+    return value;
+  }
+  langFilter.updateTimeTable = function (lang, value) {
+    // event visibility
+    document.querySelectorAll('.event[data-lang="' + lang + '"]').forEach(function(event) {
+      event.hidden = ( value === "false" )
+    });
+    // filter menu selectedness
+    document.querySelectorAll('.language-filter[data-lang="' + lang + '"]').forEach(function(filter) {
+      filter.setAttribute('aria-checked', value )
+    });
+    // count number of events in row,
+    // this hides empty rows with css
+    document.querySelectorAll(".day-row").forEach(function(row){
+      row.setAttribute("data-events", row.querySelectorAll(".event:not([hidden])").length);
+    })
+  }
+
+  // hide sideflash
   function hideSiteFlash() {
     localStorage.setItem('hideSiteFlash', 'true');
     siteFlash.hidden = true;
@@ -22,11 +60,34 @@
     sideNav.hidden = !sideNav.hidden;
   }
 
-
+  // for timetable page: client-side day switching
   function showDay(day) {
+
+    if ( day == 'previous' )  {
+      var i = days.indexOf(selectedDay) - 1;
+      if (i === -1) i = days.length - 1
+      day = days[i];
+    }
+    else if ( day == 'next' ) {
+      var i = days.indexOf(selectedDay) + 1;
+      if (i === days.length) i = 0
+      day = days[i];
+    }
 
     const lastBroadcast = parseInt(todayRows[todayRows.length - 1].dataset.time, 10);
     const showLiveSoon = ((day === today) && (loadTime < lastBroadcast));
+    const currentDay = document.querySelector("#currentDay")
+    const dayNav = document.querySelector(".SideNav [data-day='" + day + "']")
+
+    selectedDay = day;
+
+    // Write the name of the day in the mobile day switcher.
+    currentDay.innerText = daysTranslated.nl[days.indexOf(day)];
+    if (day === today) {
+      currentDay.classList.add('text-blue')
+    } else {
+      currentDay.classList.remove('text-blue')
+    }
 
     // Only show "live soon" on today and if before the last broadcast
     document.querySelector('#live-soon').hidden = !showLiveSoon;
@@ -45,9 +106,6 @@
       })
     }
 
-    // show siteFlash unless user has hidden it before
-    if (siteFlash) siteFlash.hidden = (localStorage.getItem('hideSiteFlash') == "true");
-
     // show the rows for the selected day
     document.querySelectorAll("[data-day='" + day + "']").forEach(function (e) {e.hidden = false});
 
@@ -55,25 +113,47 @@
     document.querySelectorAll(".day-row:not([data-day='" + day + "'])").forEach(function (e) {e.hidden = true});
 
     // highlight nav for selected day
-    const dayNav = document.querySelector(".SideNav [data-day='" + day + "']")
     if (dayNav) {dayNav.setAttribute('aria-current', 'page');}
 
     // unhighlight all other navs
     document.querySelectorAll(".SideNav.days .SideNav-subItem:not([data-day='" + day + "'])").forEach(function (e) {e.removeAttribute('aria-current')});
   }
 
-  if (todayBullets.length) todayBullets.forEach(function (bullet) {bullet.hidden = false} )
+  // Make today orange in nav
+  if (todayNav) todayNav.classList.add('text-orange');
 
   // When loading page on mobile, collapse the nav menu
-  SideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches
+  if (sideNav) sideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches;
 
   // click events for day navs
   document.querySelectorAll(".SideNav.days .SideNav-subItem").forEach(function(e) {
     e.onclick = function() {
-      showDay(e.dataset.day)
+      showDay(e.dataset.day);
     }
   })
 
   if (todayRows.length) showDay(today);
+
+  // show siteFlash unless user has hidden it before
+  setTimeout(function() {
+    siteFlash.hidden = (localStorage.getItem('hideSiteFlash') == "true");
+  }, 2000);
+
+
+  if (typeof languages !== 'undefined') {
+    languages.forEach(function(lang){
+      langFilter.updateTimeTable(lang, langFilter.get(lang))
+    })
+  }
+
+  // Rearrange the home links to see the upcoming first.
+  document.querySelectorAll('.home-link').forEach(function(link){
+    const isDaysBefore = days.indexOf(link.dataset.day) < days.indexOf(today);
+    const isTimeBefore = parseInt(link.dataset.time) <= loadTime
+    const isToday = link.dataset.day == today;
+    if (isDaysBefore || (isToday && isTimeBefore)) {
+      link.parentNode.append(link);
+    }
+  })
 
 </script>

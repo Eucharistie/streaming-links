@@ -1,5 +1,10 @@
 # streaming-links
-Experimental Streaming Links website in Github Pages / Jekyll
+Streaming Links website in Github Pages / Jekyll
+
+#### Development
+```
+bundle exec jekyll serve -l -b "" --config _config.yml,_config-dev.yml
+```
 
 **Netlify**
 

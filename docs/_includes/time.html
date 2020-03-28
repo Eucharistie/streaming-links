@@ -1,47 +1,63 @@
 {% assign sundayMasses = include.timetable | where: "kind", "sundayMass" %}
 {% assign weekMasses = include.timetable | where: "kind", "weekMass" %}
 
-{% if sundayMasses.size > 0 %}
-  <h6 class="mb-0 mt-2">Zondagsmis</h6>
-{% endif %}
+{% comment %}
+Get all languages in this timetable. {% endcomment %}
+{% assign languages = include.timetable | map: "language" | uniq %}
 
-{% for time in sundayMasses %}
-  <p class="f5 lh-condensed mb-0 indent-after-wrap">
-    <!-- <span title="Uur" class="Label Label--gray {% if time.kind == 'sundayMass' %}text-red{% endif %}"> -->
-      <span class="text-gray position-md-absolute">{% include format_time.html time=time.time %}</span>
-      <span class="pl-md-7 hide-sm">{{ time.days | join: ", " | replace: "mon", "maandag" | replace: "tue", "dinsdag" | replace: "wed", "woensdag" | replace: "thu", "donderdag" | replace: "fri", "vrijdag" | replace: "sat", "zaterdag" | replace: "sun", "zondag" }}</span>
-      <span class="pl-md-7 hide-md hide-lg hide-xl">{{ time.days | join: ", " | replace: "mon", "ma" | replace: "tue", "di" | replace: "wed", "wo" | replace: "thu", "do" | replace: "fri", "vr" | replace: "sat", "za" | replace: "sun", "zo" }}</span>
-    <!-- </span> -->
-  </p>
-{% endfor %}
-
-{% if weekMasses.size > 0 %}
-  <h6 class="mb-0 mt-2">Weekmis</h6>
-{% endif %}
-
-{% for time in weekMasses %}
-  {% assign joinedDays = time.days | sort | join: "" %}
-  {% if joinedDays == "frimonsatthutuewed" %}
-    {% assign dayString = "van maandag tot zaterdag" %}
-    {% assign mobileDayString = "ma-za" %}
-  {% elsif joinedDays == "frimonthutuewed" %}
-    {% assign dayString = "van maandag tot vrijdag" %}
-    {% assign mobileDayString = "ma-vr" %}
-  {% elsif joinedDays == "frithutuewed" %}
-    {% assign dayString = "van dinsdag tot vrijdag" %}
-    {% assign mobileDayString = "di-vr" %}
-  {% elsif joinedDays == "frisatthutuewed" %}
-    {% assign dayString = "van dinsdag tot zaterdag" %}
-    {% assign mobileDayString = "di-sat" %}
-  {% else %}
-    {% assign dayString = time.days | join: ", " | replace: "mon", "maandag" | replace: "tue", "dinsdag" | replace: "wed", "woensdag" | replace: "thu", "donderdag" | replace: "fri", "vrijdag" | replace: "sat", "zaterdag" | replace: "sun", "zondag" %}
-    {% assign mobileDayString = time.days | join: ", " | replace: "mon", "ma" | replace: "tue", "di" | replace: "wed", "wo" | replace: "thu", "do" | replace: "fri", "vr" | replace: "sat", "za" | replace: "sun", "zo" %}
+{% for language in languages %}
+  {% if sundayMasses.size > 0 %}
+    <h6 class="mb-0 mt-2">
+      Zondagsmis
+      <span title="Label: gray label" class="Label Label--gray">
+        {{language}}
+      </span>
+    </h6>
   {% endif %}
-  <p class="f5 lh-condensed mb-0 indent-after-wrap">
-    <!-- <span title="Uur" class="Label Label--gray {% if time.kind == 'sundayMass' %}text-red{% endif %}"> -->
-      <span class="text-gray position-md-absolute">{% include format_time.html time=time.time %}</span>
-      <span class="pl-md-7 hide-sm">{{ dayString }}</span>
-      <span class="pl-md-7 hide-md hide-lg hide-xl">{{ mobileDayString }}</span>
-    <!-- </span> -->
-  </p>
+
+  {% for time in sundayMasses %}
+    <p class="f5 lh-condensed mb-0 indent-after-wrap">
+      <!-- <span title="Uur" class="Label Label--gray {% if time.kind == 'sundayMass' %}text-red{% endif %}"> -->
+        <span class="text-gray position-md-absolute">{% include format_time.html time=time.time %}</span>
+        <span class="pl-md-7 hide-sm">{{ time.days | join: ", " | replace: "mon", "maandag" | replace: "tue", "dinsdag" | replace: "wed", "woensdag" | replace: "thu", "donderdag" | replace: "fri", "vrijdag" | replace: "sat", "zaterdag" | replace: "sun", "zondag" }}</span>
+        <span class="pl-md-7 hide-md hide-lg hide-xl">{{ time.days | join: ", " | replace: "mon", "ma" | replace: "tue", "di" | replace: "wed", "wo" | replace: "thu", "do" | replace: "fri", "vr" | replace: "sat", "za" | replace: "sun", "zo" }}</span>
+      <!-- </span> -->
+    </p>
+  {% endfor %}
+
+  {% if weekMasses.size > 0 %}
+    <h6 class="mb-0 mt-2">
+      Weekmis
+      <span title="Label: gray label" class="Label Label--gray">
+        {{language}}
+      </span>
+    </h6>
+  {% endif %}
+
+  {% for time in weekMasses %}
+    {% assign joinedDays = time.days | sort | join: "" %}
+    {% if joinedDays == "frimonsatthutuewed" %}
+      {% assign dayString = "van maandag tot zaterdag" %}
+      {% assign mobileDayString = "ma-za" %}
+    {% elsif joinedDays == "frimonthutuewed" %}
+      {% assign dayString = "van maandag tot vrijdag" %}
+      {% assign mobileDayString = "ma-vr" %}
+    {% elsif joinedDays == "frithutuewed" %}
+      {% assign dayString = "van dinsdag tot vrijdag" %}
+      {% assign mobileDayString = "di-vr" %}
+    {% elsif joinedDays == "frisatthutuewed" %}
+      {% assign dayString = "van dinsdag tot zaterdag" %}
+      {% assign mobileDayString = "di-sat" %}
+    {% else %}
+      {% assign dayString = time.days | join: ", " | replace: "mon", "maandag" | replace: "tue", "dinsdag" | replace: "wed", "woensdag" | replace: "thu", "donderdag" | replace: "fri", "vrijdag" | replace: "sat", "zaterdag" | replace: "sun", "zondag" %}
+      {% assign mobileDayString = time.days | join: ", " | replace: "mon", "ma" | replace: "tue", "di" | replace: "wed", "wo" | replace: "thu", "do" | replace: "fri", "vr" | replace: "sat", "za" | replace: "sun", "zo" %}
+    {% endif %}
+    <p class="f5 lh-condensed mb-0 indent-after-wrap">
+      <!-- <span title="Uur" class="Label Label--gray {% if time.kind == 'sundayMass' %}text-red{% endif %}"> -->
+        <span class="text-gray position-md-absolute">{% include format_time.html time=time.time %}</span>
+        <span class="pl-md-7 hide-sm">{{ dayString }}</span>
+        <span class="pl-md-7 hide-md hide-lg hide-xl">{{ mobileDayString }}</span>
+      <!-- </span> -->
+    </p>
+  {% endfor %}
 {% endfor %}

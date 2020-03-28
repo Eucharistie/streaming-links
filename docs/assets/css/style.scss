@@ -7,12 +7,51 @@
 // $blue-000: #fafcff; // .bg-blue-light
 $blue-500: #438dcc;
 
-// @import "primer.css";
-@import '@primer/css/core/index.scss';
-@import '@primer/css/product/index.scss';
-@import '@primer/css/marketing/index.scss';
+// Avoid compiling primer css to significantly speed up building for development:
+// jekyll serve --config _config.yml,_config-dev.yml
+{% if page.dev == true %}
+  @import "primer.css";
+{% else %}
+  @import '@primer/css/core/index.scss';
+  @import '@primer/css/product/index.scss';
+  @import '@primer/css/marketing/index.scss';
+{% endif %}
 
 @import "fontawesome";
+@import "homepage.scss";
+
+/*
+google-webfonts-helper
+A Hassle-Free Way to Self-Host Google Fonts
+https://google-webfonts-helper.herokuapp.com/fonts
+*/
+
+/* barlow-condensed-regular - latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('{{site.baseurl}}/assets/webfonts/barlow-condensed-v4-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Barlow Condensed Regular'), local('BarlowCondensed-Regular'),
+       url('{{site.baseurl}}/assets/webfonts/barlow-condensed-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('{{site.baseurl}}/assets/webfonts/barlow-condensed-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('{{site.baseurl}}/assets/webfonts/barlow-condensed-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('{{site.baseurl}}/assets/webfonts/barlow-condensed-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('{{site.baseurl}}/assets/webfonts/barlow-condensed-v4-latin-regular.svg#BarlowCondensed') format('svg'); /* Legacy iOS */
+}
+/* abril-fatface-regular - latin */
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  src: url('{{site.baseurl}}/assets/webfonts/abril-fatface-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Abril Fatface'), local('AbrilFatface-Regular'),
+       url('{{site.baseurl}}/assets/webfonts/abril-fatface-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('{{site.baseurl}}/assets/webfonts/abril-fatface-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('{{site.baseurl}}/assets/webfonts/abril-fatface-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('{{site.baseurl}}/assets/webfonts/abril-fatface-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('{{site.baseurl}}/assets/webfonts/abril-fatface-v11-latin-regular.svg#AbrilFatface') format('svg'); /* Legacy iOS */
+}
 
 body {
   background: #fafcff;
@@ -25,11 +64,42 @@ body {
   }
 }
 
+// only show first children
+.limit-children > :not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+    display: none;
+}
+@media (min-width: 768px) and (max-width: 1011px) {
+  .limit-children > :nth-child(4) {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   [hidden].d-md-block.unhide,
   [hidden][hidden].d-md-block.unhide {
     display: block !important;
   }
+}
+
+.blockquote-wrapper {
+  background-image: url('{{site.baseurl}}/assets/img/eucharistie_home.1920.jpg');
+}
+
+.justify {
+  text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 10 4 4;
+  -webkit-hyphenate-limit-before: 2;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-lines: 1;
+}
+
+.day-row[data-events='0'] {
+  display: none;
 }
 
 .logo {
