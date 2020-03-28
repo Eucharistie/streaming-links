@@ -12,7 +12,7 @@ timetable:
     kind: sundayMass
     language: la
   - time: 17:00
-    days: [mon,tue,wed,thu,fri]
+    days: [mon,tue,wed,thu,fri,sat]
     kind: weekMass
     language: la    
 facebook: https://www.facebook.com/Het-Oude-Klooster-104555811051318

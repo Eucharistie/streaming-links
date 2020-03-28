@@ -63,6 +63,20 @@ body {
     padding-left: 1em;
   }
 }
+@media (max-width: 543px) {
+  .slide-up {
+    transition: max-height .4s;
+    display: block !important;
+    max-height: 240px;
+    overflow: hidden;
+    &[hidden],
+    &[hidden][hidden] {
+      // transition: max-height 4s 0;
+      display: block !important;
+      max-height: 0;
+    }
+  }
+}
 
 // only show first children
 .limit-children > :not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
@@ -75,8 +89,8 @@ body {
 }
 
 @media (min-width: 768px) {
-  [hidden].d-md-block.unhide,
-  [hidden][hidden].d-md-block.unhide {
+  [hidden].unhide-md,
+  [hidden][hidden].unhide-md {
     display: block !important;
   }
 }
