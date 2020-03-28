@@ -59,16 +59,16 @@
             </a>
           </div>
           <div class="Header-item hide-sm">
-            <a href="{{ site.baseurl }}/uurrooster/" class="Header-link {%if layout.sideNav == 'timetable'%}text-orange-light{%endif%}">Uurrooster</a>
+            <a href="{{ site.baseurl }}/uurrooster/" class="Header-link {%unless layout.sideNav == 'timetable'%}text-normal{%endunless%}">Uurrooster</a>
           </div>
           <div class="Header-item hide-sm">
-            <a href="{{ site.baseurl }}/kanalen/" class="Header-link {%if layout.sideNav == 'channels'%}text-orange-light{%endif%}">Kanalen</a>
+            <a href="{{ site.baseurl }}/kanalen/" class="Header-link {%unless layout.sideNav == 'channels'%}text-normal{%endunless%}">Kanalen</a>
           </div>
           <div class="Header-item hide-sm">
-            <a href="{{ site.baseurl }}/missaal/" class="Header-link {%if page.sideNav == 'texts'%}text-orange-light{%endif%}">Missaal</a>
+            <a href="{{ site.baseurl }}/missaal/" class="Header-link {%unless page.sideNav == 'texts'%}text-normal{%endunless%}">Missaal</a>
           </div>
           <div class="Header-item hide-sm">
-            <a href="{{ site.baseurl }}/over/" class="Header-link {%if page.sideNav == 'about'%}text-orange-light{%endif%}">Over</a>
+            <a href="{{ site.baseurl }}/over/" class="Header-link {%unless page.sideNav == 'about'%}text-normal{%endunless%}">Over</a>
           </div>
           <a href="#" onclick="toggleNav()" id="sandwich" class="Header-item mr-0 text-white d-sm-none">
             {% octicon three-bars height:32 %}
