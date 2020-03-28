@@ -148,7 +148,6 @@
 
   // Rearrange the home links to see the upcoming first.
   document.querySelectorAll('.home-link').forEach(function(link){
-    console.log(days.indexOf(link.dataset.day) <= days.indexOf(today), parseInt(link.dataset.time)<= loadTime);
     const isDaysBefore = days.indexOf(link.dataset.day) < days.indexOf(today);
     const isTimeBefore = parseInt(link.dataset.time) <= loadTime
     const isToday = link.dataset.day == today;
