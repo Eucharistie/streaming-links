@@ -63,11 +63,9 @@ convert the array from liquid to js: {% endcomment %}
       <button onclick="showDay('previous')" class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron left icon">
         {% octicon chevron-left %}
       </button>
-      <div class="text-center btn btn-sm BtnGroup-item" style="width: 8em;">
-        <span class="today-bullet" hidden>•</span>
-        <span id="currentDay"></span>
-        <span class="today-bullet" hidden>•</span>
-      </div>
+      <button class="text-center btn btn-sm BtnGroup-item" style="width: 8em;" id="currentDay" onclick="showDay(today)">
+        <!-- day of week comes here -->
+      </button>
       <button onclick="showDay('next')" class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron right icon">
         {% octicon chevron-right %}
       </button>

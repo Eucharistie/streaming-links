@@ -7,7 +7,6 @@
 
   const sideNav = document.querySelector('#SideNav');
   const todayNav = document.querySelector("[data-day='" + today + "']")
-  const todayBullets = document.querySelectorAll("[data-day='" + today + "'] .today-bullet")
   const siteFlash = document.querySelector('#siteFlash')
   const todayRows = document.querySelectorAll("[data-day='"+today+"'].Box-row.day-row");
 
@@ -61,7 +60,7 @@
     sideNav.hidden = !sideNav.hidden;
   }
 
-
+  // for timetable page: client-side day switching
   function showDay(day) {
 
     if ( day == 'previous' )  {
@@ -77,11 +76,17 @@
 
     const lastBroadcast = parseInt(todayRows[todayRows.length - 1].dataset.time, 10);
     const showLiveSoon = ((day === today) && (loadTime < lastBroadcast));
+    const currentDay = document.querySelector("#currentDay")
 
     selectedDay = day;
 
     // Write the name of the day in the mobile day switcher.
-    document.querySelector('#currentDay').innerText = daysTranslated.nl[days.indexOf(day)];
+    currentDay.innerText = daysTranslated.nl[days.indexOf(day)];
+    if (day === today) {
+      currentDay.classList.add('text-blue')
+    } else {
+      currentDay.classList.remove('text-blue')
+    }
 
     // Only show "live soon" on today and if before the last broadcast
     document.querySelector('#live-soon').hidden = !showLiveSoon;
@@ -114,8 +119,8 @@
     document.querySelectorAll(".SideNav.days .SideNav-subItem:not([data-day='" + day + "'])").forEach(function (e) {e.removeAttribute('aria-current')});
   }
 
-  // TODO: this needs repair, maybe a bg color instead of bullets
-  //if (todayBullets.length) todayBullets.forEach(function (bullet) {bullet.hidden = false} )
+  // Make today orange in nav
+  document.querySelector('.SideNav-subItem[data-day="' + today + '"]').classList.add('text-orange')
 
   // When loading page on mobile, collapse the nav menu
   if (sideNav) sideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches
