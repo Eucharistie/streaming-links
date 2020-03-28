@@ -14,15 +14,15 @@
     <a class="SideNav-subItem" data-day="sat" href="#">zaterdag</a>
   </nav>
   {% endif %}
-  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/kanalen" aria-current="{% if layout.sideNav == 'channels' or layout.sideNav == 'channel' %}page{% endif %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/kanalen" aria-current="{% if page.route == 'channels' or layout.sideNav == 'channel' %}page{% endif %}">
     {% octicon globe class:"mr-2" %}
     Kanalen
   </a>
-  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/missaal" aria-current="{% if page.sideNav == 'texts' %}page{% endif %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/missaal" aria-current="{% if page.route == 'texts' %}page{% endif %}">
     {% octicon book class:"mr-2" %}
     Missaal
   </a>
-  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/over" aria-current="{% if page.sideNav == 'about' %}page{% endif %}">
+  <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/over" aria-current="{% if page.route == 'about' %}page{% endif %}">
     {% octicon info class:"mr-2" %}
     Over
   </a>
