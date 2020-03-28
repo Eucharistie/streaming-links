@@ -77,6 +77,7 @@
     const lastBroadcast = parseInt(todayRows[todayRows.length - 1].dataset.time, 10);
     const showLiveSoon = ((day === today) && (loadTime < lastBroadcast));
     const currentDay = document.querySelector("#currentDay")
+    const dayNav = document.querySelector(".SideNav [data-day='" + day + "']")
 
     selectedDay = day;
 
@@ -112,7 +113,6 @@
     document.querySelectorAll(".day-row:not([data-day='" + day + "'])").forEach(function (e) {e.hidden = true});
 
     // highlight nav for selected day
-    const dayNav = document.querySelector(".SideNav [data-day='" + day + "']")
     if (dayNav) {dayNav.setAttribute('aria-current', 'page');}
 
     // unhighlight all other navs
@@ -120,15 +120,15 @@
   }
 
   // Make today orange in nav
-  document.querySelector('.SideNav-subItem[data-day="' + today + '"]').classList.add('text-orange')
+  if (todayNav) todayNav.classList.add('text-orange');
 
   // When loading page on mobile, collapse the nav menu
-  if (sideNav) sideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches
+  if (sideNav) sideNav.hidden = !window.matchMedia( "(min-width: 768px)" ).matches;
 
   // click events for day navs
   document.querySelectorAll(".SideNav.days .SideNav-subItem").forEach(function(e) {
     e.onclick = function() {
-      showDay(e.dataset.day)
+      showDay(e.dataset.day);
     }
   })
 
