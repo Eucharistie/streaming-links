@@ -55,9 +55,6 @@ https://google-webfonts-helper.herokuapp.com/fonts
 
 body {
   background: #fafcff;
-  &[data-page='home.html'] #sandwich {
-    display: none;
-  }
 }
 
 @media (max-width: 767px) {

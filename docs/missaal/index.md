@@ -1,6 +1,7 @@
 ---
 layout: text
 sideNav: texts
+route: texts
 ---
 # Lezingen van de dag
 {: .f00-light .border-0}
