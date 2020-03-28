@@ -7,7 +7,7 @@ locations:
 - city: Bruxelles
   country: BE
 timetable:
-  - time: 15:00
+  - time: 10:30
     days: [sun]
     kind: sundayMass
     language: fr
