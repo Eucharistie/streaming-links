@@ -1,6 +1,6 @@
 ---
 community: Jezuïetenhuis Heverlee
-priests: [pater Wouter Blesgraaf, pater Walter Ceyssens, pater Jos Moons]
+priests: [paters Wouter Blesgraaf, Walter Ceyssens, Jos Moons sj]
 diocese: Mechelen-Brussel
 locations:
 - city: Heverlee
