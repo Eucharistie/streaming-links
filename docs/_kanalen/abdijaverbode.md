@@ -2,9 +2,9 @@
 channel: Abdij Averbode
 community: Norbertijnen
 priests: []
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Tienen
 locations:
-- city: Averbode
+- city: Averbode 3271
   country: BE
 timetable:
   - time: 11:00
@@ -15,6 +15,6 @@ facebook:
 fbid: 312980196055902
 youtube: https://www.youtube.com/channel/UCgSlnj1B0JoiCDfyoFJH-6g
 youtubeChannelID: UCgSlnj1B0JoiCDfyoFJH-6g
-homepage:
+homepage:https://sites.google.com/site/homepageabdij/info/gebedstijden
 stream:
 ---
