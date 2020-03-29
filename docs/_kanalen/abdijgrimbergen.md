@@ -2,7 +2,7 @@
 channel: Abdij Grimbergen
 community: Norbertijnen
 priests: []
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Mechelen
 locations:
 - city: Grimbergen 1850
   country: BE
