@@ -4,7 +4,7 @@ community: Norbertijnen
 priests: []
 diocese: Mechelen-Brussel
 locations:
-- city: Grimbergen
+- city: Grimbergen 1850
   country: BE
 timetable:
   - time: 10:00
@@ -14,6 +14,6 @@ timetable:
 facebook: https://www.facebook.com/groups/61593270750
 youtube: https://www.youtube.com/channel/UCeWiKhPkh1RP0309DJE1MFg
 youtubeChannelID:
-homepage:
+homepage:https://www.abdijgrimbergen.be/liturgie/
 stream:
 ---
