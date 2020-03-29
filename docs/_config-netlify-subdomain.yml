@@ -1,2 +1,2 @@
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "www.eucharistie.info" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.eucharistie.info" # the base hostname & protocol for your site, e.g. http://example.com
