@@ -15,5 +15,5 @@ facebook: https://www.facebook.com/FranciscainsConventuelsBXL/
 fbid: 238664016288111
 youtube: https://www.youtube.com/channel/UCO-WPmWKzs6jmG9SqBcZl8g
 homepage: https://lesfranciscains.com
-youtubeChannelID: UCO-WPmWKzs6jmG9SqBcZl8g
+youtubeChannelID: 
 ---

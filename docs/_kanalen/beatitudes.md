@@ -23,5 +23,5 @@ facebook: https://www.facebook.com/thybeatitudes
 fbid: 592802614102813
 youtube: https://www.youtube.com/channel/UC3lWbDfR3f32aHLuM8YMBnQ
 homepage: https://www.thy-beatitudes.com/
-youtubeChannelID: UC3lWbDfR3f32aHLuM8YMBnQ
+youtubeChannelID: 
 ---
