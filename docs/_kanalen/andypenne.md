@@ -1,8 +1,8 @@
----
+community: Parochiefederatie Holsbeek
 priests: [pastoor Andy Penne]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Leuven
 locations:
-- city: Holsbeek
+- city: Holsbeek 3220
   country: BE
 timetable:
   - time: 09:00
