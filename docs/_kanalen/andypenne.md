@@ -1,3 +1,4 @@
+---
 community: Parochiefederatie Holsbeek
 priests: [pastoor Andy Penne]
 diocese: Mechelen-Brussel Regio Leuven
