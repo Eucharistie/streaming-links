@@ -2,9 +2,9 @@
 title:
 community: Communauté des Béatitudes
 priests: []
-diocese:
+diocese: Namen
 locations:
-- city: Thy-le-Château
+- city: Thy-le-Château 5651
   country: BE
 timetable:
   - time: 11:00
@@ -22,6 +22,6 @@ timetable:
 facebook: https://www.facebook.com/thybeatitudes
 fbid: 592802614102813
 youtube: https://www.youtube.com/channel/UC3lWbDfR3f32aHLuM8YMBnQ
-homepage: https://www.thy-beatitudes.com/
+homepage: https://www.thy-beatitudes.com/dajindeling#!
 youtubeChannelID: 
 ---
