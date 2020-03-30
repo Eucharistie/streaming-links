@@ -1,9 +1,11 @@
 ---
 priests: [pastoor Wim Simons]
-diocese: Hasselt Regio Herk-de-Stad
 locations:
-- city: Herk-de-Stad 3540
+- city: Herk-de-Stad
+  postcode: 3540
   country: BE
+  diocese: Hasselt
+  dioceseRegion: Herk-de-Stad
 timetable:
   - time: 09:00
     days: [sun]

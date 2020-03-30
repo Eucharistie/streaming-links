@@ -1,10 +1,12 @@
 ---
 community: Parochie Sint-Martinus Basiliek
 priests: [priester Servaas Bosch]
-diocese: Mechelen-Brussel Regio Halle
 locations:
-- city: Halle 1500
+- city: Halle
+  postcode: 1500
   country: BE
+  diocese: Mechelen-Brussel
+  dioceseRegion: Halle
 timetable:
   - time: 10:00
     days: [sun]

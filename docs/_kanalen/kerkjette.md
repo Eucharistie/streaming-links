@@ -1,15 +1,17 @@
 ---
 community: Parochie Sint-Pieters Jette
 priests: [pastoor Dirk Vannetelbosch]
-diocese: Mechelen-Brussel Regio Centrum
 locations:
-- city: Jette 1090
+- city: Jette
+  postcode: 1090
+  diocese: Mechelen-Brussel
+  dioceseRegion: Centrum
   country: BE
 timetable:
-  - time: 10:00
-    days: [sun]
-    kind: sundayMass
-    language: nl
+- time: 10:00
+  days: [sun]
+  kind: sundayMass
+  language: nl
 facebook: https://www.facebook.com/groups/43323561723/
 fbid:
 youtube: https://www.youtube.com/user/kerkjettevideo
