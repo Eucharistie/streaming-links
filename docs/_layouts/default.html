@@ -32,7 +32,9 @@
     {"headline":"{{site.title}}","image":"{{site.url}}{{site.baseurl}}{{page.image}}","url":"{{site.url}}{{site.baseurl}}","name":"{{site.title}}","description":"{{site.description}}","@type":"WebSite","@context":"https://schema.org"}</script>
 
     <!-- twitter -->
-    <meta property="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@eucharistieinfo">
+    <meta name="twitter:title" content="{{site.title}}">
 
 
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
