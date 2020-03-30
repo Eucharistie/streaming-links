@@ -1,9 +1,9 @@
 ---
 community: Johannes XXIII Seminarie
 priests: [priester Filip Hacour]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Leuven
 locations:
-- city: Leuven
+- city: Leuven 3000
   country: BE
 timetable:
   - time: 09:30
