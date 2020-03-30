@@ -2,9 +2,9 @@
 channel:
 community: Kapucijnen Klooster Meersel-Dreef
 priests: []
-diocese: Antwerpen
+diocese: Antwerpen Regio Noorder Kempen
 locations:
-- city: Meersel-Dreef
+- city: Hoogstraten Meerle 2328
   country: BE
 timetable:
   - time: 10:00
@@ -15,6 +15,6 @@ facebook: https://www.facebook.com/KapucijnenKlooster/
 fbid: 199307790194742
 youtube:
 youtubeChannelID:
-homepage:
+homepage:http://www.parochiemeerseldreef.be/
 stream:
 ---
