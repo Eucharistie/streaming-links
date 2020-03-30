@@ -1,9 +1,9 @@
 ---
 community: Parochie Roosdaal
 priests: [pastoor Kris Van Den Bossche]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Halle 
 locations:
-- city: Roosdaal
+- city: Borchtlombeek 1761
   country: BE
 timetable:
   - time: 10:30
