@@ -1,9 +1,9 @@
 ---
 community: Jezuïetenhuis Heverlee
 priests: [paters Wouter Blesgraaf, Walter Ceyssens, Jos Moons sj]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Leuven
 locations:
-- city: Heverlee
+- city: Heverlee 3001
   country: BE
 timetable:
   - time: 11:00
