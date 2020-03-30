@@ -1,7 +1,7 @@
 ---
 channel:
-community: Kapucijnen Klooster Meersel-Dreef
-priests: []
+community: Kapucijnen
+priests: [Klooster Meersel-Dreef]
 diocese: Antwerpen Regio Noorder Kempen
 locations:
 - city: Hoogstraten Meerle 2328
