@@ -2,9 +2,9 @@
 channel:
 community: Fraternité de Tibériade
 priests: []
-diocese: Namur
+diocese: Namen Regio Rochefort
 locations:
-- city: Lavaux-Sainte-Anne
+- city: Lavaux-Sainte-Anne 5580
   country: BE
 timetable:
 - time: 11:00
