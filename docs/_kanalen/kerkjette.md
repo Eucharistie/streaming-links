@@ -1,9 +1,9 @@
 ---
-community: Sint-Pieterskerk Jette
+community: Parochie Sint-Pieters Jette
 priests: [pastoor Dirk Vannetelbosch]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Centrum
 locations:
-- city: Jette
+- city: Jette 1090
   country: BE
 timetable:
   - time: 10:00
