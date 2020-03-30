@@ -1,10 +1,10 @@
 ---
 title: Eucharistieviering met Paus Franciscus
-community:
+community: Vaticaan
 priests: [Paus Franciscus]
-diocese:
+diocese: Rome
 locations:
-- city: Rome
+- city: Rome Italy
   country: IT
 timetable:
   - time: 07:00
