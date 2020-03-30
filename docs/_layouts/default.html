@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% assign v = 6 %}
+    <!-- Logo -->
+    {% assign v = 7 %}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png?v={{v}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png?v={{v}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon-16x16.png?v={{v}}">
@@ -16,7 +17,28 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#438dcc">
 
-{% seo %}
+    <title>Eucharistie-info voor Vlaanderen | Enkele links om de Eucharistie live te volgen.</title>
+    <link rel="canonical" href="{{site.url}}{{site.baseurl}}">
+    <meta name="description" content="{{site.description}}">
+
+    <!-- social -->
+    <meta property="og:title" content="{{site.title}}">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="og:description" content="{{site.description}}">
+    <meta property="og:url" content="{{site.url}}{{site.baseurl}}">
+    <meta property="og:site_name" content="{{site.title}}">
+    <meta property="og:image" content="{{site.url}}{{site.baseurl}}{{page.image}}">
+    <script type="application/ld+json">
+    {"headline":"{{site.title}}","image":"{{site.url}}{{site.baseurl}}{{page.image}}","url":"{{site.url}}{{site.baseurl}}","name":"{{site.title}}","description":"{{site.description}}","@type":"WebSite","@context":"https://schema.org"}</script>
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@eucharistieinfo">
+    <meta name="twitter:title" content="{{site.title}}">
+    <meta name="twitter:description" content="{{site.description}}">
+    <meta name="twitter:image" content="{{site.url}}{{site.baseurl}}{{page.image}}">
+
+
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
 
     <!-- Matomo -->

@@ -18,7 +18,7 @@ title: Eucharistie-info voor Vlaanderen
 description: >- # this means to ignore newlines until "baseurl:"
   Enkele links om de Eucharistie live te volgen.
 baseurl: "/streaming-links" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://eucharistie.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 #github_username:  jekyll
 
@@ -28,7 +28,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-octicons
-  - jekyll-seo-tag
+  # - jekyll-seo-tag
 
 collections:
   kanalen:
@@ -42,12 +42,20 @@ sass:
 gems:
   - jekyll-octicons
 
+# Caution: arrays will be entirely overwritten by entries in other config files
+# if used (like_config-dev.yml). So you might want to copy all the defaults to
+# that file before adding more.
 defaults:
   - scope:
       path: ""
       type: kanalen
     values:
       layout: stream
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/logo-social.png
+      lang: nl_BE
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
