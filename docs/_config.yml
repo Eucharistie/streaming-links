@@ -28,7 +28,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-octicons
-  - jekyll-seo-tag
+  # - jekyll-seo-tag
 
 collections:
   kanalen:
