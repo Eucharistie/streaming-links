@@ -1,10 +1,10 @@
 ---
 title: Vieren met de bisschop
 community: Kathedraal Antwerpen
-priests: [bisschop Bonny,pastoor Bart Paepen]
+priests: [bisschop Johan Bonny,pastoor Bart Paepen]
 diocese: Antwerpen
 locations:
-- city: Antwerpen
+- city: Antwerpen 2000
   country: BE
 timetable:
   - time: 10:00
