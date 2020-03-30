@@ -1,9 +1,9 @@
 ---
 channel: Radio Maria Vlaanderen
-community:
-priests: []
-diocese:
-city:
+community: World Family of Radio Maria
+priests: [Karlo Tiberghien]
+diocese: Mechelen-Brussel Regio Leuven
+city: Leuven Egenhoven 3001
 timetable:
   - time: 10:00
     days: [sun]
