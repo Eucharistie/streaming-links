@@ -54,7 +54,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/img/logo.png
+      image: /assets/img/logo-padded.png
       lang: nl_BE
 
 # Exclude from processing.
