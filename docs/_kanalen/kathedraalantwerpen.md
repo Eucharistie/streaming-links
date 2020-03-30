@@ -1,20 +1,21 @@
 ---
 title: Vieren met de bisschop
 community: Kathedraal Antwerpen
-priests: [bisschop Bonny,pastoor Bart Paepen]
-diocese: Antwerpen
+priests: [bisschop Johan Bonny,pastoor Bart Paepen]
 locations:
 - city: Antwerpen
+  postcode: 2000
+  diocese: Antwerpen
   country: BE
 timetable:
-  - time: 10:00
-    days: [sun]
-    kind: sundayMass
-    language: nl
-  - time: 10:00
-    days: [mon,tue,wed,thu,fri,sat]
-    kind: weekMass
-    language: nl
+- time: 10:00
+  days: [sun]
+  kind: sundayMass
+  language: nl
+- time: 10:00
+  days: [mon,tue,wed,thu,fri,sat]
+  kind: weekMass
+  language: nl
 facebook: https://www.facebook.com/DeKathedraal/
 fbid: DeKathedraal
 youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg

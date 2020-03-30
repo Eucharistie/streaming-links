@@ -1,10 +1,12 @@
 ---
-community: Sint-Jan-Baptist Kachtem
+community: Parochie Sint-Jan-Baptist
 priests: [pastoor Matthias Noë]
-diocese: Brugge
 locations:
 - country: BE
-  city: Herzele
+  city: Kachtem
+  postcode: 8870
+  diocese: Brugge
+  dioceseRegion: Roeselare-Izegem
 timetable:
   - time: 10:30
     days: [sun]
@@ -12,5 +14,6 @@ timetable:
     language: nl
 facebook: https://www.facebook.com/Pastoor.Matthias.Noe
 fbid: 392645767942453
+homepage: https://www.kerknet.be/kerk/st-jan-baptist-kerk-kachtem
 stream:
 ---
