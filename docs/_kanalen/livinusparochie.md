@@ -1,9 +1,9 @@
 ---
-community: Livinusparochie in Herzele & Sint-Lievens-Houtem
+community: Parochie van de H. Livinus
 priests: [pastoor Herbert Vandersmissen]
-diocese: Gent
+diocese: Gent Regio Zottegem
 locations:
-- city: Herzele
+- city: Herzele 9550
   country: BE
 timetable:
   - time: 09:00
