@@ -4,7 +4,7 @@ defaults:
       path: ""
     values:
       dev: true
-      image: /assets/img/logo.png
+      image: /assets/img/logo-social.png
   - scope:
       path: ""
       type: kanalen
