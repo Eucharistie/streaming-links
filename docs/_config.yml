@@ -42,12 +42,20 @@ sass:
 gems:
   - jekyll-octicons
 
+# Caution: arrays will be entirely overwritten by entries in other config files
+# if used (like_config-dev.yml). So you might want to copy all the defaults to
+# that file before adding more.
 defaults:
   - scope:
       path: ""
       type: kanalen
     values:
       layout: stream
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/logo.png
+      lang: nl_BE
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

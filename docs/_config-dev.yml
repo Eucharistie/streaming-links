@@ -2,10 +2,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 defaults:
   - scope:
       path: ""
+    values:
+      dev: true
+      image: /assets/img/logo.png
+  - scope:
+      path: ""
       type: kanalen
     values:
       layout: stream
-  - scope:
-      path: ""
-    values:
-      dev: true
