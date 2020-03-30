@@ -1,9 +1,9 @@
 ---
 community: Begijnhof O.L.Vrouw ter Engelen
 priests: [priester Serge De Cauwer]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Halle
 locations:
-- city: Halle
+- city: Halle 1500
   country: BE
 timetable:
   - time: 08:30
@@ -25,5 +25,6 @@ timetable:
 facebook: https://www.facebook.com/Begijnhofhalle
 fbid: Begijnhofhalle
 stream: https://www.facebook.com/Begijnhofhalle
+homepage: https://monasteriumhalle.wordpress.com/dagorde/
 ---
 De vroegere Sacramentinnen
