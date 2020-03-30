@@ -1,6 +1,6 @@
 ---
 channel: Het Oude Klooster Maleizen
-community: SJM
+community: Servi Jesu et Mariae SJM
 priests: [pater Gert Verbeken]
 diocese: Mechelen-Brussel Vlaams Brabant
 locations:
