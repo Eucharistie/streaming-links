@@ -2,9 +2,9 @@
 title:
 community: Paroisse Sainte Cathérine
 priests: [père Grégory Kienlen, père Carmelo Prima]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Regio Centrum
 locations:
-- city: Bruxelles
+- city: Bruxelles 1000
   country: BE
 timetable:
   - time: 10:30
