@@ -2,9 +2,9 @@
 channel: Het Oude Klooster Maleizen
 community: SJM
 priests: [pater Gert Verbeken]
-diocese: Mechelen-Brussel
+diocese: Mechelen-Brussel Vlaams Brabant
 locations:
-- city: Overijse
+- city: Overijse 3090
   country: BE
 timetable:
   - time: 10:00
