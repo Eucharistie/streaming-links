@@ -172,48 +172,48 @@ div.nav-about {
 /* Fontawesome Social Media icons */
 .social {
   a:hover {
-    color: $blue-500 !important;
+    // color: $blue-500 !important;
   }
-  .link-gray .fab:not(:hover) {
-    color: #586069;
+  .link-gray.fab:not(:hover) {
+    color: #586069 !important;
   }
   .fa-home {
-    color: $blue-500;
+    // color: $blue-500;
   }
   .fa-facebook, .fa-facebook-square {
-      color: #3b5998
+      color: #3b5998 !important;
   }
   .fa-twitter, .fa-twitter-square {
-      color: #00aced
+      color: #00aced !important;
   }
   .fa-google-plus, .fa-google-plus-square {
-      color: #dd4b39
+      color: #dd4b39 !important;
   }
   .fa-youtube, .fa-youtube-play, .fa-youtube-square {
-      color: #bb0000
+      color: #bb0000 !important;
   }
   .fa-tumblr, .fa-tumblr-square {
-      color: #32506d
+      color: #32506d !important;
   }
   .fa-vine {
-      color: #00bf8f
+      color: #00bf8f !important;
   }
   .fa-flickr {
-      color: #ff0084
+      color: #ff0084 !important;
   }
   .fa-vimeo-square {
-      color: #aad450
+      color: #aad450 !important;
   }
   .fa-pinterest, .fa-pinterest-square {
-      color: #cb2027
+      color: #cb2027 !important;
   }
   .fa-linkedin, .fa-linkedin-square {
-      color: #007bb6
+      color: #007bb6 !important;
   }
   .fa-instagram {
-      color: #517fa4;
+      color: #517fa4 !important;
   }
   .fa-spotify {
-      color: #1ED760;
+      color: #1ED760 !important;
   }
 }
