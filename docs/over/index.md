@@ -20,6 +20,7 @@ Met eucharistie.info zullen we de komende weken proberen zo veel mogelijk inform
 Heb je vragen of suggesties over de site? Laat het ons weten via onderstaande kanalen.
 {: .justify lang="nl"}
 
-[<i class="fas fa-envelope fa-fw"></i> contact@eucharistie.info](mailto:contact@eucharistie.info)  
-[<i class="fab fa-facebook-square fa-fw"></i> eucharistie.info](https://www.facebook.com/eucharistie.info)
-{: .hide-sm .hide-md}
+<i class="fas fa-envelope fa-fw"></i> E-mail [contact@eucharistie.info](mailto:contact@eucharistie.info)  
+<i class="fab fa-twitter fa-fw"></i> Twitter handle [@eucharistieinfo](https://www.twitter.com/eucharistieinfo)  
+<i class="fab fa-facebook fa-fw"></i> Facebook page [eucharistie.info](https://www.facebook.com/eucharistie.info)
+{: .hide-sm .hide-md .social}
