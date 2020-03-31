@@ -59,8 +59,6 @@
       <meta property="og:title" content="{{site.title}}">
       <meta property="og:url" content="{{site.url}}{{site.baseurl}}">
       <meta name="twitter:title" content="{{site.title}}">
-      <meta property="og:description" content="{{site.description}}">
-      <meta name="twitter:description" content="{{site.description}}">
       <script type="application/ld+json">
       {
         "headline":"{{site.title}}",
@@ -69,7 +67,8 @@
         "name":"{{site.title}}",
         "description":"{{site.description}}",
         "@type":"WebSite",
-        "@context":"https://schema.org"
+        "@context":"https://schema.org",
+        "logo": "{{site.url}}{{site.baseurl}}/assets/img/logo.png"
       }
       </script>
     {% endif %}
@@ -139,8 +138,15 @@
     </div>
     <div class="bg-gray">
       <div class="container-lg clearfix p-3 mt-3 d-flex flex-justify-end">
-        <a href="mailto:contact@eucharistie.info" class="flex-auto text-center mt-1 pl-5 link-gray">contact@eucharistie.info</a>
-        <a href="https://www.facebook.com/eucharistie.info" class="social"><i class="link-gray fab fa-facebook fa-fw fa-2x"></i></a>
+        <a href="https://www.twitter.com/eucharistieinfo" class="social flex-md-order-1">
+          <i class="link-gray fab fa-twitter fa-fw fa-2x"></i>
+        </a>
+        <a href="https://www.facebook.com/eucharistie.info" class="social flex-md-order-2">
+          <i class="link-gray fab fa-facebook fa-fw fa-2x"></i>
+        </a>
+        <a href="mailto:contact@eucharistie.info" class="flex-auto text-md-right mt-1 pl-2 pl-md-0 pr-md-2 link-gray">
+          contact@eucharistie.info
+        </a>
       </div>
     </div>
     {% include script.html %}
