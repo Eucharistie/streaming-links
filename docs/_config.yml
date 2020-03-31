@@ -51,6 +51,7 @@ defaults:
       type: kanalen
     values:
       layout: stream
+      route: channel
   - scope:
       path: ""
     values:

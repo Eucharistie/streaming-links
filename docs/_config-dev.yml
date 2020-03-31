@@ -10,3 +10,4 @@ defaults:
       type: kanalen
     values:
       layout: stream
+      route: channel
