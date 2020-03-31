@@ -28,6 +28,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@eucharistieinfo">
     <meta name="twitter:image" content="{{site.url}}{{site.baseurl}}{{page.image}}">
+    <meta property="og:description" content="{{site.description}}">
+    <meta name="twitter:description" content="{{site.description}}">
     {% if page.route == "channel" %}
       {% if page.fbid.size > 0 %}
         <!--
@@ -40,19 +42,18 @@
       {% endif %}
       <meta property="og:title" content="{% include title.html channel=page %}">
       <meta name="twitter:title" content="{% include title.html channel=page %}">
-      <meta property="og:description" content="{{site.description}}">
-      <meta name="twitter:description" content="{{site.description}}">
       <meta property="og:url" content="{{site.url}}{{site.baseurl}}{{page.url}}">
       <meta property="og:type" content="video.other" />
       <script type="application/ld+json">
       {
-        "headline":"Eucharistie-info voor {% include title.html channel=page %}",
+        "headline":"{% include title.html channel=page %}",
         "image":"{{site.url}}{{site.baseurl}}{{page.image}}",
         "url":"{{site.url}}{{site.baseurl}}{{page.url}}",
         "name":"{{site.title}}",
         "description":"{{site.description}}",
         "@type":"WebSite",
-        "@context":"https://schema.org"
+        "@context":"https://schema.org",
+        "logo": "{{site.url}}{{site.baseurl}}/assets/img/logo.png"
       }
       </script>
     {% else %}
