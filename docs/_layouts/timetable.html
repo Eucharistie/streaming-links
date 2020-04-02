@@ -80,14 +80,6 @@ convert the array from liquid to js: {% endcomment %}
   </div>
   {% for i in (0..6) %}
     {% assign day = layout.days[i] %}
-    {% assign yesterday = i|minus:1 %}
-    {% assign tomorrow = i|plus:1 %}
-    {% if yesterday==-1 %}
-      {% assign yesterday=6 %}
-    {% endif %}
-    {% if tomorrow==7 %}
-      {% assign tomorrow=0 %}
-    {% endif %}
     {% assign timetable = "" | split: "," %}
 
     {% for stream in site.kanalen %}
