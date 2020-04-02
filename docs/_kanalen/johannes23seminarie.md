@@ -12,7 +12,32 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: nl
-facebook: https://www.facebook.com/Johannes-XXIII-Seminarie-309563685301/
+- title: Witte Donderdag
+  time: 20:00
+  dates: [2020-04-09]
+  kind: feast
+  language: nl
+- title: Goede Vrijdag - Kruisweg
+  time: 15:00
+  dates: [2020-04-10]
+  kind: feast
+  language: nl
+- title: Goede Vrijdag - Liturgie
+  time: 20:00
+  dates: [2020-04-10]
+  kind: feast
+  language: nl
+- title: Paaswake
+  time: 23:59
+  dates: [2020-04-11]
+  kind: feast
+  language: nl
+- title: Pasen
+  time: 10:30
+  dates: [2020-04-12]
+  kind: feast
+  language: nl  
+facebook: https://www.facebook.com/Johannes-XXIII-Seminarie-309563685301/live
 fbid: 309563685301
 youtube:
 homepage:
