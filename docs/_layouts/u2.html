@@ -1,0 +1,221 @@
+---
+layout: main
+---
+{% assign locale = site.locale %}
+{% assign localDays = site.data.cldr.main[locale].dates.calendars.generic.days.format.wide %}
+
+<div class="Box border-left-0 border-right-0 border-md rounded-0 rounded-md-2 overflow-hidden">
+  <div class="Box-header order-0 border-md rounded-0 rounded-md-top-2 d-flex flex-justify-between Box-header--blue">
+    <details class="details-reset details-overlay m-0 mr-3" id="filter">
+      <summary class="btn btn-sm" aria-haspopup="true">
+        {% octicon settings class:"mr-1" %}
+        <span class="hide-sm">Filter</span>
+      </summary>
+      <div class="SelectMenu">
+        <div class="SelectMenu-modal">
+          <header class="SelectMenu-header">
+            <h6 class="m-0 p-1 SelectMenu-title">Talen</h6>
+            <button class="SelectMenu-closeButton" type="button" onclick="document.querySelector('#filter').open = false">
+              {% octicon x %}
+            </button>
+          </header>
+          <div class="SelectMenu-list">
+            {% for language in languages %}
+              <button class="SelectMenu-item language-filter" role="menuitem" aria-checked="true" data-lang="{{language}}" onclick="langFilter.updateTimeTable('{{language}}', langFilter.toggle('{{language}}'))">
+                {% octicon check class:"SelectMenu-icon SelectMenu-icon--check" %}
+                {{ language | append: "_" |  replace: "nl_", "Nederlands" | replace: "fr_", "Frans" | replace: "la_", "Latijn" | replace: "en_", "Engels" }}
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </details>
+    <div class="BtnGroup hide-lg hide-xl m-0">
+      <button onclick="showDay('previous')" class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron left icon">
+        {% octicon chevron-left %}
+      </button>
+      <button class="text-center btn btn-sm BtnGroup-item" style="width: 8em;" id="currentDay" onclick="showDay(today)">
+        <!-- day of week comes here -->
+      </button>
+      <button onclick="showDay('next')" class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron right icon">
+        {% octicon chevron-right %}
+      </button>
+    </div>
+    <div class="hide-lg hide-xl" style="width: 58px;">
+
+    </div>
+  </div>
+
+  <div class="flash flash-full py-1" hidden id="live-soon">
+    Volgende uitzendingen:
+  </div>
+
+  <!-- day of week -->
+
+    <!-- time of day for this day -->
+    <div class="Box-row day-row" hidden>
+
+      <!-- events for this time of day -->
+      <a href="" class="capitalize-first-letter event Label Label--gray">
+        <span class="Counter Counter--gray language-badge"></span>
+      </a>
+
+    </div>
+
+  <div class="Box-footer day-footer text-small bg-gray">
+    {% include timetable_legend.html %}
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  // Liquid variables
+  const channelEntries = [
+    // convert jekyll collection to js excluding "output", "next" and "previous" keys
+    {% for channel in site.kanalen %}
+      {{channel | where_exp: "hash", "hash[0] != 'output'" | where_exp: "hash", "hash[0] != 'next' and hash[0] != 'previous'"  | jsonify}},
+    {% endfor %}
+  ];
+  const channels = channelEntries.map(function (entries) {return Object.fromEntries(entries)});
+  const localDays = {{localDays|jsonify}};
+  const siteLocale = "{{site.locale}}";
+  const genericDays = Object.keys(localDays);
+  const channel = {{site.kanalen[0] | where_exp: "hash", "hash[0] != 'output'" | where_exp: "hash", "hash[0] != 'next' and hash[0] != 'previous'"  | jsonify}}
+
+  // DOM elements
+  const hourElement = document.querySelector(".day-row");
+  const eventElement = document.querySelector(".day-row .event");
+  const languageElement = document.querySelector(".day-row .event .language-badge");
+  const footerElement = document.querySelector(".day-footer");
+
+  const pageLoadDate = new Date();
+
+  const shortDate = function (date) {
+    const dateLocal = new Date(date - (date.getTimezoneOffset() * 60 * 1000));
+    const dateShort = dateLocal.toISOString().slice(0, 10)
+    return dateShort;
+  }
+
+  const hourMinutes = function (minutes) {
+    const format = new Intl.DateTimeFormat(siteLocale, { hour: 'numeric', minute: 'numeric' });
+    return format.format(new Date(Date.UTC(0,0,0,0,minutes)));
+  }
+
+  const eventTitle = function (channel, event) {
+    var loc = "",
+        title;
+    if (typeof(event.location) === "number") {
+      const eventLoc = channel.locations[event.location]
+      if (eventLoc.community) loc += eventLoc.community + ", "
+      loc += eventLoc.city + " (" + eventLoc.country + ")";
+    }
+    if (Array.isArray(event.priests) && event.priests.length > 0) {
+      loc += ", " + event.priests.map(function(priest){
+        return channel.priests[priest]
+      }).join(", ")
+    }
+    title = loc || channel.channel || channel.community || channel.priests.join(", ")
+    if (title.length > 30) {title = title.substring(0,28) + "…";}
+    return title;
+  }
+
+  const dateToDay = function (date) {
+    var UTCDate;
+    if (typeof date.getMonth === 'function') {
+      UTCDate = new Date(date - (date.getTimezoneOffset() * 60 * 1000))
+    } else {
+      UTCDate = new Date(date + "T00:00:00Z")
+    }
+    return genericDays[UTCDate.getUTCDay()];
+  }
+
+  const datesToDays = function (dates) {
+    var days = [];
+    if (Array.isArray(dates) && dates.length > 0) {
+      days = dates.map(dateToDay)
+    }
+    return days
+  }
+
+  const populateCalendar = function() {
+    var calendarEvents = []
+    // [mon, tue, wed, ...]
+    genericDays.forEach(function (day) {
+      var hourEvents = {};
+      channels.forEach(function (channel) {
+        channel.timetable.forEach(function (event) {
+          if ((event.days && event.days.indexOf(day) >= 0) || datesToDays(event.dates).indexOf(day) >= 0 ) {
+            const eventDom = eventElement.cloneNode();
+            const langDom = languageElement.cloneNode();
+            // XXX url instead of title
+            eventDom.innerText = eventTitle(channel, event) + " ";
+            if (event.kind == 'sundayMass') eventDom.classList.add("text-blue");
+            eventDom.href = channel.url;
+            langDom.innerText = event.language;
+            eventDom.appendChild(langDom);
+            if (!hourEvents[event.time]) { hourEvents[event.time]=[] }
+            hourEvents[event.time].push({
+              dom: eventDom,
+              event: event,
+              channel: channel
+            });
+          };
+        });
+      });
+
+      Object.keys(hourEvents).forEach(function (time) {
+        const dom = hourElement.cloneNode();
+        dom.append(hourMinutes(time));
+        hourEvents[time].forEach(function (event) {
+          dom.append(" ");
+          dom.appendChild(event.dom);
+        })
+        footerElement.before(dom);
+        calendarEvents.push({
+          day: day,
+          time: time,
+          dom: dom,
+          events: hourEvents[time]
+        });
+      });
+    });
+    return calendarEvents;
+  }
+
+  const showDate = function (date) {
+    calendar.forEach(function (row) {
+      row.dom.hidden = (row.day !== dateToDay(date));
+    })
+  }
+
+  const calendar = populateCalendar();
+  // show today
+  showDate(new Date());
+
+  // datepicker range:
+  // from 1 week ago
+  // to 1 year from now
+  var minDate = new Date();
+  minDate.setDate(minDate.getDate() - 7);
+  minDate = shortDate(new Date(minDate));
+
+  var maxDate = new Date();
+  maxDate.setDate(maxDate.getDate() + 365);
+  maxDate = shortDate(new Date(maxDate));
+
+  flatpickr(
+    "#datePicker .widget",
+    {
+      inline: true,
+      locale: siteLocale.slice(0,2),
+      minDate: minDate,
+      maxDate: maxDate,
+      defaultDate: new Date(),
+      onChange: function (selectedDates, dateStr, instance) {
+        console.log("new date", dateStr);
+        showDate(dateStr);
+      }
+    }
+  );
+
+</script>
