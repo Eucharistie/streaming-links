@@ -56,7 +56,8 @@ defaults:
       path: ""
     values:
       image: /assets/img/logo-social.png
-      lang: nl_BE
+
+locale: nl-BE
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

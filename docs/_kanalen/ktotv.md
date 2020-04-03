@@ -9,7 +9,7 @@ locations:
 - city: Paris
   diocese: Paris
   country: FR
-  community: Saint-Germain l'Auxerrois
+  community: St. Germain l'Auxerrois
 - city: Lourdes
   diocese: Tarbes et Lourdes
   country: FR
