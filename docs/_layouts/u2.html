@@ -121,6 +121,7 @@ layout: main
 
   const dateToDay = function (date) {
     var UTCDate;
+    //XXX should always be shortDate()
     if (typeof date.getMonth === 'function') {
       UTCDate = new Date(date - (date.getTimezoneOffset() * 60 * 1000))
     } else {
@@ -150,6 +151,7 @@ layout: main
             // XXX url instead of title
             eventDom.innerText = eventTitle(channel, event) + " ";
             if (event.kind == 'sundayMass') eventDom.classList.add("text-blue");
+            else if (event.kind == 'feast') eventDom.classList.add("text-red");
             eventDom.href = channel.url;
             langDom.innerText = event.language;
             eventDom.appendChild(langDom);
@@ -184,13 +186,25 @@ layout: main
 
   const showDate = function (date) {
     calendar.forEach(function (row) {
-      row.dom.hidden = (row.day !== dateToDay(date));
+      const isRowDay = (row.day === dateToDay(date));
+      var eventCount = row.events.length;
+      console.log("row",row.events,row.events.length);
+      row.events.forEach(function(event) {
+        // event has dates but not this date:
+        const notThisDate = event.event.dates && Array.isArray(event.event.dates) && (event.event.dates.indexOf(date) === -1)
+        if (notThisDate) {
+          eventCount--;
+          console.log(row.day, row.time, date, event.event.dates, Array.isArray(event.event.dates), (event.event.dates.indexOf(date) === -1), eventCount);
+        }
+        event.dom.hidden = notThisDate;
+      })
+      row.dom.hidden = ( (!isRowDay) || (eventCount === 0) );
     })
   }
 
   const calendar = populateCalendar();
   // show today
-  showDate(new Date());
+  showDate(shortDate(new Date()));
 
   // datepicker range:
   // from 1 week ago
@@ -212,7 +226,6 @@ layout: main
       maxDate: maxDate,
       defaultDate: new Date(),
       onChange: function (selectedDates, dateStr, instance) {
-        console.log("new date", dateStr);
         showDate(dateStr);
       }
     }
