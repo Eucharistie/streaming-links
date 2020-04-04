@@ -78,14 +78,6 @@ body {
   }
 }
 
-#datePicker .flatpickr-calendar {
-  box-shadow: none;
-  &::before,
-  &::after {
-    border: none;
-  }
-}
-
 // only show first children
 .limit-children > :not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
     display: none;
@@ -100,6 +92,18 @@ body {
   [hidden].unhide-md,
   [hidden][hidden].unhide-md {
     display: block !important;
+  }
+}
+
+
+#datePicker .flatpickr-calendar {
+  box-shadow: none;
+  &::before,
+  &::after {
+    border: none;
+  }
+  .flatpickr-current-month .flatpickr-monthDropdown-months {
+    -webkit-appearance: none;
   }
 }
 
