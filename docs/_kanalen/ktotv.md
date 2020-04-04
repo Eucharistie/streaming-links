@@ -31,6 +31,11 @@ timetable:
   kind: sundayMass
   language: fr
   location: 2
+- days: [sun]
+  time: 11:00
+  kind: feast
+  language: fr
+  location: 0
 - time: 10:00
   days: [mon,tue,wed,thu,fri,sat]
   kind: weekMass
