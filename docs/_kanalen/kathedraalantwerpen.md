@@ -9,7 +9,7 @@ locations:
   country: BE
 timetable:
 - time: 10:00
-  days: [sun]
+  days: []
   kind: sundayMass
   language: nl
 - time: 10:00
