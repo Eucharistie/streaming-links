@@ -1,7 +1,7 @@
 ---
 layout: main
 ---
-{% assign locale = site.locale %}
+{% assign locale = page.locale %}
 {% assign localDays = site.data.cldr.main[locale].dates.calendars.generic.days.format.wide %}
 
 <div class="Box border-left-0 border-right-0 border-md rounded-0 rounded-md-2 overflow-hidden">
@@ -78,7 +78,7 @@ layout: main
   ];
   const channels = channelEntries.map(function (entries) {return Object.fromEntries(entries)});
   const localDays = {{localDays|jsonify}};
-  const siteLocale = "{{site.locale}}";
+  const siteLocale = "{{page.locale}}";
   const genericDays = Object.keys(localDays);
   const channel = {{site.kanalen[0] | where_exp: "hash", "hash[0] != 'output'" | where_exp: "hash", "hash[0] != 'next' and hash[0] != 'previous'"  | jsonify}}
 

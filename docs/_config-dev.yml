@@ -2,12 +2,13 @@ baseurl: "" # the subpath of your site, e.g. /blog
 defaults:
   - scope:
       path: ""
-    values:
-      dev: true
-      image: /assets/img/logo-social.png
-  - scope:
-      path: ""
       type: kanalen
     values:
       layout: stream
       route: channel
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/logo-social.png
+      dev: true
+      locale: nl-BE
