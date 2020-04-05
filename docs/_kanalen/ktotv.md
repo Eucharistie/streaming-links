@@ -33,7 +33,7 @@ timetable:
   location: 2
 - days: [sun]
   time: 11:00
-  kind: feast
+  kind: sundayMass
   language: fr
   location: 0
 - time: 10:00
