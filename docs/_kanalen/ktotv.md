@@ -21,7 +21,7 @@ timetable:
   location: 0
   priests: [0]
 - time: 07:00
-  days: [sun]
+  days: []
   kind: sundayMass
   language: fr
   location: 0
