@@ -12,10 +12,10 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: nl
-facebook: https://www.facebook.com/groups/43323561723/
+facebook: https://www.facebook.com/Kerknet-384549141651808/
 fbid:
 youtube: https://www.youtube.com/channel/UCf0kwiiUpoaD5_4kIIwhNfA/live
-homepage: www.kerknet.be
+homepage: https://www.kerknet.be
 stream: 
 youtubeChannelID: 
 ---
