@@ -1,5 +1,5 @@
 ---
-community: Verdieping (Opname met ondertitels)
+community: Verdieping
 priests: []
 locations:
 - city:
@@ -9,7 +9,7 @@ locations:
   country: IT
 timetable:
 - time: 00:00
-  days: []
+  days: [sun]
   kind: sundayMass
   language: nl 
 facebook:
@@ -18,3 +18,4 @@ youtube: https://www.youtube.com/channel/UCF55Y0wrALqcE-APXs3KNLw
 homepage:
 stream:
 ---
+Opname met ondertitels
