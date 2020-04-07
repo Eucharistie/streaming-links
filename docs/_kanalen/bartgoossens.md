@@ -1,5 +1,5 @@
 ---
-community: Verdieping met pastoor Bart Goossens (Opname)
+community: Verdieping met pastoor Bart Goossens
 priests: [pastoor Bart Goossens]
 locations:
 - city: Schoten
@@ -23,3 +23,4 @@ youtube: https://www.youtube.com/channel/UCQydh9rZDoR3-xmuC1e1K-w
 homepage:
 stream:
 ---
+Opname
