@@ -8,22 +8,52 @@ locations:
     diocese: Mechelen-Brussel
     dioceseRegion: Halle
 timetable:
-  - time: 08:30
-    days: [sun]
+#  - time: 08:30
+#    days: [sun]
+#    kind: sundayMass
+#    language: nl
+#  - time: 19:00
+#    days: [sat]
+#    kind: sundayMass
+#    language: nl
+#  - time: 08:00
+#    days: [mon,tue,wed,thu,fri,sat]
+#    kind: weekMass
+#    language: nl
+#  - time: 19:00
+#    days: [mon,tue,wed,thu,fri]
+#    kind: weekMass
+#    language: nl
+# - title: Witte Donderdag
+  - time: 19:00
+    days: [thu]
     kind: sundayMass
     language: nl
-  - time: 19:00
+  # - title: Goede Vrijdag - Kruisweg
+  - time: 15:00
+    days: [fri]
+    kind: weekMass
+    language: nl
+  # - title: Paaswake
+  - time: 20:00
     days: [sat]
     kind: sundayMass
     language: nl
-  - time: 08:00
-    days: [mon,tue,wed,thu,fri,sat]
-    kind: weekMass
+  # - title: Pasen
+  - time: 08:30
+    days: [sun]
+    kind: sundayMass
+    language: nl 
+  # - title: Paasmaandag
+  - time: 08:30
+    days: [mon]
+    kind: sundayMass
     language: nl
   - time: 19:00
-    days: [mon,tue,wed,thu,fri]
-    kind: weekMass
-    language: nl
+    days: [mon]
+    kind: sundayMass
+    language: nl     
+    
 facebook: https://www.facebook.com/Begijnhofhalle
 fbid: Begijnhofhalle
 stream: https://www.facebook.com/Begijnhofhalle
