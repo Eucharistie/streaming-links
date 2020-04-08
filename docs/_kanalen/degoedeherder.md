@@ -8,29 +8,29 @@ locations:
   dioceseRegion: Gent-West
   country: BE
 timetable:
-- time: 09:00
-  days: [sun]
+# - time: 09:00
+#  days: [sun]
+#  kind: sundayMass
+#  language: nl
+# - title: Witte Donderdag
+- time: 19:00
+  days: [thu]
   kind: sundayMass
   language: nl
-- title: Witte Donderdag
-  time: 19:00
-  dates: [2020-04-09]
-  kind: feast
+# - title: Goede Vrijdag - Kruisweg
+- time: 15:00
+  dates: [fri]
+  kind: weekMass
   language: nl
-- title: Goede Vrijdag - Kruisweg
-  time: 15:00
-  dates: [2020-04-10]
-  kind: feast
+# - title: Paaswake
+- time: 20:00
+  dates: [sat]
+  kind: sundayMass
   language: nl
-- title: Paaswake
-  time: 20:00
-  dates: [2020-04-11]
-  kind: feast
-  language: nl
-- title: Pasen
-  time: 09:00
-  dates: [2020-04-12]
-  kind: feast
+# - title: Pasen
+- time: 09:00
+  dates: [sun]
+  kind: sundayMass
   language: nl  
 facebook: https://www.facebook.com/groups/137990294305816/
 fbid:

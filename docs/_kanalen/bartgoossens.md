@@ -14,7 +14,7 @@ timetable:
   language: nl
 - title: Goede Vrijdag - Kruisweg
   time: 15:00
-  dates: [2020-04-10]
+  dates: [fri]
   kind: feast
   language: nl 
 facebook:
