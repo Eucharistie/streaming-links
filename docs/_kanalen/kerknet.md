@@ -31,19 +31,19 @@ timetable:
     location: 0
   # - title: Goede Vrijdag - Kruisweg
   - time: 15:00
-    dates: [fri]
+    days: [fri]
     kind: weekMass
     language: nl
     location: 1
   # - title: Paaswake
   - time: 20:00
-    dates: [sat]
+    days: [sat]
     kind: sundayMass
     language: nl
     location: 2
   # - title: Pasen
   - time: 11:00
-    dates: [sun]
+    days: [sun]
     kind: sundayMass
     language: nl
     location: 3

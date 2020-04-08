@@ -22,27 +22,27 @@ timetable:
 #  language: nl
 # - title: Witte Donderdag
   - time: 20:00
-    dates: [thu]
+    days: [thu]
     kind: sundayMass
     language: nl
   # - title: Goede Vrijdag - Kruisweg
   - time: 15:00
-    dates: [fri]
+    days: [fri]
     kind: weekMass
     language: nl
   # - title: Goede Vrijdag - Liturgie
   - time: 20:00
-    dates: [fri]
+    days: [fri]
     kind: weekMass
     language: nl
   # - title: Paaswake
   - time: 20:00
-    dates: [sat]
+    days: [sat]
     kind: sundayMass
     language: nl
   # - title: Pasen
   - time: 09:00
-    dates: [sun]
+    days: [sun]
     kind: sundayMass
     language: nl  
 facebook: https://www.facebook.com/andy.penne.5

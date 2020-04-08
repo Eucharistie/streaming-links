@@ -19,17 +19,17 @@ timetable:
     language: nl
   # - title: Goede Vrijdag - Kruisweg
   - time: 15:00
-    dates: [fri]
+    days: [fri]
     kind: weekMass
     language: nl
   # - title: Paaswake
   - time: 20:00
-    dates: [sat]
+    days: [sat]
     kind: sundayMass
     language: nl
   # - title: Pasen
   - time: 09:00
-    dates: [sun]
+    days: [sun]
     kind: sundayMass
     language: nl  
 facebook: https://www.facebook.com/groups/137990294305816/

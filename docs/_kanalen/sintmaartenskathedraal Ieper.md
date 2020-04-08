@@ -10,22 +10,22 @@ locations:
 timetable:
 # - title: Palmzondag
   - time: 10:30
-    dates: [sun]
+    days: [sun]
     kind: sundayMass
     language: nl
   # - title: Witte Donderdag
   - time: 19:00
-    dates: [thu]
+    days: [thu]
     kind: sundayMass
     language: nl
   # - title: Goede Vrijdag - Liturgie
   - time: 20:00
-    dates: [fri]
+    days: [fri]
     kind: sundayMass
     language: nl
   # - title: Paaswake
   - time: 20:00
-    dates: [sat]
+    days: [sat]
     kind: sundayMass
     language: nl
 facebook: https://www.facebook.com/kerkinieper/live
