@@ -13,31 +13,31 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: fr
-- title: Witte Donderdag
+# - title: Witte Donderdag
   time: 19:00
-  dates: [2020-04-09]
-  kind: feast
+  dates: [thu]
+  kind: sundayMass
   language: fr
-- title: Goede Vrijdag - Kruisweg
+# - title: Goede Vrijdag - Kruisweg
   time: 15:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: weekMass
   language: fr
-- title: Goede Vrijdag - Liturgie
+# - title: Goede Vrijdag - Liturgie
   time: 20:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: sundayMass
   language: fr
-- title: Paaswake
+# - title: Paaswake
   time: 21:00
-  dates: [2020-04-11]
-  kind: feast
+  dates: [sat]
+  kind: sundayMass
   language: fr
-- title: Pasen
-  time: 10:30
-  dates: [2020-04-12]
-  kind: feast
-  language: fr 
+# - title: Pasen
+#  time: 10:30
+#  dates: [2020-04-12]
+#  kind: sundayMass
+#  language: fr 
 facebook: https://www.facebook.com/EgliseSainteCatherine/live
 fbid: 1100107513335259
 youtube:

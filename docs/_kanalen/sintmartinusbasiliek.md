@@ -12,20 +12,20 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: nl
-- title: Witte Donderdag
+# - title: Witte Donderdag
   time: 19:00
-  dates: [2020-04-09]
-  kind: feast
+  dates: [thu]
+  kind: sundayMass
   language: nl
-- title: Goede Vrijdag - Liturgie
+# - title: Goede Vrijdag - Liturgie
   time: 19:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: sundayMass
   language: nl
-- title: Paaswake
+# - title: Paaswake
   time: 20:00
-  dates: [2020-04-11]
-  kind: feast
+  dates: [sat]
+  kind: sundayMass
   language: nl
 facebook: https://www.facebook.com/basiliekhalle/live
 fbid: 102495201397492

@@ -8,34 +8,35 @@ locations:
   dioceseRegion: 
   country: BE
 timetable:
-- time: 07:15
-  days: [sun]
+# Palmzondag
+# - time: 07:15
+#  days: [sun]
+#  kind: sundayMass
+#  language: nl
+# - title: Witte Donderdag
+  time: 20:00
+  dates: [thu]
   kind: sundayMass
   language: nl
-- title: Witte Donderdag
-  time: 20:00
-  dates: [2020-04-09]
-  kind: feast
-  language: nl
-- title: Goede Vrijdag - Kruisweg
+# - title: Goede Vrijdag - Kruisweg
   time: 9:30
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: weekMass
   language: nl
-- title: Goede Vrijdag - Liturgie
+# - title: Goede Vrijdag - Liturgie
   time: 20:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: sundayMass
   language: nl
-- title: Paaswake
+# - title: Paaswake
   time: 20:00
-  dates: [2020-04-11]
-  kind: feast
+  dates: [sat]
+  kind: sundayMass
   language: nl
-- title: Pasen
+# - title: Pasen
   time: 7:00
-  dates: [2020-04-12]
-  kind: feast
+  dates: [sun]
+  kind: sundayMass
   language: nl  
 facebook: 
 fbid: 

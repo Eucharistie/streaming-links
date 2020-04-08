@@ -7,47 +7,47 @@ locations:
   diocese: Hasselt
   dioceseRegion: Herk-de-Stad
 timetable:
-  - time: 09:00
-    days: [sun]
-    kind: sundayMass
-    language: nl
-  - time: 18:00
-    days: [mon,tue,wed,thu,fri]
-    kind: weekMass
-    language: nl
-  - time: 17:00
-    days: [sat]
-    kind: sundayMass
-    language: nl
-- title: Witte Donderdag
+#  - time: 09:00
+#    days: [sun]
+#    kind: sundayMass
+#    language: nl
+#  - time: 18:00
+#    days: [mon,tue,wed,thu,fri]
+#    kind: weekMass
+#    language: nl
+#  - time: 17:00
+#    days: [sat]
+#    kind: sundayMass
+#    language: nl
+# - title: Witte Donderdag
   time: 18:00
-  dates: [2020-04-09]
-  kind: feast
+  dates: [thu]
+  kind: sundayMass
   language: nl
-- title: Goede Vrijdag - Kruisweg
+# - title: Goede Vrijdag - Kruisweg
   time: 14:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: weekMass
   language: nl
-- title: Goede Vrijdag - Liturgie
+# - title: Goede Vrijdag - Liturgie
   time: 18:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: sundayMass
   language: nl
-- title: Paaswake
+# - title: Paaswake
   time: 21:00
-  dates: [2020-04-11]
-  kind: feast
+  dates: [sat]
+  kind: sundayMass
   language: nl
-- title: Pasen
+# - title: Pasen
   time: 09:00
-  dates: [2020-04-12]
-  kind: feast
+  dates: [sun]
+  kind: sundayMass
   language: nl 
-- title: Paasmaandag
+# - title: Paasmaandag
   time: 09:00
-  dates: [2020-04-13]
-  kind: feast
+  dates: [mon]
+  kind: sundayMass
   language: nl 
 facebook: https://www.facebook.com/wim.simons.71
 stream: https://www.facebook.com/wim.simons.71

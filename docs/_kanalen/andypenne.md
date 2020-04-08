@@ -8,42 +8,42 @@ locations:
   dioceseRegion: Leuven
   country: BE
 timetable:
-- time: 09:00
-  days: [sun]
+# - time: 09:00
+#  days: [sun]
+#  kind: sundayMass
+#  language: nl
+# - time: 09:00
+#  days: [tue,fri]
+#  kind: weekMass
+#  language: nl
+# - time: 19:00
+#  days: [mon,wed,thu]
+#  kind: weekMass
+#  language: nl
+# - title: Witte Donderdag
+  time: 20:00
+  dates: [thu]
   kind: sundayMass
   language: nl
-- time: 09:00
-  days: [tue,fri]
-  kind: weekMass
-  language: nl
-- time: 19:00
-  days: [mon,wed,thu]
-  kind: weekMass
-  language: nl
-- title: Witte Donderdag
-  time: 20:00
-  dates: [2020-04-09]
-  kind: feast
-  language: nl
-- title: Goede Vrijdag - Kruisweg
+# - title: Goede Vrijdag - Kruisweg
   time: 15:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: weekMass
   language: nl
-- title: Goede Vrijdag - Liturgie
+# - title: Goede Vrijdag - Liturgie
   time: 20:00
-  dates: [2020-04-10]
-  kind: feast
+  dates: [fri]
+  kind: sundayMass
   language: nl
-- title: Paaswake
+# - title: Paaswake
   time: 20:00
-  dates: [2020-04-11]
-  kind: feast
+  dates: [fri]
+  kind: sundayMass
   language: nl
-- title: Pasen
+# - title: Pasen
   time: 09:00
-  dates: [2020-04-12]
-  kind: feast
+  dates: [fri]
+  kind: sundayMass
   language: nl  
 facebook: https://www.facebook.com/andy.penne.5
 fbid: 1629533551

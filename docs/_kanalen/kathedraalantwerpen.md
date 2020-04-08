@@ -8,14 +8,20 @@ locations:
   diocese: Antwerpen
   country: BE
 timetable:
+# - title: Pasen
 - time: 10:00
-  days: []
+  days: [sun]
   kind: sundayMass
   language: nl
 - time: 10:00
-  days: [mon,tue,wed,thu,fri,sat]
+  days: []
   kind: weekMass
   language: nl
+# - title: Goede Vrijdag - Kruisweg
+- time: 15:00
+  dates: [fri]
+  kind: weekMass
+  language: nl 
 facebook: https://www.facebook.com/DeKathedraal/
 fbid: DeKathedraal
 youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg
