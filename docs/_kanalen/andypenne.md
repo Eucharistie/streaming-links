@@ -2,11 +2,11 @@
 community: Parochiefederatie Holsbeek
 priests: [pastoor Andy Penne]
 locations:
-- city: Holsbeek
-  postcode: 3220
-  diocese: Mechelen-Brussel
-  dioceseRegion: Leuven
-  country: BE
+  - city: Holsbeek
+    postcode: 3220
+    diocese: Mechelen-Brussel
+    dioceseRegion: Leuven
+    country: BE
 timetable:
 # - time: 09:00
 #  days: [sun]
@@ -21,30 +21,30 @@ timetable:
 #  kind: weekMass
 #  language: nl
 # - title: Witte Donderdag
-- time: 20:00
-  dates: [thu]
-  kind: sundayMass
-  language: nl
-# - title: Goede Vrijdag - Kruisweg
-- time: 15:00
-  dates: [fri]
-  kind: weekMass
-  language: nl
-# - title: Goede Vrijdag - Liturgie
-- time: 20:00
- dates: [fri]
- kind: weekMass
- language: nl
-# - title: Paaswake
-- time: 20:00
-  dates: [sat]
-  kind: sundayMass
-  language: nl
-# - title: Pasen
-- time: 09:00
-  dates: [fri]
-  kind: sundayMass
-  language: nl  
+  - time: 20:00
+    dates: [thu]
+    kind: sundayMass
+    language: nl
+  # - title: Goede Vrijdag - Kruisweg
+  - time: 15:00
+    dates: [fri]
+    kind: weekMass
+    language: nl
+  # - title: Goede Vrijdag - Liturgie
+  - time: 20:00
+    dates: [fri]
+    kind: weekMass
+    language: nl
+  # - title: Paaswake
+  - time: 20:00
+    dates: [sat]
+    kind: sundayMass
+    language: nl
+  # - title: Pasen
+  - time: 09:00
+    dates: [sun]
+    kind: sundayMass
+    language: nl  
 facebook: https://www.facebook.com/andy.penne.5
 fbid: 1629533551
 stream: https://www.facebook.com/andy.penne.5

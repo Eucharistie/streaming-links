@@ -3,20 +3,20 @@ channel: Het Oude Klooster Maleizen
 community: Servi Jesu et Mariae SJM
 priests: [pater Gert Verbeken]
 locations:
-- city: Overijse
-  postcode: 3090
-  diocese: Mechelen-Brussel
-  dioceseRegion: Vlaams Brabant
-  country: BE
+  - city: Overijse
+    postcode: 3090
+    diocese: Mechelen-Brussel
+    dioceseRegion: Vlaams Brabant
+    country: BE
 timetable:
-- time: 10:00
-  days: [sun]
-  kind: sundayMass
-  language: la
-- time: 17:00
-  days: [mon,tue,wed,thu,fri,sat]
-  kind: weekMass
-  language: la    
+  - time: 10:00
+    days: [sun]
+    kind: sundayMass
+    language: la
+  - time: 17:00
+    days: [mon,tue,wed,thu,fri,sat]
+    kind: weekMass
+    language: la    
 facebook: https://www.facebook.com/Het-Oude-Klooster-104555811051318
 fbid: 104555811051318
 youtube: https://www.youtube.com/channel/UC7lUxNFc6p777LTjiz6MMTA
