@@ -4,8 +4,8 @@ community:
 priests: [Paus Franciscus]
 diocese:
 locations:
-- city: Rome
-  country: IT
+  - city: Rome
+    country: IT
 timetable:
   - time: 18:00
     days: []

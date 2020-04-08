@@ -3,10 +3,10 @@ title:
 community: Communauté des Béatitudes
 priests: []
 locations:
-- city: Thy-le-Château
-  postcode: 5651
-  diocese: Namen
-  country: BE
+  - city: Thy-le-Château
+    postcode: 5651
+    diocese: Namen
+    country: BE
 timetable:
 # - time: 11:00
 #  days: [sun]
@@ -20,26 +20,26 @@ timetable:
 #  days: [thu]
 #  kind: weekMass
 #  language: fr
-- time: 20:30
-  days: [thu]
-  kind: sundayMass
-  language: fr
-- time: 15:00
-  days: [fri]
-  kind: weekMass
-  language: fr
-- time: 17:00
-  days: [fri]
-  kind: sundayMass
-  language: fr  
-- time: 21:00
-  days: [sat]
-  kind: sundayMass
-  language: fr 
-- time: 11:00
-  days: [sun]
-  kind: sundayMass
-  language: fr  
+  - time: 20:30
+    days: [thu]
+    kind: sundayMass
+    language: fr
+  - time: 15:00
+    days: [fri]
+    kind: weekMass
+    language: fr
+  - time: 17:00
+    days: [fri]
+    kind: sundayMass
+    language: fr  
+  - time: 21:00
+    days: [sat]
+    kind: sundayMass
+    language: fr 
+  - time: 11:00
+    days: [sun]
+    kind: sundayMass
+    language: fr  
 facebook: https://www.facebook.com/thybeatitudes
 fbid: 592802614102813
 youtube: https://www.youtube.com/channel/UC3lWbDfR3f32aHLuM8YMBnQ
