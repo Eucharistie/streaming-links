@@ -32,12 +32,12 @@ timetable:
   language: nl
 # - title: Goede Vrijdag - Liturgie
 - time: 20:00
-  dates: [fri]
-  kind: sundayMass
-  language: nl
+ dates: [fri]
+ kind: weekMass
+ language: nl
 # - title: Paaswake
 - time: 20:00
-  dates: [fri]
+  dates: [sat]
   kind: sundayMass
   language: nl
 # - title: Pasen
