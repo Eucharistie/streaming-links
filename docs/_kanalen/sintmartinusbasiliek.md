@@ -13,17 +13,17 @@ timetable:
   kind: sundayMass
   language: nl
 # - title: Witte Donderdag
-  time: 19:00
+- time: 19:00
   dates: [thu]
   kind: sundayMass
   language: nl
 # - title: Goede Vrijdag - Liturgie
-  time: 19:00
+- time: 19:00
   dates: [fri]
   kind: sundayMass
   language: nl
 # - title: Paaswake
-  time: 20:00
+- time: 20:00
   dates: [sat]
   kind: sundayMass
   language: nl

@@ -9,22 +9,22 @@ locations:
   dioceseRegion:
 timetable:
 # - title: Palmzondag
-  time: 10:30
+- time: 10:30
   dates: [sun]
   kind: sundayMass
   language: nl
 # - title: Witte Donderdag
-  time: 19:00
+- time: 19:00
   dates: [thu]
   kind: sundayMass
   language: nl
 # - title: Goede Vrijdag - Liturgie
-  time: 20:00
+- time: 20:00
   dates: [fri]
   kind: sundayMass
   language: nl
 # - title: Paaswake
-  time: 20:00
+- time: 20:00
   dates: [sat]
   kind: sundayMass
   language: nl

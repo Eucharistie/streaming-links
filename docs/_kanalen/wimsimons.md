@@ -20,32 +20,32 @@ timetable:
 #    kind: sundayMass
 #    language: nl
 # - title: Witte Donderdag
-  time: 18:00
+- time: 18:00
   dates: [thu]
   kind: sundayMass
   language: nl
 # - title: Goede Vrijdag - Kruisweg
-  time: 14:00
+- time: 14:00
   dates: [fri]
   kind: weekMass
   language: nl
 # - title: Goede Vrijdag - Liturgie
-  time: 18:00
+- time: 18:00
   dates: [fri]
   kind: sundayMass
   language: nl
 # - title: Paaswake
-  time: 21:00
+- time: 21:00
   dates: [sat]
   kind: sundayMass
   language: nl
 # - title: Pasen
-  time: 09:00
+- time: 09:00
   dates: [sun]
   kind: sundayMass
   language: nl 
 # - title: Paasmaandag
-  time: 09:00
+- time: 09:00
   dates: [mon]
   kind: sundayMass
   language: nl 
