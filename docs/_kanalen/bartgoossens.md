@@ -14,7 +14,7 @@ timetable:
     language: nl
   - title: Goede Vrijdag - Kruisweg
     time: 15:00
-    dates: [fri]
+    days: [fri]
     kind: feast
     language: nl 
 facebook:

@@ -19,7 +19,7 @@ timetable:
   language: nl
 # - title: Goede Vrijdag - Kruisweg
 - time: 15:00
-  dates: [fri]
+  days: [fri]
   kind: weekMass
   language: nl 
 facebook: https://www.facebook.com/DeKathedraal/

@@ -14,17 +14,17 @@ timetable:
     language: nl
   # - title: Witte Donderdag
   - time: 19:00
-    dates: [thu]
+    days: [thu]
     kind: sundayMass
     language: nl
   # - title: Goede Vrijdag - Liturgie
   - time: 19:00
-    dates: [fri]
+    days: [fri]
     kind: sundayMass
     language: nl
   # - title: Paaswake
   - time: 20:00
-    dates: [sat]
+    days: [sat]
     kind: sundayMass
     language: nl
 facebook: https://www.facebook.com/basiliekhalle/live

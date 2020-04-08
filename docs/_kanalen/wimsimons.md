@@ -21,32 +21,32 @@ timetable:
 #    language: nl
 # - title: Witte Donderdag
   - time: 18:00
-    dates: [thu]
+    days: [thu]
     kind: sundayMass
     language: nl
   # - title: Goede Vrijdag - Kruisweg
   - time: 14:00
-    dates: [fri]
+    days: [fri]
     kind: weekMass
     language: nl
   # - title: Goede Vrijdag - Liturgie
   - time: 18:00
-    dates: [fri]
+    days: [fri]
     kind: sundayMass
     language: nl
   # - title: Paaswake
   - time: 21:00
-    dates: [sat]
+    days: [sat]
     kind: sundayMass
     language: nl
   # - title: Pasen
   - time: 09:00
-    dates: [sun]
+    days: [sun]
     kind: sundayMass
     language: nl 
   # - title: Paasmaandag
   - time: 09:00
-    dates: [mon]
+    days: [mon]
     kind: sundayMass
     language: nl 
 facebook: https://www.facebook.com/wim.simons.71
