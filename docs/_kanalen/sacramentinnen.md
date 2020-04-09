@@ -24,6 +24,36 @@ timetable:
   days: [mon,tue,wed,thu,fri]
   kind: weekMass
   language: nl
+- title: Witte Donderdag
+  time: 19:00
+  dates: [2020-04-09]
+  kind: feast
+  language: nl
+- title: Goede Vrijdag - Kruisweg
+  time: 15:00
+  dates: [2020-04-10]
+  kind: feast
+  language: nl
+- title: Paaswake
+  time: 20:00
+  dates: [2020-04-11]
+  kind: feast
+  language: nl
+- title: Pasen
+  time: 08:30
+  dates: [2020-04-12]
+  kind: feast
+  language: nl 
+- title: Paasmaandag
+  time: 08:30
+  dates: [2020-04-13]
+  kind: feast
+  language: nl  
+- title: Paasmaandag
+  time: 19:00
+  dates: [2020-04-13]
+  kind: feast
+  language: nl   
 facebook: https://www.facebook.com/Begijnhofhalle
 fbid: Begijnhofhalle
 stream: https://www.facebook.com/Begijnhofhalle
