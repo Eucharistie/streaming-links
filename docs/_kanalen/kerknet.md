@@ -19,4 +19,3 @@ homepage: https://www.kerknet.be
 stream: 
 youtubeChannelID: 
 ---
-
