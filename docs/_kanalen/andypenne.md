@@ -20,6 +20,31 @@ timetable:
   days: [mon,wed,thu]
   kind: weekMass
   language: nl
+- title: Witte Donderdag
+  time: 20:00
+  dates: [2020-04-09]
+  kind: feast
+  language: nl
+- title: Goede Vrijdag - Kruisweg
+  time: 15:00
+  dates: [2020-04-10]
+  kind: feast
+  language: nl
+- title: Goede Vrijdag - Liturgie
+  time: 20:00
+  dates: [2020-04-10]
+  kind: feast
+  language: nl
+- title: Paaswake
+  time: 20:00
+  dates: [2020-04-11]
+  kind: feast
+  language: nl
+- title: Pasen
+  time: 09:00
+  dates: [2020-04-12]
+  kind: feast
+  language: nl  
 facebook: https://www.facebook.com/andy.penne.5
 fbid: 1629533551
 stream: https://www.facebook.com/andy.penne.5

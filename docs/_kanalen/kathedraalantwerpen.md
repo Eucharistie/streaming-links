@@ -9,19 +9,13 @@ locations:
   country: BE
 timetable:
 - time: 10:00
-  days: [sun]
+  days: []
   kind: sundayMass
   language: nl
 - time: 10:00
   days: [mon,tue,wed,thu,fri,sat]
-  excludingDates: [2020-04-10]
   kind: weekMass
   language: nl
-- time: 15:00
-  dates: [2020-04-10]
-  kind: feast
-  language: nl
-
 facebook: https://www.facebook.com/DeKathedraal/
 fbid: DeKathedraal
 youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg
