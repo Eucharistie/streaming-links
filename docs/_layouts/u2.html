@@ -1,6 +1,11 @@
 ---
 layout: main
 ---
+{% comment %}
+╭────────────────────╮
+│ U2 —— Uurrooster 2 │
+╰────────────────────╯{% endcomment %}
+
 {% assign locale = page.locale %}
 {% assign localDays = site.data.cldr.main[locale].dates.calendars.generic.days.format.wide %}
 
@@ -147,6 +152,7 @@ layout: main
     return days
   }
 
+  // This creates elements for all events in the calendar
   const populateCalendar = function() {
     var calendarEvents = []
     // [mon, tue, wed, ...]
@@ -154,10 +160,11 @@ layout: main
       var hourEvents = {};
       channels.forEach(function (channel) {
         channel.timetable.forEach(function (event) {
-          if ((event.days && event.days.indexOf(day) >= 0) || datesToDays(event.dates).indexOf(day) >= 0 ) {
+          const eventHasDay = event.days && event.days.indexOf(day) >= 0;
+          const eventHasDate = datesToDays(event.dates).indexOf(day) >= 0;
+          if ( eventHasDay || eventHasDate ) {
             const eventDom = eventElement.cloneNode();
             const langDom = languageElement.cloneNode();
-            // XXX url instead of title
             eventDom.innerText = eventTitle(channel, event) + " ";
             if (event.kind == 'sundayMass') eventDom.classList.add("text-blue");
             else if (event.kind == 'feast') eventDom.classList.add("text-red");
@@ -197,15 +204,18 @@ layout: main
     calendar.forEach(function (row) {
       const isRowDay = (row.day === dateToDay(date));
       var eventCount = row.events.length;
-      console.log("row",row.events,row.events.length);
       row.events.forEach(function(event) {
+
         // event has dates but not this date:
-        const notThisDate = event.event.dates && Array.isArray(event.event.dates) && (event.event.dates.indexOf(date) === -1)
+        const notThisDate = event.event.dates && Array.isArray(event.event.dates) && (event.event.dates.indexOf(date) === -1);
+
+        // event has exlude dates
+        const excludesThisDate = event.event.excludingDates && Array.isArray(event.event.excludingDates) && (event.event.excludingDates.indexOf(date) >= 0);
+
         if (notThisDate) {
           eventCount--;
-          console.log(row.day, row.time, date, event.event.dates, Array.isArray(event.event.dates), (event.event.dates.indexOf(date) === -1), eventCount);
         }
-        event.dom.hidden = notThisDate;
+        event.dom.hidden = ( notThisDate || excludesThisDate );
       })
       row.dom.hidden = ( (!isRowDay) || (eventCount === 0) );
     })
