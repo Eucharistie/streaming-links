@@ -4,8 +4,13 @@ layout: main
 {% assign locale = page.locale %}
 {% assign localDays = site.data.cldr.main[locale].dates.calendars.generic.days.format.wide %}
 
+
 <div class="Box border-left-0 border-right-0 border-md rounded-0 rounded-md-2 overflow-hidden">
+
+  <!-- timetable header -->
   <div class="Box-header order-0 border-md rounded-0 rounded-md-top-2 d-flex flex-justify-between Box-header--blue">
+
+    <!-- filter button -->
     <details class="details-reset details-overlay m-0 mr-3" id="filter">
       <summary class="btn btn-sm" aria-haspopup="true">
         {% octicon settings class:"mr-1" %}
@@ -30,37 +35,41 @@ layout: main
         </div>
       </div>
     </details>
+
+    <!-- mobile day chooser (for desktop: sidenav) -->
     <div class="BtnGroup hide-lg hide-xl m-0">
-      <button onclick="showDay('previous')" class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron left icon">
+      <button class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron left icon" id="previousDay">
         {% octicon chevron-left %}
       </button>
-      <button class="text-center btn btn-sm BtnGroup-item" style="width: 8em;" id="currentDay" onclick="showDay(today)">
+      <button class="text-center btn btn-sm BtnGroup-item" hidden style="width: 8em;" id="currentDay">
         <!-- day of week comes here -->
       </button>
-      <button onclick="showDay('next')" class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron right icon">
+      <button class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron right icon" id="nextDay">
         {% octicon chevron-right %}
       </button>
     </div>
-    <div class="hide-lg hide-xl" style="width: 58px;">
 
+    <div class="hide-lg hide-xl" style="width: 58px;">
     </div>
-  </div>
+
+  </div> <!-- end timetable header -->
 
   <div class="flash flash-full py-1" hidden id="live-soon">
     Volgende uitzendingen:
   </div>
 
-  <!-- day of week -->
+  <!-- time-of-day row -->
+  <div class="Box-row day-row" hidden>
 
-    <!-- time of day for this day -->
-    <div class="Box-row day-row" hidden>
+    <!-- calendar event -->
+    <a href="" class="capitalize-first-letter event Label Label--gray">
+      <!-- event name here -->
+      <span class="Counter Counter--gray language-badge">
+        <!-- event language here -->
+      </span>
+    </a>
 
-      <!-- events for this time of day -->
-      <a href="" class="capitalize-first-letter event Label Label--gray">
-        <span class="Counter Counter--gray language-badge"></span>
-      </a>
-
-    </div>
+  </div>
 
   <div class="Box-footer day-footer text-small bg-gray">
     {% include timetable_legend.html %}
@@ -202,6 +211,13 @@ layout: main
     })
   }
 
+  const addDays = function (days) {
+    var newdate = new Date(datePickerDesktop.selectedDates[0]);
+    newdate.setDate(newdate.getDate() + days);
+    datePickerDesktop.setDate(new Date(newdate), true);
+    datePickerMobile.setDate(new Date(newdate), true);
+  }
+
   const calendar = populateCalendar();
   // show today
   showDate(shortDate(new Date()));
@@ -217,7 +233,7 @@ layout: main
   maxDate.setDate(maxDate.getDate() + 365);
   maxDate = shortDate(new Date(maxDate));
 
-  flatpickr(
+  const datePickerDesktop = flatpickr(
     "#datePicker .widget",
     {
       inline: true,
@@ -230,5 +246,26 @@ layout: main
       }
     }
   );
+
+  const datePickerMobile = flatpickr(
+    "#currentDay.btn",
+    {
+      locale: siteLocale.slice(0,2),
+      minDate: minDate,
+      maxDate: maxDate,
+      defaultDate: new Date(),
+      onChange: function (selectedDates, dateStr, instance) {
+        showDate(dateStr);
+      },
+    }
+  );
+
+  document.querySelector("#nextDay").addEventListener('click', function () {
+    addDays(1);
+  });
+
+  document.querySelector("#previousDay").addEventListener('click', function () {
+    addDays(-1);
+  });
 
 </script>
