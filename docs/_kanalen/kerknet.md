@@ -3,21 +3,21 @@ community: Kerknet
 priests: []
 locations:
 - city: Gent
-    diocese: 
-    country: BE
-    community: Crypte Seminariehuis
-  - city: Antwerpen
-    diocese: 
-    country: BE
-    community: Onze-Lieve-Vrouwe Kathedraal
-  - city: Westvleteren
-    diocese: 
-    country: BE
-    community: Sint-Sixtusabdij
-  - city: Paris
-    diocese: 
-    country: BE
-    community: Eurovisie
+  diocese:
+  country: BE
+  community: Crypte Seminariehuis
+- city: Antwerpen
+  diocese:
+  country: BE
+  community: Onze-Lieve-Vrouwe Kathedraal
+- city: Westvleteren
+  diocese:
+  country: BE
+  community: Sint-Sixtusabdij
+- city: Paris
+  diocese:
+  country: BE
+  community: Eurovisie
 timetable:
 - time: 10:00
   days: [sun]
@@ -51,6 +51,6 @@ facebook: https://www.facebook.com/Kerknet-384549141651808/
 fbid:
 youtube: https://www.youtube.com/channel/UCf0kwiiUpoaD5_4kIIwhNfA/live
 homepage: https://www.kerknet.be
-stream: 
-youtubeChannelID: 
+stream:
+youtubeChannelID:
 ---
