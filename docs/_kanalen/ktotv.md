@@ -9,7 +9,7 @@ locations:
 - city: Paris
   diocese: Paris
   country: FR
-  community: Saint-Germain l'Auxerrois
+  community: St. Germain l'Auxerrois
 - city: Lourdes
   diocese: Tarbes et Lourdes
   country: FR
@@ -21,7 +21,7 @@ timetable:
   location: 0
   priests: [0]
 - time: 07:00
-  days: []
+  days: [sun]
   kind: sundayMass
   language: fr
   location: 0
@@ -31,11 +31,6 @@ timetable:
   kind: sundayMass
   language: fr
   location: 2
-- days: [sun]
-  time: 11:00
-  kind: sundayMass
-  language: fr
-  location: 0
 - time: 10:00
   days: [mon,tue,wed,thu,fri,sat]
   kind: weekMass
