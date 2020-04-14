@@ -1,14 +1,14 @@
 ---
-community: Scherpenheuvel
-priests: [pastoor Luc Van Hilst]
+community: Johannes XXIII Seminarie
+priests: [priester Filip Hacour]
 locations:
-- city: Scherpenheuvel
-  postcode: 
+- city: Leuven
+  postcode: 3000
   diocese: Mechelen-Brussel
-  dioceseRegion: 
+  dioceseRegion: Leuven
   country: BE
 timetable:
-- time: 07:15
+- time: 09:30
   days: [sun]
   kind: sundayMass
   language: nl
@@ -18,7 +18,7 @@ timetable:
   kind: feast
   language: nl
 - title: Goede Vrijdag - Kruisweg
-  time: 9:30
+  time: 15:00
   dates: [2020-04-10]
   kind: feast
   language: nl
@@ -28,19 +28,18 @@ timetable:
   kind: feast
   language: nl
 - title: Paaswake
-  time: 20:00
+  time: 23:59
   dates: [2020-04-11]
   kind: feast
   language: nl
 - title: Pasen
-  time: 7:00
+  time: 10:30
   dates: [2020-04-12]
   kind: feast
   language: nl  
-facebook: 
-fbid: 
-youtube: https://www.youtube.com/channel/UClr4DblRzHvfr1YsqOwu7kg
-homepage: www.scherpenheuvel.be
-stream: https://www.youtube.com/watch?v=Az6fhnl25Ck
+facebook: https://www.facebook.com/Johannes-XXIII-Seminarie-309563685301/live
+fbid: 309563685301
+youtube:
+homepage:
+stream:
 ---
-Eclips-tv (Telenet 51/Proximus 90)
