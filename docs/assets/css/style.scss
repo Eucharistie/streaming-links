@@ -95,6 +95,18 @@ body {
   }
 }
 
+
+#datePicker .flatpickr-calendar {
+  box-shadow: none;
+  &::before,
+  &::after {
+    border: none;
+  }
+  .flatpickr-current-month .flatpickr-monthDropdown-months {
+    -webkit-appearance: none;
+  }
+}
+
 .blockquote-wrapper {
   background-image: url('{{site.baseurl}}/assets/img/eucharistie_home.1920.jpg');
 }

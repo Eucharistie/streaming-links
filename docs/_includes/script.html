@@ -51,7 +51,7 @@
 
   // hide sideflash
   function hideSiteFlash() {
-    localStorage.setItem('hideSiteFlash', '2');
+    localStorage.setItem('hideSiteFlash', "3");
     siteFlash.hidden = true;
   }
 
@@ -136,7 +136,7 @@
 
   // show siteFlash unless user has hidden it before
   setTimeout(function() {
-    siteFlash.hidden = (localStorage.getItem('hideSiteFlash') === "2");
+    siteFlash.hidden = (localStorage.getItem('hideSiteFlash') === "3");
   }, 2000);
 
 

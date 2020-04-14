@@ -2,42 +2,41 @@
 community: Scherpenheuvel
 priests: [pastoor Luc Van Hilst]
 locations:
-  - city: Scherpenheuvel
-    postcode: 
-    diocese: Mechelen-Brussel
-    dioceseRegion: 
-    country: BE
+- city: Scherpenheuvel
+  postcode: 
+  diocese: Mechelen-Brussel
+  dioceseRegion: 
+  country: BE
 timetable:
-# Palmzondag
-# - time: 07:15
-#  days: [sun]
-#  kind: sundayMass
-#  language: nl
-# - title: Witte Donderdag
-  - time: 20:00
-    days: [thu]
-    kind: sundayMass
-    language: nl
-  # - title: Goede Vrijdag - Kruisweg
-  - time: 9:30
-    days: [fri]
-    kind: weekMass
-    language: nl
-  # - title: Goede Vrijdag - Liturgie
-  - time: 20:00
-    days: [fri]
-    kind: sundayMass
-    language: nl
-  # - title: Paaswake
-  - time: 20:00
-    days: [sat]
-    kind: sundayMass
-    language: nl
-  # - title: Pasen
-  - time: 7:00
-    days: [sun]
-    kind: sundayMass
-    language: nl  
+- time: 07:15
+  days: [sun]
+  kind: sundayMass
+  language: nl
+- title: Witte Donderdag
+  time: 20:00
+  dates: [2020-04-09]
+  kind: feast
+  language: nl
+- title: Goede Vrijdag - Kruisweg
+  time: 9:30
+  dates: [2020-04-10]
+  kind: feast
+  language: nl
+- title: Goede Vrijdag - Liturgie
+  time: 20:00
+  dates: [2020-04-10]
+  kind: feast
+  language: nl
+- title: Paaswake
+  time: 20:00
+  dates: [2020-04-11]
+  kind: feast
+  language: nl
+- title: Pasen
+  time: 7:00
+  dates: [2020-04-12]
+  kind: feast
+  language: nl  
 facebook: 
 fbid: 
 youtube: https://www.youtube.com/channel/UClr4DblRzHvfr1YsqOwu7kg
