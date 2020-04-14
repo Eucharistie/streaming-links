@@ -2,58 +2,28 @@
 community: Begijnhof O.L.Vrouw ter Engelen
 priests: [priester Serge De Cauwer]
 locations:
-  - city: Halle
-    postcode: 1500
-    country: BE
-    diocese: Mechelen-Brussel
-    dioceseRegion: Halle
+- city: Halle
+  postcode: 1500
+  country: BE
+  diocese: Mechelen-Brussel
+  dioceseRegion: Halle
 timetable:
-#  - time: 08:30
-#    days: [sun]
-#    kind: sundayMass
-#    language: nl
-#  - time: 19:00
-#    days: [sat]
-#    kind: sundayMass
-#    language: nl
-#  - time: 08:00
-#    days: [mon,tue,wed,thu,fri,sat]
-#    kind: weekMass
-#    language: nl
-#  - time: 19:00
-#    days: [mon,tue,wed,thu,fri]
-#    kind: weekMass
-#    language: nl
-# - title: Witte Donderdag
-  - time: 19:00
-    days: [thu]
-    kind: sundayMass
-    language: nl
-  # - title: Goede Vrijdag - Kruisweg
-  - time: 15:00
-    days: [fri]
-    kind: weekMass
-    language: nl
-  # - title: Paaswake
-  - time: 20:00
-    days: [sat]
-    kind: sundayMass
-    language: nl
-  # - title: Pasen
-  - time: 08:30
-    days: [sun]
-    kind: sundayMass
-    language: nl 
-  # - title: Paasmaandag
-  - time: 08:30
-    days: [mon]
-    kind: sundayMass
-    language: nl
-  - time: 19:00
-    days: [mon]
-    kind: sundayMass
-    language: nl     
-    
+- time: 08:30
+  days: [sun]
+  kind: sundayMass
+  language: nl
+- time: 19:00
+  days: [sat]
+  kind: sundayMass
+  language: nl
+- time: 08:00
+  days: [mon,tue,wed,thu,fri,sat]
+  kind: weekMass
+  language: nl
+- time: 19:00
+  days: [mon,tue,wed,thu,fri]
+  kind: weekMass
+  language: nl
 facebook: https://www.facebook.com/Begijnhofhalle
 fbid: Begijnhofhalle
 stream: https://www.facebook.com/Begijnhofhalle

@@ -5,13 +5,13 @@
   </a>
   {% if layout.sideNav == 'timetable' %}
   <nav class="SideNav bg-white border-top py-3 pl-6 days hide-sm hide-md">
+    <a class="SideNav-subItem" data-day="sun" href="#">zondag</a>
     <a class="SideNav-subItem" data-day="mon" href="#">maandag</a>
     <a class="SideNav-subItem" data-day="tue" href="#">dinsdag</a>
     <a class="SideNav-subItem" data-day="wed" href="#">woensdag</a>
-    <a class="SideNav-subItem" data-day="thu" href="#">Witte Donderdag</a>
-    <a class="SideNav-subItem" data-day="fri" href="#">Goede Vrijdag</a>
-    <a class="SideNav-subItem" data-day="sat" href="#">Stille Zaterdag</a>
-    <a class="SideNav-subItem" data-day="sun" href="#">Pasen</a>  
+    <a class="SideNav-subItem" data-day="thu" href="#">donderdag</a>
+    <a class="SideNav-subItem" data-day="fri" href="#">vrijdag</a>
+    <a class="SideNav-subItem" data-day="sat" href="#">zaterdag</a>
   </nav>
   {% endif %}
   <a class="SideNav-item no-wrap" href="{{ site.baseurl }}/kanalen" aria-current="{% if page.route == 'channels' or layout.sideNav == 'channel' %}page{% endif %}">

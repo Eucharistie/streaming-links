@@ -2,11 +2,11 @@
 community: Parochie Sint-Jan-Baptist
 priests: [pastoor Matthias Noë]
 locations:
-  - country: BE
-    city: Kachtem
-    postcode: 8870
-    diocese: Brugge
-    dioceseRegion: Roeselare-Izegem
+- country: BE
+  city: Kachtem
+  postcode: 8870
+  diocese: Brugge
+  dioceseRegion: Roeselare-Izegem
 timetable:
   - time: 10:30
     days: [sun]

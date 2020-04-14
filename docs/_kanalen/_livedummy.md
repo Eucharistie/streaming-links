@@ -7,8 +7,8 @@ community:
 priests: [1jfhdkglh,fjhgklsm,fjsdiq]
 diocese:
 location:
-  - city: Halle
-    country: BE
+- city: Halle
+  country: BE
 language:
 timetable:
   - time: 10:00
