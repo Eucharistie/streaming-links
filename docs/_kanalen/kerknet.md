@@ -19,12 +19,11 @@ locations:
   country: BE
   community: Eurovisie
 - city: Jette
-  diocese
   country: BE
   community: Kerk Jette
 timetable:
 - time: 10:00
-  days: [sun]
+  dates: [2020-04-19]
   kind: sundayMass
   language: nl
   location: 4
