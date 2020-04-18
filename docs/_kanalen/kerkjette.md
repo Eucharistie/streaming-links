@@ -8,9 +8,10 @@ locations:
   dioceseRegion: Centrum
   country: BE
 timetable:
-- time: 10:00
-  days: [sun]
-  kind: sundayMass
+- title: VRT-Mis Jette
+  time: 10:00
+  dates: [2020-04-19]
+  kind: feast
   language: nl
 facebook: https://www.facebook.com/groups/43323561723/
 fbid:
