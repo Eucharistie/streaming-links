@@ -21,7 +21,7 @@ timetable:
   days: [tue,wed,thu,fri,sat]
   kind: weekMass
   language: fr
-facebook: https://www.facebook.com/Fraternite.Tiberiade/
+facebook: https://www.facebook.com/Fraternite.Tiberiade/live
 fbid: 133601110070929
 youtube:
 homepage: https://www.tiberiade.be
