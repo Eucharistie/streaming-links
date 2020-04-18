@@ -22,3 +22,5 @@ youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg
 homepage: https://www.kerknet.be/bisdom-antwerpen/artikel/coronacrisis-dag-verbinding-met-bisschop-liturgisch-aanbod?microsite=203
 youtubeChannelID: UCoBsBL5PSYnOKZVwu2r0Drg
 ---
+
+Hier is een korte omschrijving.
