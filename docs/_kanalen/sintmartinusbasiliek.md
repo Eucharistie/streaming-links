@@ -1,5 +1,5 @@
 ---
-community: Parochie Sint-Martinus Basiliek
+community: Sint-Martinus Basiliek Halle
 priests: [priester Servaas Bosch]
 locations:
 - city: Halle
