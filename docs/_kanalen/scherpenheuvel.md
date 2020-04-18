@@ -41,7 +41,7 @@ timetable:
 facebook: 
 fbid: 
 youtube: https://www.youtube.com/channel/UClr4DblRzHvfr1YsqOwu7kg
-homepage: www.scherpenheuvel.be
+homepage: http://www.scherpenheuvel.be
 stream: https://www.youtube.com/watch?v=Az6fhnl25Ck
 ---
 Eclips-tv (Telenet 51/Proximus 90)
