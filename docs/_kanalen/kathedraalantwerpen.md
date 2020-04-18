@@ -9,18 +9,24 @@ locations:
   country: BE
 timetable:
 - time: 10:00
-  days: []
+  days: [sun]
   kind: sundayMass
   language: nl
 - time: 10:00
-  days: [mon,tue,wed,thu,fri,sat]
+  days: [sat]
   kind: weekMass
   language: nl
-facebook: https://www.facebook.com/DeKathedraal/
+- time: 16:00
+  days: [mon,tue,wed,thu,fri]
+  kind: weekMass
+  language: nl
+- time: 15:00
+  days: [fri]
+  kind: weekMass
+  language: en  
+facebook: https://www.facebook.com/DeKathedraal/live
 fbid: DeKathedraal
 youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg
-homepage: https://www.kerknet.be/bisdom-antwerpen/artikel/coronacrisis-dag-verbinding-met-bisschop-liturgisch-aanbod?microsite=203
+homepage: https://www.kerknet.be/bisdom-antwerpen/video/coronacrisis-liturgisch-en-bezinnend-aanbod-online?
 youtubeChannelID: UCoBsBL5PSYnOKZVwu2r0Drg
 ---
-
-Hier is een korte omschrijving.
