@@ -20,12 +20,6 @@ timetable:
   language: fr
   location: 0
   priests: [0]
-- time: 07:00
-  days: []
-  kind: sundayMass
-  language: fr
-  location: 0
-  priests: [0]
 - days: [sun]
   time: 10:00
   kind: sundayMass
