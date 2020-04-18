@@ -20,10 +20,10 @@ timetable:
   days: [mon,tue,wed,thu,fri]
   kind: weekMass
   language: nl
-- time: 15:00
-  days: [fri]
-  kind: weekMass
-  language: en  
+# - time: 15:00
+#  days: [fri]
+#  kind: weekMass
+#  language: en  
 facebook: https://www.facebook.com/DeKathedraal/live
 fbid: DeKathedraal
 youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg
