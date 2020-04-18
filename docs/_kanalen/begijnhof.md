@@ -56,7 +56,7 @@ timetable:
   language: nl   
 facebook: https://www.facebook.com/Begijnhofhalle/live
 fbid: Begijnhofhalle
-stream: https://www.facebook.com/Begijnhofhalle
+stream: https://www.facebook.com/Begijnhofhalle/live
 homepage: https://monasteriumhalle.wordpress.com/dagorde/
 ---
 De vroegere Sacramentinnen
