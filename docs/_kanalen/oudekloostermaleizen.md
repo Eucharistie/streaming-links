@@ -47,7 +47,7 @@ timetable:
   dates: [2020-04-13]
   kind: feast
   language: la 
-facebook: https://www.facebook.com/Het-Oude-Klooster-104555811051318
+facebook: https://www.facebook.com/Het-Oude-Klooster-104555811051318/live
 fbid: 104555811051318
 youtube: https://www.youtube.com/channel/UC7lUxNFc6p777LTjiz6MMTA
 homepage: http://www.hetoudekloostermaleizen.be

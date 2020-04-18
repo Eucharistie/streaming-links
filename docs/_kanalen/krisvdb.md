@@ -27,6 +27,6 @@ timetable:
   dates: [2020-04-11]
   kind: feast
   language: nl
-facebook: https://www.facebook.com/kris.vandenbossche.58
+facebook: https://www.facebook.com/kris.vandenbossche.58/live
 fbid: 1400044731
 ---

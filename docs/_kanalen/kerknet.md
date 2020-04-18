@@ -18,11 +18,15 @@ locations:
   diocese:
   country: BE
   community: Eurovisie
+- city: Jette
+  country: BE
+  community: VRT-Mis
 timetable:
 - time: 10:00
-  days: [sun]
+  dates: [2020-04-19]
   kind: sundayMass
   language: nl
+  location: 4
 - title: Witte Donderdag
   time: 19:00
   dates: [2020-04-09]
