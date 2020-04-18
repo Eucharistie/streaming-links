@@ -8,9 +8,10 @@ locations:
   dioceseRegion: 
   country: BE
 timetable:
-- time: 07:15
-  days: [sun]
-  kind: sundayMass
+- title: Palmzondag
+  time: 07:15
+  dates: [2020-04-05]
+  kind: feast
   language: nl
 - title: Witte Donderdag
   time: 20:00
