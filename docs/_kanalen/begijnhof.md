@@ -54,7 +54,7 @@ timetable:
   dates: [2020-04-13]
   kind: feast
   language: nl   
-facebook: https://www.facebook.com/Begijnhofhalle
+facebook: https://www.facebook.com/Begijnhofhalle/live
 fbid: Begijnhofhalle
 stream: https://www.facebook.com/Begijnhofhalle
 homepage: https://monasteriumhalle.wordpress.com/dagorde/
