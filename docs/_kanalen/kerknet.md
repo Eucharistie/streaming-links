@@ -20,7 +20,7 @@ locations:
   community: Eurovisie
 - city: Jette
   country: BE
-  community: Kerk Jette
+  community: VRT-Mis
 timetable:
 - time: 10:00
   dates: [2020-04-19]
