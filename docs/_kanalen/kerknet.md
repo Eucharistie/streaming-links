@@ -24,7 +24,7 @@ locations:
   community: Kerk Jette
 timetable:
 - time: 10:00
-  dates: [2020-04-19]
+  days: [sun]
   kind: sundayMass
   language: nl
   location: 4
