@@ -28,7 +28,7 @@ locations:
 timetable:
 - time: 10:00
   days: [sun]
-  excludingDates:[2020-04-26] 
+  excludingDates: [2020-04-26] 
   kind: sundayMass
   language: nl
 - time: 10:00
