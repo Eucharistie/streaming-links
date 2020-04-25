@@ -1,6 +1,6 @@
 ---
 community: Kerknet
-priests: []
+priests: [Mgr. Koen Vanhoutte]
 locations:
 - city: Gent
   diocese:
