@@ -18,11 +18,17 @@ timetable:
   language: nl
 - time: 08:00
   days: [mon,tue,wed,thu,fri,sat]
+  excludingDates: [2020-05-01]
   kind: weekMass
   language: nl
 - time: 19:00
   days: [mon,tue,wed,thu,fri]
   kind: weekMass
+  language: nl
+- title: H. Jozef, de arbeider
+  time: 8:30
+  dates: [2020-05-01]
+  kind: feast
   language: nl
 - title: Witte Donderdag
   time: 19:00
