@@ -13,6 +13,10 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: nl
+- time: 09:00
+  days: [mon,tue,wed,thu,fri,sat]
+  kind: weekMass
+  language: nl
 facebook: https://www.facebook.com/groups/61593270750
 youtube: https://www.youtube.com/channel/UCeWiKhPkh1RP0309DJE1MFg
 youtubeChannelID:
