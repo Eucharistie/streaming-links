@@ -8,7 +8,7 @@ locations:
   diocese: Mechelen-Brussel
   dioceseRegion: 
 timetable:
-- time: 11:00
+- time: 10:30
   days: [sun]
   kind: sundayMass
   language: nl
