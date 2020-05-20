@@ -14,12 +14,6 @@ locations:
   diocese: Tarbes et Lourdes
   country: FR
 timetable:
-- time: 07:00
-  days: [mon,tue,wed,thu,fri,sat]
-  kind: weekMass
-  language: fr
-  location: 0
-  priests: [0]
 - days: [sun]
   time: 10:00
   kind: sundayMass
