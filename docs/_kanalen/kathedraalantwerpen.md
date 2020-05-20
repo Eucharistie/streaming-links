@@ -18,7 +18,13 @@ timetable:
   language: nl
 - time: 16:00
   days: [mon,tue,wed,thu,fri]
+  excludingDates: [2020-05-21]
   kind: weekMass
+  language: nl
+- title: Hemelvaart van de Heer
+  time: 10:00
+  dates: [2020-05-21]
+  kind: feast
   language: nl
 # - time: 15:00
 #  days: [fri]
