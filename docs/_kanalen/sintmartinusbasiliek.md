@@ -12,6 +12,11 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: nl
+- title: Hemelvaart van de Heer
+  time: 10:00
+  dates: [2020-05-21]
+  kind: feast
+  language: nl
 - title: Witte Donderdag
   time: 19:00
   dates: [2020-04-09]
