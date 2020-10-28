@@ -1,0 +1,206 @@
+{
+	"type": "object",
+	"title": "Channel",
+	"description": "A channel that broadcasts the Holy Mass",
+	"properties": {
+		"name": {
+			"type": "string",
+			"description": "The name of the channel"
+		},
+		"shortName": {
+			"type": "string",
+			"description": "An abbreviation of the name to show in compact spaces such as timetables"
+		},
+		"locations": {
+			"type": "array",
+			"description": "List of locations from which this channel streams.",
+			"items": {
+				"type": "object",
+				"title": "Location",
+				"properties": {
+					"postalCode": {
+						"type": "integer"
+					},
+					"diocese": {
+						"type": "string"
+					},
+					"country": {
+						"type": "string"
+					},
+					"city": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"postalCode",
+					"diocese",
+					"country"
+				]
+			}
+		},
+		"priests": {
+			"type": "array",
+			"uniqueItems": true,
+			"description": "List of priest names who celebrate the eucharist",
+			"items": {
+				"type": "string"
+			}
+		},
+		"website": {
+			"type": "string",
+			"description": "A homepage for the channel",
+			"format": "uri"
+		},
+		"socialMedia": {
+			"type": "object",
+			"title": "Social media links",
+			"description": "Links to social media accounts of this channel",
+			"properties": {
+				"youtube": {
+					"title": "Youtube link",
+					"anyOf": [
+						{
+							"type": "object",
+							"title": "Youtube channel ID",
+							"properties": {
+								"channelID": {
+									"type": "string"
+								}
+							},
+							"required": ["channelID"]
+						},
+						{
+							"type": "object",
+							"title": "Youtube URL",
+							"properties": {
+								"url": {
+									"type": "string",
+									"format": "uri"
+								}
+							},
+							"required": ["url"]
+						}
+					]
+				},
+				"facebook": {
+					"type": "object",
+					"title": "Facebook link",
+					"properties": {
+						"id": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"id"
+					]
+				},
+				"other": {
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "string",
+						"title": "Social media URL",
+						"format": "uri"
+					}
+				}
+			}
+		},
+		"eucharistTimetable": {
+			"type": "array",
+			"items": {
+				"title": "Timetable entry",
+				"allOf": [
+					{
+						"type": "object",
+						"title": "Timetable entry main properties",
+						"properties": {
+							"time": {
+								"type": "string",
+								"pattern": "(?:[0-1]\\d)|(?:2[0-3]):[0-5]\\d",
+								"description": "The time of transmission in the format of: \"hh:mm\".",
+								"examples": ["18:30", "10:00"]
+							},
+							"kind": {
+								"type": "string",
+								"title": "Mass type",
+								"enum": ["week", "sunday", "feast"],
+								"meta:enum": {
+									"week": "for weekday masses",
+									"sunday": "for sunday masses",
+									"feast": "for feasts"
+								}
+							},
+							"location": {
+								"type": "integer",
+								"description": "An index into the top level locations array"
+							},
+							"language": {
+								"type": "string"
+							},
+							"excludingDates": {
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"title": "Date",
+									"type": "string",
+									"format": "date"						
+								}
+							}
+						},
+						"required": [
+							"time",
+							"location",
+							"kind",
+							"language"
+						]
+					},
+					{
+						"title": "Timetable entry date descriptor",
+						"description": "Describes the dates at which the entry occurs in the timetable",
+						"anyOf": [
+							{
+								"type": "object",
+								"title": "Weekly date descriptor",
+								"description": "Indicates the weekdays at which an entry occurs in the timetable",
+								"properties": {
+									"days": {
+										"type": "array",
+										"uniqueItems": true,
+										"items": {
+											"type": "string",
+											"title": "Weekdays",
+											"enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+										}
+									}
+								},
+								"required": ["days"]
+							},
+							{
+								"type": "object",
+								"title": "Exact date descriptor",
+								"properties": {
+									"dates": {
+										"type": "array",
+										"uniqueItems": true,
+										"items": {
+											"title": "Date",
+											"type": "string",
+											"format": "date"		
+										}
+									}
+								},
+								"required": ["dates"]
+							}
+						]
+					}
+				]
+			}
+		}
+	},
+	"required": [
+		"name",
+		"locations",
+		"priests",
+		"eucharistTimetable"
+	]
+}

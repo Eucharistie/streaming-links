@@ -1,0 +1,51 @@
+title: Notre Dame de l'Annonciation
+community: Parochiefederatie Holsbeek
+
+priests: [pastoor Andy Penne]
+
+# Contact
+homepage: http://www.priesterpenne.be
+facebook: https://www.facebook.com/ap
+fbid: 1629533551
+
+# Video streams
+stream: https://www.facebook.com/andy.penne.5
+youtube: https://www.youtube.com/channel/UClujihXO9L4sFyWkyiW_D2A
+youtubeChannelID: UClujihXO9L4sFyWkyiW_D2A
+
+locations:
+- city: Holsbeek
+  postcode: 3220
+  diocese: Mechelen-Brussel
+  dioceseRegion: Leuven
+  country: BE
+
+timetable:
+- time: 09:00
+  days: [sun]
+  kind: sundayMass
+  language: nl
+- time: 19:00
+  days: [mon,wed,thu]
+  excludingDates: [2020-05-21]
+  kind: weekMass
+  language: nl
+- title: Hemelvaart van de Heer
+  time: 9:00
+  dates: [2020-05-21]
+  kind: feast
+  language: nl
+
+notes: |
+  # Hello world
+
+  This is a *short* text **formatted** in `markdown`
+  And it continues and continues.
+
+  Here are some bulets:
+  - A first
+  - A second
+
+  Here are some numbers:
+  1. First
+  2. Second
