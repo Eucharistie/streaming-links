@@ -12,5 +12,7 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: nl
-facebook: https://www.facebook.com/felix.vanmeerbergen
+homepage: https://www.facebook.com/felix.vanmeerbergen
+youtube: https://www.youtube.com/channel/UCpteAQpOrDwvgGyIwK9kUGA
+
 ---
