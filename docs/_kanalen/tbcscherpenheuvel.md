@@ -8,6 +8,11 @@ locations:
   dioceseRegion: 
   country: BE
 timetable:
+- time: 11:00
+  days: [mon,tue,wed,thu,fri,sat]
+  excludingDates:
+  kind: weekMass
+  language: nl
 - title: Palmzondag
   time: 07:15
   dates: [2020-04-05]
@@ -44,4 +49,3 @@ youtube: https://www.youtube.com/channel/UClr4DblRzHvfr1YsqOwu7kg
 homepage: http://www.scherpenheuvel.be
 stream: https://www.youtube.com/watch?v=Az6fhnl25Ck
 ---
-Eclips-tv (Telenet 51/Proximus 90)
