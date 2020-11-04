@@ -14,11 +14,7 @@ timetable:
   kind: sundayMass
   language: fr
 - time: 18:30
-  days: [mon]
-  kind: weekMass
-  language: fr
-- time: 17:00
-  days: [tue,wed,thu,fri,sat]
+  days: [mon,tue,wed,thu,fri,sat]
   excludingDates: [2020-05-21]
   kind: weekMass
   language: fr
@@ -29,7 +25,7 @@ timetable:
   language: fr
 facebook: https://www.facebook.com/Fraternite.Tiberiade/live
 fbid: 133601110070929
-youtube:
-homepage: https://www.tiberiade.be
+youtube: https://www.youtube.com/user/frattiberiade
+homepage: https://www.tiberiade.be/fr/publications/diffusion-offices-en-live
 
 ---
