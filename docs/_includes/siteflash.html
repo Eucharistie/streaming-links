@@ -13,3 +13,18 @@
     </button>
   </div>
 </div>
+
+<script>
+  const siteFlash = document.querySelector('#siteFlash')
+
+  // hide sideflash
+  function hideSiteFlash() {
+    localStorage.setItem('hideSiteFlash', "3");
+    siteFlash.hidden = true;
+  }
+  
+  // show siteFlash unless user has hidden it before
+  setTimeout(function() {
+    siteFlash.hidden = (localStorage.getItem('hideSiteFlash') === "3");
+  }, 2000);
+</script>
