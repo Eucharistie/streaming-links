@@ -7,7 +7,7 @@ locations:
   diocese: Hasselt
   dioceseRegion: Herk-de-Stad
 timetable:
-- time: 09:00
+- time: 10:30
   days: [sun]
   kind: sundayMass
   language: nl
@@ -16,7 +16,7 @@ timetable:
   excludingDates: [2020-05-21]
   kind: weekMass
   language: nl
-- time: 17:00
+- time: 18:00
   days: [sat]
   kind: sundayMass
   language: nl
