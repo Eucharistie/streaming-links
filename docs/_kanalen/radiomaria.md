@@ -13,7 +13,7 @@ timetable:
   kind: sundayMass
   language: nl
 - time: 18:15
-  days: [sun,sat]
+  days: [sat]
   kind: sundayMass
   language: nl
 - time: 09:00
