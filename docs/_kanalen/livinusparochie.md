@@ -8,7 +8,7 @@ locations:
   dioceseRegion: Zottegem
   country: BE
 timetable:
-- time: 09:00
+- time: 08:00
   days: [sun]
   kind: sundayMass
   language: nl
