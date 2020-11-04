@@ -8,7 +8,7 @@ locations:
   diocese:
   dioceseRegion:
 timetable:
-- time: 17:00
+- time: 17:30
   days: [sat]
   kind: sundayMass
   language: nl
