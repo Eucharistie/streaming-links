@@ -1,6 +1,6 @@
 ---
 community: Sint Benedictuskerk Morstel
-priests: []
+priests: [pastoor Tom Schellekens]
 locations:
 - city: Mortsel
   postcode:
@@ -14,7 +14,7 @@ timetable:
   language: nl
 facebook:
 fbid:
-youtube: https://www.youtube.com/channel/UCRrovCIcMcUVS-94p7y9DYA
-homepage: 
+youtube: https://www.youtube.com/channel/UCt_4GIr7r9owGrCgQbxTt7A
+homepage: https://www.mijnparochie.be/wie-zijn-wij/liturgie/viering-en-gebed/
 stream:
 ---
