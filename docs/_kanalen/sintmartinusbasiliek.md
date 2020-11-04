@@ -1,6 +1,6 @@
 ---
 community: Sint-Martinus Basiliek Halle
-priests: [priester Servaas Bosch]
+priests: [pastoor Raymond Decoster,priester Servaas Bosch]
 locations:
 - city: Halle
   postcode: 1500
