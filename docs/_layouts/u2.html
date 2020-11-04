@@ -159,7 +159,6 @@ layout: main
     genericDays.forEach(function (day) {
       var hourEvents = {};
       channels.forEach(function (channel) {
-        console.log(channel);
         if (channel.timetable && Array.isArray(channel.timetable))
         channel.timetable.forEach(function (event) {
           const eventHasDay = event.days && event.days.indexOf(day) >= 0;
