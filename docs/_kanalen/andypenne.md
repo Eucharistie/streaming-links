@@ -21,6 +21,10 @@ timetable:
   excludingDates: [2020-05-21]
   kind: weekMass
   language: nl
+- time: 19:00
+  days: [sat]
+  kind: sundayMass
+  language: nl  
 - title: Hemelvaart van de Heer
   time: 9:00
   dates: [2020-05-21]
