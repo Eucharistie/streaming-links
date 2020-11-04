@@ -8,8 +8,12 @@ locations:
   diocese: Brugge
   dioceseRegion: Roeselare-Izegem
 timetable:
-  - time: 10:30
+  - time: 9:00
     days: [sun]
+    kind: sundayMass
+    language: nl
+  - time: 18:00
+    days: [sat]
     kind: sundayMass
     language: nl
 facebook: https://www.facebook.com/Pastoor.Matthias.Noe
