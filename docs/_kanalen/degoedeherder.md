@@ -32,7 +32,7 @@ timetable:
   dates: [2020-04-12]
   kind: feast
   language: nl  
-facebook: https://www.facebook.com/groups/137990294305816/
+# facebook: https://www.facebook.com/groups/137990294305816/
 fbid:
 youtube: https://www.youtube.com/channel/UCtlgsab0wOd5Ww7rMrCbUDA
 homepage: https://www.kerknet.be/parochie-de-goede-herder-gent-west/vieringen
