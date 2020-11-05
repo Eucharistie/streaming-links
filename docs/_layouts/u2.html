@@ -126,6 +126,14 @@ layout: main
     }
   };
 
+  const shortDate = function (date) {
+    const dateLocal = new Date(date - (date.getTimezoneOffset() * 60 * 1000));
+    const dateShort = dateLocal.toISOString().slice(0, 10)
+    return dateShort;
+  }
+
+  let dateToShow = shortDate(new Date())
+
   // Find used languages
   let languages = new Set();
   channels.forEach( function(channel) {
@@ -142,17 +150,11 @@ layout: main
     selectElement.addEventListener('click', function() {
       langFilter.toggle(lang);
       selectElement.setAttribute('aria-checked', langFilter.get(lang));
-      showDate(shortDate(new Date()));
+      showDate(dateToShow);
     })
     selectElement.querySelector('span').innerText = languageNames[lang]
     langListElement.appendChild(selectElement);
   });
-
-  const shortDate = function (date) {
-    const dateLocal = new Date(date - (date.getTimezoneOffset() * 60 * 1000));
-    const dateShort = dateLocal.toISOString().slice(0, 10)
-    return dateShort;
-  }
 
   const hourMinutes = function (minutes) {
     const format = new Intl.DateTimeFormat(siteLocale, { hour: 'numeric', minute: 'numeric' });
@@ -282,7 +284,7 @@ layout: main
 
   let calendar = generateCalendar();
   // show today
-  showDate(shortDate(new Date()));
+  showDate(dateToShow);
 
   // datepicker range:
   // from 1 week ago
@@ -304,7 +306,8 @@ layout: main
       maxDate: maxDate,
       defaultDate: new Date(),
       onChange: function (selectedDates, dateStr, instance) {
-        showDate(dateStr);
+        dateToShow = dateStr;
+        showDate(dateToShow);
       }
     }
   );
@@ -317,7 +320,8 @@ layout: main
       maxDate: maxDate,
       defaultDate: new Date(),
       onChange: function (selectedDates, dateStr, instance) {
-        showDate(dateStr);
+        dateToShow = dateStr;
+        showDate(dateToShow);
       },
     }
   );
