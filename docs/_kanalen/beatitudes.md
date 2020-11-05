@@ -53,7 +53,8 @@ timetable:
   language: fr    
 facebook: https://www.facebook.com/thybeatitudes/live
 fbid: 592802614102813
-youtube: https://www.youtube.com/channel/UC3lWbDfR3f32aHLuM8YMBnQ
+# youtube: https://www.youtube.com/channel/UC3lWbDfR3f32aHLuM8YMBnQ
 homepage: https://beatitudes.org/la-liturgie-en-direct-avec-la-communaute-des-beatitudes/
 youtubeChannelID:
+
 ---
