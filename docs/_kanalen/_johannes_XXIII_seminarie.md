@@ -12,7 +12,7 @@ timetable:
   days: [sun]
   kind: sundayMass
   language: nl
-facebook: https://www.facebook.com/Johannes-XXIII-Seminarie-309563685301/live
+facebook: https://www.facebook.com/Johannes-XXIII-Seminarie-309563685301
 fbid: 309563685301
 youtube:
 homepage:
