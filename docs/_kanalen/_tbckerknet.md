@@ -68,7 +68,7 @@ timetable:
 facebook: https://www.facebook.com/Kerknet-384549141651808/
 fbid:
 youtube: https://www.youtube.com/channel/UCf0kwiiUpoaD5_4kIIwhNfA/live
-homepage: https://www.kerknet.be
+homepage: https://www.kerknet.be/kerknet-redactie/artikel-informatie/aanbod-vieringen-radio-tv-internet
 stream:
 youtubeChannelID:
 ---
