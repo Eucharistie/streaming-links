@@ -16,7 +16,7 @@ timetable:
   days: [mon,tue,wed,thu,fri]
   kind: weekMass
   language: nl
-facebook: https://www.facebook.com/gerben.zweers
+facebook: https://www.facebook.com/gerben.zweers/live
 fbid: 100000020964185
 youtube: https://www.youtube.com/channel/UCL8g1Le8r_xfL2IT9XGwI1w
 homepage:

@@ -1,5 +1,5 @@
 ---
-community: Parochie Sint-Martinus Basiliek
+community: Sint-Martinus Basiliek Halle
 priests: [priester Servaas Bosch]
 locations:
 - city: Halle
@@ -11,6 +11,11 @@ timetable:
 - time: 10:00
   days: [sun]
   kind: sundayMass
+  language: nl
+- title: Hemelvaart van de Heer
+  time: 10:00
+  dates: [2020-05-21]
+  kind: feast
   language: nl
 - title: Witte Donderdag
   time: 19:00

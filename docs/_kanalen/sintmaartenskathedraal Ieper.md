@@ -1,6 +1,6 @@
 ---
 community: Sint-Maartenskathedraal Ieper
-priests: []
+priests: [priester Mathias Parret]
 locations:
 - city: Ieper
   postcode:
@@ -8,6 +8,15 @@ locations:
   diocese:
   dioceseRegion:
 timetable:
+- time: 17:00
+  days: [sat]
+  kind: sundayMass
+  language: nl
+- title: O.L.H. Hemelvaart
+  time: 10:30
+  dates: [2020-05-21]
+  kind: feast
+  language: nl  
 - title: Palmzondag
   time: 10:30
   dates: [2020-04-05]

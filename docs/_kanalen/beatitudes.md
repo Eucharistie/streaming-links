@@ -18,7 +18,13 @@ timetable:
   language: fr
 - time: 18:00
   days: [thu]
+  excludingDates: [2020-05-21]
   kind: weekMass
+  language: fr
+- title: Hemelvaart van de Heer
+  time: 11:00
+  dates: [2020-05-21]
+  kind: feast
   language: fr
 - title: Witte Donderdag
   time: 20:30
@@ -45,7 +51,7 @@ timetable:
   dates: [2020-04-12]
   kind: feast
   language: fr    
-facebook: https://www.facebook.com/thybeatitudes
+facebook: https://www.facebook.com/thybeatitudes/live
 fbid: 592802614102813
 youtube: https://www.youtube.com/channel/UC3lWbDfR3f32aHLuM8YMBnQ
 homepage: https://beatitudes.org/la-liturgie-en-direct-avec-la-communaute-des-beatitudes/

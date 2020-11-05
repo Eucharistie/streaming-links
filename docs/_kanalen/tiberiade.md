@@ -19,9 +19,15 @@ timetable:
   language: fr
 - time: 17:00
   days: [tue,wed,thu,fri,sat]
+  excludingDates: [2020-05-21]
   kind: weekMass
   language: fr
-facebook: https://www.facebook.com/Fraternite.Tiberiade/
+- title: Hemelvaart van de Heer
+  time: 11:00
+  dates: [2020-05-21]
+  kind: feast
+  language: fr
+facebook: https://www.facebook.com/Fraternite.Tiberiade/live
 fbid: 133601110070929
 youtube:
 homepage: https://www.tiberiade.be

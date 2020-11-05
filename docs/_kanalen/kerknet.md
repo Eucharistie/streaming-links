@@ -1,6 +1,6 @@
 ---
 community: Kerknet
-priests: []
+priests: [Mgr. Koen Vanhoutte]
 locations:
 - city: Gent
   diocese:
@@ -18,11 +18,29 @@ locations:
   diocese:
   country: BE
   community: Eurovisie
+- city: Jette
+  country: BE
+  community: VRT-Mis
+- city: Mechelen
+  diocese:
+  country: 
+  community: Hanswijkbasiliek  
 timetable:
 - time: 10:00
   days: [sun]
+  excludingDates: [2020-04-26] 
   kind: sundayMass
   language: nl
+- time: 10:00
+  dates: [2020-04-26]
+  kind: sundayMass
+  language: nl
+  location: 5
+- time: 10:00
+  dates: [2020-04-19]
+  kind: sundayMass
+  language: nl
+  location: 4
 - title: Witte Donderdag
   time: 19:00
   dates: [2020-04-09]

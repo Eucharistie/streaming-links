@@ -15,7 +15,13 @@ timetable:
   language: la
 - time: 17:00
   days: [mon,tue,wed,thu,fri,sat]
+  excludingDates: [2020-05-21]
   kind: weekMass
+  language: la
+- title: Hemelvaart van de Heer
+  time: 10:00
+  dates: [2020-05-21]
+  kind: feast
   language: la
 - title: Witte Donderdag
   time: 29:00

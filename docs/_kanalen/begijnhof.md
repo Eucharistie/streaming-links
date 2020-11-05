@@ -18,11 +18,22 @@ timetable:
   language: nl
 - time: 08:00
   days: [mon,tue,wed,thu,fri,sat]
+  excludingDates: [2020-05-01,2020-05-21]
   kind: weekMass
   language: nl
 - time: 19:00
   days: [mon,tue,wed,thu,fri]
   kind: weekMass
+  language: nl
+- title: Hemelvaart van de Heer
+  time: 8:30
+  dates: [2020-05-21]
+  kind: feast
+  language: nl
+- title: H. Jozef, de arbeider
+  time: 8:30
+  dates: [2020-05-01]
+  kind: feast
   language: nl
 - title: Witte Donderdag
   time: 19:00
@@ -54,9 +65,9 @@ timetable:
   dates: [2020-04-13]
   kind: feast
   language: nl   
-facebook: https://www.facebook.com/Begijnhofhalle
+facebook: https://www.facebook.com/Begijnhofhalle/live
 fbid: Begijnhofhalle
-stream: https://www.facebook.com/Begijnhofhalle
+stream: https://www.facebook.com/Begijnhofhalle/live
 homepage: https://monasteriumhalle.wordpress.com/dagorde/
 ---
 De vroegere Sacramentinnen
