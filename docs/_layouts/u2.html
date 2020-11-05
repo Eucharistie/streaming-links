@@ -8,6 +8,7 @@ layout: main
 
 {% assign locale = page.locale %}
 {% assign localDays = site.data.cldr.main[locale].dates.calendars.generic.days.format.wide %}
+{% assign languageNames = site.data.cldr.main[locale].localeDisplayNames.languages %}
 
 
 <div class="Box border-left-0 border-right-0 border-md rounded-0 rounded-md-2 overflow-hidden">
@@ -29,13 +30,11 @@ layout: main
               {% octicon x %}
             </button>
           </header>
-          <div class="SelectMenu-list">
-            {% for language in languages %}
-              <button class="SelectMenu-item language-filter" role="menuitem" aria-checked="true" data-lang="{{language}}" onclick="langFilter.updateTimeTable('{{language}}', langFilter.toggle('{{language}}'))">
-                {% octicon check class:"SelectMenu-icon SelectMenu-icon--check" %}
-                {{ language | append: "_" |  replace: "nl_", "Nederlands" | replace: "fr_", "Frans" | replace: "la_", "Latijn" | replace: "en_", "Engels" }}
-              </button>
-            {% endfor %}
+          <div class="SelectMenu-list" id="languageFilter">
+            <button class="SelectMenu-item" role="menuitem" aria-checked="true">
+              {% octicon check class:"SelectMenu-icon SelectMenu-icon--check" %}
+              <span><!-- language comes here --></span>
+            </button>
           </div>
         </div>
       </div>
@@ -92,6 +91,7 @@ layout: main
   ];
   const channels = channelEntries.map(function (entries) {return Object.fromEntries(entries)});
   const localDays = {{localDays|jsonify}};
+  const languageNames = {{languageNames|jsonify}};
   const siteLocale = "{{page.locale}}";
   const genericDays = Object.keys(localDays);
   const channel = {{site.kanalen[0] | where_exp: "hash", "hash[0] != 'output'" | where_exp: "hash", "hash[0] != 'next' and hash[0] != 'previous'"  | jsonify}}
@@ -101,8 +101,52 @@ layout: main
   const eventElement = document.querySelector(".day-row .event");
   const languageElement = document.querySelector(".day-row .event .language-badge");
   const footerElement = document.querySelector(".day-footer");
+  const langListElement = document.querySelector('#languageFilter');
+  const langSelectElement = document.querySelector('#languageFilter button');
 
   const pageLoadDate = new Date();
+
+  const langFilter = {
+    // setting/getting language filter settings
+    // default value = true (all languages visible)
+    get: function (lang) {
+      if (localStorage.getItem('lang-filter-' + lang) == "false") {
+        return "false";
+      } else {
+        return "true";
+      }
+    },
+    toggle: function (lang) {
+      const key = 'lang-filter-' + lang;
+      var value;
+      if (localStorage.getItem(key) == "false") value = "true"
+      else value = "false"
+      localStorage.setItem(key, value);
+      return value;
+    }
+  };
+
+  // Find used languages
+  let languages = new Set();
+  channels.forEach( function(channel) {
+    channel.timetable.forEach( function (event) {
+      languages.add(event.language)
+    });
+  });
+
+  // populate language filter list
+  langListElement.innerHTML = '';
+  languages.forEach(function (lang) {
+    const selectElement = langSelectElement.cloneNode(true);
+    selectElement.setAttribute('aria-checked', langFilter.get(lang))
+    selectElement.addEventListener('click', function() {
+      langFilter.toggle(lang);
+      selectElement.setAttribute('aria-checked', langFilter.get(lang));
+      showDate(shortDate(new Date()));
+    })
+    selectElement.querySelector('span').innerText = languageNames[lang]
+    langListElement.appendChild(selectElement);
+  });
 
   const shortDate = function (date) {
     const dateLocal = new Date(date - (date.getTimezoneOffset() * 60 * 1000));
@@ -153,13 +197,17 @@ layout: main
   }
 
   // This creates elements for all events in the calendar
-  const populateCalendar = function() {
+  const generateCalendar = function() {
     var calendarEvents = []
-    // [mon, tue, wed, ...]
+    // Iterate weekdays [mon, tue, wed, ...]
     genericDays.forEach(function (day) {
       var hourEvents = {};
+
+      // Iterate channels
       channels.forEach(function (channel) {
         if (channel.timetable && Array.isArray(channel.timetable))
+
+        // Iterate events
         channel.timetable.forEach(function (event) {
           const eventHasDay = event.days && event.days.indexOf(day) >= 0;
           const eventHasDate = datesToDays(event.dates).indexOf(day) >= 0;
@@ -210,13 +258,16 @@ layout: main
         // event has dates but not this date:
         const notThisDate = event.event.dates && Array.isArray(event.event.dates) && (event.event.dates.indexOf(date) === -1);
 
+        const notThisLang = langFilter.get(event.event.language) === 'false';
+
         // event has exlude dates
         const excludesThisDate = event.event.excludingDates && Array.isArray(event.event.excludingDates) && (event.event.excludingDates.indexOf(date) >= 0);
+        let hidden = notThisDate || excludesThisDate || notThisLang
 
-        if (notThisDate) {
+        if (hidden) {
           eventCount--;
         }
-        event.dom.hidden = ( notThisDate || excludesThisDate );
+        event.dom.hidden = ( hidden );
       })
       row.dom.hidden = ( (!isRowDay) || (eventCount === 0) );
     })
@@ -229,7 +280,7 @@ layout: main
     datePickerMobile.setDate(new Date(newdate), true);
   }
 
-  const calendar = populateCalendar();
+  let calendar = generateCalendar();
   // show today
   showDate(shortDate(new Date()));
 
