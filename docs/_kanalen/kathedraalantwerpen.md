@@ -33,11 +33,7 @@ timetable:
   time: 10:00
   dates: [2020-05-21]
   kind: feast
-  language: nl
-# - time: 15:00
-#  days: [fri]
-#  kind: weekMass
-#  language: en  
+  language: nl  
 facebook: https://www.facebook.com/DeKathedraal
 fbid: DeKathedraal
 youtube: https://www.youtube.com/channel/UCoBsBL5PSYnOKZVwu2r0Drg
