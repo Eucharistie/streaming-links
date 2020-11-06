@@ -37,9 +37,9 @@ timetable:
   dates: [2020-04-11]
   kind: feast
   language: nl
-facebook: https://www.facebook.com/kerkinieper/live
+facebook: https://www.facebook.com/kerkinieper
 fbid: 940660136006486
 youtube: https://www.youtube.com/channel/UCnqt8vPL7r9LEmyLkXoGXzQ/
-homepage: www.kerkinieper.be
+homepage: http://www.kerkinieper.be
 stream:
 ---
