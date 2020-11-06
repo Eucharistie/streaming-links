@@ -14,7 +14,11 @@ timetable:
   kind: sundayMass
   language: fr
 - time: 18:30
-  days: [mon,tue,wed,thu,fri,sat]
+  days: [mon]
+  kind: weekMass
+  language: fr
+- time: 17:00
+  days: [tue,wed,thu,fri,sat]
   excludingDates: [2020-05-21]
   kind: weekMass
   language: fr
