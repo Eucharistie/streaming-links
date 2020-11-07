@@ -137,9 +137,11 @@ layout: main
   // Find used languages
   let languages = new Set();
   channels.forEach( function(channel) {
-    channel.timetable.forEach( function (event) {
-      languages.add(event.language)
-    });
+    if (channel.timetable && Array.isArray(channel.timetable)) {
+      channel.timetable.forEach( function (event) {
+        languages.add(event.language)
+      });
+    }
   });
 
   // populate language filter list
