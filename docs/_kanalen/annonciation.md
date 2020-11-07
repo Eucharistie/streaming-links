@@ -15,6 +15,6 @@ timetable:
 youtube: https://www.youtube.com/channel/UClujihXO9L4sFyWkyiW_D2A
 stream: https://www.youtube.com/embed/live_stream?channel=UClujihXO9L4sFyWkyiW_D2A
 homepage: http://upsourcesvives.be
-youtubeChannelID: 
+youtubeChannelID: UClujihXO9L4sFyWkyiW_D2A
 
 ---
