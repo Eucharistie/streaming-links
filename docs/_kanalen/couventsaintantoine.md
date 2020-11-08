@@ -14,7 +14,7 @@ timetable:
   kind: sundayMass
   language: fr
 - time: 18:30
-  days: [tue]
+  days: [tue,thu]
   kind: weekMass
   language: fr
 facebook: https://www.facebook.com/FranciscainsConventuelsBXL/
