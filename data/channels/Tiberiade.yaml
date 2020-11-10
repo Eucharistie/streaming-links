@@ -1,0 +1,41 @@
+---
+name: Fraternité de Tibériade
+shortName: Tibériade
+locations:
+- postalCode: 5580
+  diocese: Namur
+  country: BE
+  city: Lavaux-Sainte-Anne
+priests: []
+website: https://www.tiberiade.be/fr/publications/diffusion-offices-en-live
+socialMedia:
+  youtube:
+    url: https://www.youtube.com/user/frattiberiade
+    channelID: 
+  facebook:
+    id: '133601110070929'
+  other: []
+eucharistTimetable:
+- time: '11:00'
+  kind: sunday
+  location: 0
+  language: fr
+  excludingDates: []
+  days: [sun]
+- time: '18:30'
+  kind: week
+  location: 0
+  language: fr
+  excludingDates: []
+  days: [mon]
+- time: '17:00'
+  kind: week
+  location: 0
+  language: fr
+  excludingDates: []
+  days:
+  - tue
+  - wed
+  - thu
+  - fri
+  - sat
