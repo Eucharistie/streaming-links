@@ -2,9 +2,10 @@
 	<title>Eucharistie-info | Enkele links om de Eucharistie live te volgen.</title>
 </svelte:head>
 
-<div class="d-md-block hide-lg hide-xl slide-up" hidden id="SideNav">
-  <!-- TODO include sidenav.html -->
-</div>
+<script>
+	import ChannelTile from '../components/channel tile.svelte'
+</script>
+
 <div class="blockquote-wrapper">
   <div class="blockquote">
     <h1>
@@ -34,6 +35,7 @@
     </a>
   </div>
 
-	<!-- TODO add H. Mass links -->
+	<!-- TODO loop over the channels -->
+	<ChannelTile channel={{name: 'Hello world'}} day={{nl: 'zondag'}} time="8:15"></ChannelTile>
 
 </div>

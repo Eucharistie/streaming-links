@@ -9,7 +9,7 @@
 
 <script>
 	import Logo from '../components/logo.svelte'
-	import JsonLink from '../components/jsonLinkingData.svelte'
+	import JsonLink from '../components/jsonLD.svelte'
 
 	export let site;
 	site.imageURL = site.url + site.image
