@@ -15,10 +15,9 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const cssAutoPrefixerOptions = {
-	postcss: {
-		plugins: [autoprefixer()]
-	}
+const cssOptions = {
+	scss: { includePaths: ['src'] },
+	postcss: { plugins: [autoprefixer()] }
 };
 
 const onwarn = (warning, onwarn) =>
@@ -39,7 +38,7 @@ export default {
 				dev,
 				hydratable: true,
 				emitCss: true,
-				preprocess: [sveltePreprocess(cssAutoPrefixerOptions)]
+				preprocess: [sveltePreprocess(cssOptions)]
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
@@ -88,7 +87,8 @@ export default {
 			svelte({
 				generate: 'ssr',
 				hydratable: true,
-				dev
+				dev,
+				preprocess: [sveltePreprocess(cssOptions)]
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),

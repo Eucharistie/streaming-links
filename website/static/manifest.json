@@ -1,18 +1,20 @@
 {
+	"name": "Eucharistie",
+	"short_name": "Eucharistie",
+	
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
-	"display": "minimal-ui",
+	
+	"display": "standalone",
 	"start_url": "/",
 	"icons": [
 		{
-			"src": "logo-192.png",
+			"src": "image/logo/icon/192x192.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "logo-512.png",
+			"src": "image/logo/icon/512x512.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}

@@ -1,6 +1,6 @@
 {
-  "name": "nightfever-band",
-  "description": "A fun way to organise music for nightfever",
+  "name": "eucharistie-info",
+  "description": "Eucharistie live volgen op internet. Uurrooster, teksten en links.",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
@@ -20,6 +20,7 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "@primer/css": "^15.2.0",
     "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
@@ -27,6 +28,7 @@
     "@rollup/plugin-url": "^5.0.0",
     "autoprefixer": "^10.0.1",
     "js-yaml": "^3.14.0",
+    "node-sass": "^5.0.0",
     "postcss": "^8.1.4",
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^6.0.0",
