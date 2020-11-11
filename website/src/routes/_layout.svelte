@@ -1,13 +1,18 @@
+<script context="module">
+	export async function preload(page, session) {
+		const data = await this.fetch('api/info.json');
+		const info = await data.json()
+
+		return { site: info }
+	}
+</script>
+
 <script>
 	import Logo from '../components/logo.svelte'
 	import JsonLink from '../components/jsonLinkingData.svelte'
 
-	const site = {
-		title: 'Eucharistie-info',
-		description: 'Eucharistie live volgen op internet. Uurrooster, teksten en links.',
-		url: 'https://www.eucharistie.info',
-		logo: '/image/logo/social.png'
-	}
+	export let site;
+	site.imageURL = site.url + site.image
 
 	const linkingData = {
 		'@type': "WebSite",
@@ -15,7 +20,7 @@
 		name: site.title,
 		headline: site.title,
 		description: site.description,
-		image: site.url + site.image,
+		image: site.imageURL,
 		url: site.url,
 		logo: site.url + '/image/logo/main.png'
 	}
@@ -30,10 +35,10 @@
 <svelte:head>
 <meta property="og:locale" content="nl_BE">
 <meta property="og:site_name" content="{site.title}">
-<meta property="og:image" content="{site.url}{site.image}">
+<meta property="og:image" content="{site.imageURL}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@eucharistieinfo">
-<meta name="twitter:image" content="{site.url}{site.image}">
+<meta name="twitter:image" content="{site.imageURL}">
 <meta property="og:description" content="{site.description}">
 <meta name="twitter:description" content="{site.description}">
 <meta property="og:title" content="{site.title}">
