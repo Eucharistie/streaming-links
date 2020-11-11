@@ -1,43 +1,19 @@
-# sapper-template
+# Eucharistie.info website
 
-The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project. Can use either Rollup or webpack as bundler.
-
+This is the source to build the website at https://eucharistie.info
 
 ## Getting started
 
+### Clone the project
 
-### Using `degit`
-
-To create a new Sapper project based on Rollup locally, run
-
-```bash
-npx degit "sveltejs/sapper-template#rollup" my-app
-```
-
-For a webpack-based project, instead run
-
-```bash
-npx degit "sveltejs/sapper-template#webpack" my-app
-```
-
-[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository.
-
-Replace `my-app` with the path where you wish to create the project.
-
-
-### Using GitHub templates
-
-Alternatively, you can create the new project as a GitHub repository using GitHub's template feature.
-
-Go to either [sapper-template-rollup](https://github.com/sveltejs/sapper-template-rollup) or [sapper-template-webpack](https://github.com/sveltejs/sapper-template-webpack) and click on "Use this template" to create a new project repository initialized by the template.
-
+`git clone https://github.com/Eucharistie/streaming-links.git`
 
 ### Running the project
 
 Once you have created the project, install dependencies and run the project in development mode:
 
 ```bash
-cd my-app
+cd streaming-links
 npm install # or yarn
 npm run dev
 ```
