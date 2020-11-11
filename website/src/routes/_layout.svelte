@@ -1,11 +1,23 @@
 <script>
 	import Logo from '../components/logo.svelte'
+	import JsonLink from '../components/jsonLinkingData.svelte'
 
 	const site = {
 		title: 'Eucharistie-info',
 		description: 'Eucharistie live volgen op internet. Uurrooster, teksten en links.',
 		url: 'https://www.eucharistie.info',
-		logo: '/assets/img/logo-social.png',
+		logo: '/image/logo/social.png'
+	}
+
+	const linkingData = {
+		'@type': "WebSite",
+		'@context': "https://schema.org",
+		name: site.title,
+		headline: site.title,
+		description: site.description,
+		image: site.url + site.image,
+		url: site.url,
+		logo: site.url + '/image/logo/main.png'
 	}
 	
 	export let segment;
@@ -18,28 +30,17 @@
 <svelte:head>
 <meta property="og:locale" content="nl_BE">
 <meta property="og:site_name" content="{site.title}">
-<meta property="og:image" content="{site.url}{site.logo}">
+<meta property="og:image" content="{site.url}{site.image}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@eucharistieinfo">
-<meta name="twitter:image" content="{site.url}{site.logo}">
+<meta name="twitter:image" content="{site.url}{site.image}">
 <meta property="og:description" content="{site.description}">
 <meta name="twitter:description" content="{site.description}">
 <meta property="og:title" content="{site.title}">
 <meta property="og:url" content="{site.url}">
 <meta name="twitter:title" content="{site.title}">
-<!-- TODO -->
-<!-- <script type="application/ld+json">
-	{
-		"headline":"{{site.title}}",
-		"image":"{{site.url}}{{site.baseurl}}{{page.image}}",
-		"url":"{{site.url}}{{site.baseurl}}",
-		"name":"{{site.title}}",
-		"description":"{{site.description}}",
-		"@type":"WebSite",
-		"@context":"https://schema.org",
-		"logo": "{{site.url}}{{site.baseurl}}/assets/img/logo.png"
-	}
-</script> -->
+<JsonLink data={linkingData}></JsonLink>
+
 </svelte:head>
 
 <Logo></Logo>

@@ -16,6 +16,7 @@ const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const cssOptions = {
+	preserve: ['ld+json'],
 	scss: { includePaths: ['src'] },
 	postcss: { plugins: [autoprefixer()] }
 };
