@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Echaristie.info</title>
+	<title>Eucharistie-info | Enkele links om de Eucharistie live te volgen.</title>
 </svelte:head>
 
 <main>
