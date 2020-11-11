@@ -1,0 +1,25 @@
+name: Unité Pastorale des Sources Vives
+shortName: UP - Sources Vives
+locations:
+- postalCode: 1050
+  diocese: Bruxelles
+  country: BE
+  city: Ixelles
+priests:
+- père Cédric Claessens
+- père Benoît de Baenst
+- père Olivier Bonnewijn
+website: http://upsourcesvives.be
+socialMedia:
+  youtube:
+    channelID: UClujihXO9L4sFyWkyiW_D2A
+  facebook:
+    id: ''
+  other: []
+eucharistTimetable:
+- time: '10:00'
+  kind: sunday
+  location: 0
+  language: fr
+  excludingDates: []
+  days: [sun]
