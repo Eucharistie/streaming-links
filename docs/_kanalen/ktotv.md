@@ -22,6 +22,7 @@ timetable:
   kind: sundayMass
   language: fr
   location: 2
+  excludingDates: [2020-11-15]
 - days: [sat]
   time: 18:15
   kind: sundayMass
@@ -37,11 +38,11 @@ timetable:
   kind: weekMass
   language: fr
   location: 1
-# - days: [sun]
-#   time: 11:00
-#   kind: sundayMass
-#   language: fr
-#   location: 0
+- time: 10:00
+  kind: sundayMass
+  language: fr
+  location: 0
+  dates: [2020-11-15]
 # - time: 18:30
 #   days: [sun]
 #   kind: sundayMass
