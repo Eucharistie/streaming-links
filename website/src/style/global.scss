@@ -130,23 +130,11 @@ body {
   }
 }
 
-div.nav-texts,
-div.nav-about {
-  padding: 0 1em;
-}
-
 .capitalize-first-letter {
   display: inline-block;
   &::first-letter {
     text-transform: uppercase;
   }
-}
-
-#main {
-  // min-height: 100vh;
-  // min-height: calc(100vh - 64px);
-  // margin-bottom: -150px;
-  // padding-bottom: 150px;
 }
 
 .markdown-body {
