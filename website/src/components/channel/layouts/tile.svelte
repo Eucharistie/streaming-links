@@ -1,5 +1,5 @@
 <script>
-	import Avatar from '../avatar.svelte'
+	import Avatar from '../elements/avatar.svelte'
 	export let day, time, channel;
 
 	const title = (channel.shortName || channel.name || 'Onbekend') // TODO add priest and location as fallback

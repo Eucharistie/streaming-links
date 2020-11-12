@@ -1,6 +1,11 @@
 <script>
 	import SidebarLayout from '../layouts/sidebar.svelte'
-	import ChannelRow from '../components/channel/row.svelte'
+	import ChannelRow from '../components/channel/layouts/row.svelte'
+
+	const exampleChannels = [
+		{name: "Basiliek", description: 'Audio streaming', url: '/channel/basiliek', isLive: true},
+		{name: "Kathedraal", url: '/channel/kathedraal'}
+	]
 </script>
 
 <SidebarLayout>
@@ -9,15 +14,10 @@
 			Kanalen die de eucharistie uitzenden
 		</div>
 	
-		<!-- {% for stream in site.kanalen %}
-			{% assign timetable = stream.timetable %}
-			{% if timetable %} -->
-	
-				<div class="Box-row">
-					<ChannelRow channel={{}}></ChannelRow>
-				</div>
-			<!-- {% endif %}
-		{% endfor %} -->
-	
+		{#each exampleChannels as channel}
+			<div class="Box-row">
+					<ChannelRow {channel}></ChannelRow>
+			</div>
+		{/each}
 	</div>	
 </SidebarLayout>
