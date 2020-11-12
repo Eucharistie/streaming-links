@@ -66,16 +66,16 @@
 				</a>
 			</div>
 			<div class="Header-item hide-sm">
-				<a href="timetable" class="Header-link {linkClass('timetable', segment)}">Uurrooster</a>
+				<a href="/timetable" class="Header-link {linkClass('timetable', segment)}">Uurrooster</a>
 			</div>
 			<div class="Header-item hide-sm">
-				<a href="channels" class="Header-link {linkClass('channels', segment)}">Kanalen</a>
+				<a href="/channels" class="Header-link {linkClass('channels', segment)}">Kanalen</a>
 			</div>
 			<div class="Header-item hide-sm">
-				<a href="texts" class="Header-link {linkClass('texts', segment)}">Missaal</a>
+				<a href="/texts" class="Header-link {linkClass('texts', segment)}">Missaal</a>
 			</div>
 			<div class="Header-item hide-sm">
-				<a href="about" class="Header-link {linkClass('about', segment)}">Over</a>
+				<a href="/about" class="Header-link {linkClass('about', segment)}">Over</a>
 			</div>
 			<a href="#nav" onclick="toggleNav()" id="sandwich" class="Header-item mr-0 text-white d-sm-none">
 				<!-- {% octicon three-bars height:32 %} -->

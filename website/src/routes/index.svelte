@@ -3,7 +3,7 @@
 </svelte:head>
 
 <script>
-	import ChannelTile from '../components/channel tile.svelte'
+	import ChannelTile from '../components/channel/tile.svelte'
 </script>
 
 <div class="blockquote-wrapper">

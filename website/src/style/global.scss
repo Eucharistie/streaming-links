@@ -5,8 +5,6 @@
 // $blue-000: #fafcff; // .bg-blue-light
 $blue-500: #438dcc;
 
-// Avoid compiling primer css to significantly speed up building for development:
-// jekyll serve --config _config.yml,_config-dev.yml
 @import '@primer/css/core/index.scss';
 @import '@primer/css/product/index.scss';
 @import '@primer/css/marketing/index.scss';
