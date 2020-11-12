@@ -42,7 +42,7 @@ merged type ([Youtube link](channel-properties-social-media-links-properties-you
 any of
 
 -   [Youtube channel ID](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-channel-id.md "check type definition")
--   [Youtube url](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-url.md "check type definition")
+-   [Youtube URL](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-url.md "check type definition")
 
 ## facebook
 

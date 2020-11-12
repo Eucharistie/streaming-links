@@ -19,7 +19,7 @@ undefined#/properties/socialMedia/properties/youtube/anyOf/0
 
 | Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                    |
 | :---------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [channelID](#channelid) | `string` | Optional | cannot be null | [Channel](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-channel-id-properties-channelid.md "undefined#/properties/socialMedia/properties/youtube/anyOf/0/properties/channelID") |
+| [channelID](#channelid) | `string` | Required | cannot be null | [Channel](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-channel-id-properties-channelid.md "undefined#/properties/socialMedia/properties/youtube/anyOf/0/properties/channelID") |
 
 ## channelID
 
@@ -28,7 +28,7 @@ undefined#/properties/socialMedia/properties/youtube/anyOf/0
 
 `channelID`
 
--   is optional
+-   is required
 -   Type: `string`
 -   cannot be null
 -   defined in: [Channel](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-channel-id-properties-channelid.md "undefined#/properties/socialMedia/properties/youtube/anyOf/0/properties/channelID")

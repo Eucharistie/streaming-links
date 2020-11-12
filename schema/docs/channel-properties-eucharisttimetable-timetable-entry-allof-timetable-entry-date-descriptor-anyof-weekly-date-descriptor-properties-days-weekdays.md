@@ -27,3 +27,4 @@ undefined#/properties/eucharistTimetable/items/allOf/1/anyOf/0/properties/days/i
 | `"thu"` |             |
 | `"fri"` |             |
 | `"sat"` |             |
+| `"sun"` |             |

@@ -1,4 +1,4 @@
-# Youtube url Schema
+# Youtube URL Schema
 
 ```txt
 undefined#/properties/socialMedia/properties/youtube/anyOf/1
@@ -13,13 +13,13 @@ undefined#/properties/socialMedia/properties/youtube/anyOf/1
 
 ## 1 Type
 
-`object` ([Youtube url](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-url.md))
+`object` ([Youtube URL](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-url.md))
 
-# Youtube url Properties
+# Youtube URL Properties
 
 | Property    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                 |
 | :---------- | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [url](#url) | `string` | Optional | cannot be null | [Channel](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-url-properties-url.md "undefined#/properties/socialMedia/properties/youtube/anyOf/1/properties/url") |
+| [url](#url) | `string` | Required | cannot be null | [Channel](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-url-properties-url.md "undefined#/properties/socialMedia/properties/youtube/anyOf/1/properties/url") |
 
 ## url
 
@@ -28,7 +28,7 @@ undefined#/properties/socialMedia/properties/youtube/anyOf/1
 
 `url`
 
--   is optional
+-   is required
 -   Type: `string`
 -   cannot be null
 -   defined in: [Channel](channel-properties-social-media-links-properties-youtube-link-anyof-youtube-url-properties-url.md "undefined#/properties/socialMedia/properties/youtube/anyOf/1/properties/url")
