@@ -9,7 +9,7 @@ const info = {
 	image: '/image/logo/social.png'
 }
 
-info.url = inDevMode ? `http://localhost:${PORT}` : remoteWebsiteURL
+info.url = inDevMode ? `http://localhost:${PORT}` : info.remoteWebsiteURL
 
 export function get(request, response) {
 
