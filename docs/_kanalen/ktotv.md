@@ -39,6 +39,7 @@ timetable:
   language: fr
   location: 1
 - time: 10:00
+  title: Paus Franciscus
   kind: sundayMass
   language: fr
   location: 0
