@@ -1,6 +1,5 @@
 ---
 channel: KTO tv
-community:
 priests: [Paus Franciscus, andere priesters]
 locations:
 - city: Rome
@@ -13,17 +12,21 @@ locations:
 - city: Lourdes
   diocese: Tarbes et Lourdes
   country: FR
+- city: Paris (4e)
+  community: église Saint-Gervais-Saint-Protais
+  diocese: Paris
+  country: FR
 timetable:
 - days: [sun]
   time: 10:00
   kind: sundayMass
   language: fr
-  location: 3
+  location: 2
 - days: [sat]
   time: 18:00
   kind: sundayMass
   language: fr
-  location:   
+  location: 3
 # - days: [sun]
 #   time: 11:00
 #   kind: sundayMass
@@ -43,7 +46,7 @@ timetable:
   days: [mon,tue,wed,thu,fri]
   kind: weekMass
   language: fr
-  location: 2
+  location: 1
 facebook: https://www.facebook.com/kto.television/
 fbid: 143654702340655
 youtube: https://www.youtube.com/user/KTOTV
