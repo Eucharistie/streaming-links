@@ -27,3 +27,4 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
 /swift-edit/Eucharistie.xcodeproj/project.xcworkspace/xcuserdata
+/schema/out

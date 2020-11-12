@@ -19,7 +19,7 @@
 <div class="container-lg clearfix limit-children">
 
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 float-left text-center">
-    <a href="/uurrooster">
+    <a href="/timetable">
       <div class="bg-blue rounded-md-2 my-md-6 mx-md-3 p-4">
         <h6 class="m-0 text-white">
           Volg de eucharistie live:
@@ -37,5 +37,4 @@
 
 	<!-- TODO loop over the channels -->
 	<ChannelTile channel={{name: 'Hello world'}} day={{nl: 'zondag'}} time="8:15"></ChannelTile>
-
 </div>
