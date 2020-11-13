@@ -1,11 +1,20 @@
+<script context="module">
+	export async function preload(page, session) {
+		const response = await this.fetch(`/api/channels.json`);
+		const channels = await response.json();
+
+		return {channels}
+	}
+</script>
+
 <script>
 	import SidebarLayout from '../layouts/sidebar.svelte'
 	import ChannelRow from '../components/channel/layouts/row.svelte'
+	import {hydrate} from '../logic/channels'
 
-	const exampleChannels = [
-		{name: "Basiliek", description: 'Audio streaming', url: '/channel/basiliek', isLive: true},
-		{name: "Kathedraal", url: '/channel/kathedraal'}
-	]
+	export let channels
+	channels.forEach(hydrate)
+	
 </script>
 
 <SidebarLayout>
@@ -14,7 +23,7 @@
 			Kanalen die de eucharistie uitzenden
 		</div>
 	
-		{#each exampleChannels as channel}
+		{#each channels as channel}
 			<div class="Box-row">
 					<ChannelRow {channel}></ChannelRow>
 			</div>

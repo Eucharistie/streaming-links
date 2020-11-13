@@ -2,7 +2,7 @@ import {loadAllChannels} from '../../data-loader.js'
 
 let channelErrors = []
 const channels = loadAllChannels(true)
-	.then(channels => channels.map(([channel, id]) => ({...channel, id})))
+	.then(channels => channels.map(([channel, id]) => ({...channel, id: id.replace('.yaml', '')})))
 	.catch(errors => channelErrors = errors)
 
 export function get(request, response) {
