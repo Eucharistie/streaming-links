@@ -20,20 +20,27 @@ export async function loadAllChannels(waitForAllErrors) {
 	return await waitFor(validatedChannels)
 }
 
+export function loadChannel(filename) {
+	return validateChannelPromise( parseChannel(filename) )
+}
+
 export async function parseAllChannels() {
 	return (await fs.promises.readdir(channelPath))
 		.filter(name => name[0] != '.' || name[0] != '_')
-		.map(filename =>
-			fs.promises.readFile(channelPath + filename, 'utf-8')
-				.then(text => parse(text, filename))
-		)
+		.map(parseChannel)
+}
+
+function parseChannel(filename) {
+	return fs.promises
+		.readFile(channelPath + filename, 'utf-8')
+		.then(text => parse(text, filename))
 }
 
 export async function validateChannelPromise(channelPromise, waitForAllErrors) {
 	const parser = waitForAllErrors ? schemaParserWithLastExit : schemaParserWithEarlyExit
-	const [[channel, channelName], conformsToSchema] = await Promise.all([channelPromise, parser.compileAsync(schema)])
+	const [[channelName, channel], conformsToSchema] = await Promise.all([channelPromise, parser.compileAsync(schema)])
 	if (conformsToSchema(channel) && hasValidPointers(channel, conformsToSchema)) {
-		return [channel, channelName]
+		return [channelName, channel]
 	} else {
 		const errorList = JSON.stringify(conformsToSchema.errors.reverse(), undefined, '  ')
 		throw new Error(`Channel ${channelName} does not conform to channel schema: ${errorList}`)
@@ -77,8 +84,8 @@ function hasValidPointers(channel, ref) {
 function parse(text, filename) {
 	try {
 		return [
-			safeLoad(text),
-			filename
+			filename,
+			safeLoad(text)
 		]
 	} catch (error) {
 		console.error('Could not parse yaml file', filename)

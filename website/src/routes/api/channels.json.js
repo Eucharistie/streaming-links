@@ -12,10 +12,14 @@ export function get(request, response) {
 	}
 
 	function sendError(errors) {
-		console.error('Channels do not conform to channel schema', errors)
+		const errorMessage = 'Channels do not conform to channel schema'
+		console.error(errorMessage, errors)
 		response.writeHead(500, { 'Content-Type': 'text/plain' })
-		response.write('Channels do not conform to channel schema\n')
-		if (inDevMode) response.write(errors.map(e => e.message).join(',\n'))
+		response.write(errorMessage)
+		if (inDevMode) {
+			response.write('\n')
+			response.write(errors.map(e => e.message).join(',\n'))
+		}
 		response.end()
 	}
 }

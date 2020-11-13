@@ -4,14 +4,10 @@
 		// is called [id].svelte
 		const { id } = page.params;
 
-		const channel = {
-			name: id,
-			description: 'Audio streaming',
-			url: '/channel/basiliek',
-			isLive: true,
-			priests: ['Servaas Bosch'],
-			locations: [{city: 'Halle'}]
-		}
+		const response = await this.fetch(`/api/channel/${id}.json`);
+		const channel = await response.json()
+
+		
 
 		return { channel };
 	}
