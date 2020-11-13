@@ -116,7 +116,7 @@
 						"properties": {
 							"time": {
 								"type": "string",
-								"pattern": "(?:[0-1]\\d)|(?:2[0-3]):[0-5]\\d",
+								"pattern": "^(?:(?:[0-1]\\d)|(?:2[0-3])):[0-5]\\d$",
 								"description": "The time of transmission in the format of: \"hh:mm\".",
 								"examples": ["18:30", "10:00"]
 							},
