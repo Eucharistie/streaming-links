@@ -16,7 +16,7 @@ export async function loadAllChannels(waitForAllErrors) {
 	const validatedChannels = channels.map(
 		promise => validateChannelPromise(promise, waitForAllErrors)
 	)
-	const waitFor = waitForAllErrors ? captureAllErrorsIn : Promise.all
+	const waitFor = waitForAllErrors ? waitAndCaptureAllErrorsIn : waitWithEarlyExit
 	return await waitFor(validatedChannels)
 }
 
@@ -91,7 +91,7 @@ function parse(text, filename) {
  * @param {Promise[]} promises An array of promises
  * @returns {Promise<Array>}
  */
-function captureAllErrorsIn(promises) {
+function waitAndCaptureAllErrorsIn(promises) {
 	return new Promise(wait)
 	function wait(resolve, reject) {
 		let semaphore = promises.length
@@ -111,6 +111,15 @@ function captureAllErrorsIn(promises) {
 			}
 		}
 	}
+}
+
+/**
+ * 
+ * @param {Promise[]} promises An array of promises
+ * @returns {Promise<Array>}
+ */
+function waitWithEarlyExit(promises) {
+	return Promise.all(promises)
 }
 
 function loadSchema() {
