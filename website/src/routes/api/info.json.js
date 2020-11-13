@@ -12,7 +12,6 @@ const info = {
 info.url = inDevMode ? `http://localhost:${PORT}` : info.remoteWebsiteURL
 
 export function get(request, response) {
-
 	response.setHeader('Content-Type', 'application/json')
 	response.end(JSON.stringify(info))
 }
