@@ -11,10 +11,10 @@
 <script>
 	import SidebarLayout from '../layouts/sidebar.svelte'
 	import ChannelRow from '../components/channel/layouts/row.svelte'
-	import {hydrate} from '../logic/channels'
+	import {hydrate} from '../logic/hydrate'
 
 	export let channels
-	channels.forEach(hydrate)
+	channels.map(hydrate)
 	
 </script>
 

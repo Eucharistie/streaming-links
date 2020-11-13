@@ -3,4 +3,5 @@ export function hydrate(channel) {
 	for (const entry of channel.eucharistTimetable) {
 		entry.location = channel.locations[entry.location]
 	}
+	return channel
 }
