@@ -1,20 +1,23 @@
 import {loadAllChannels} from '../../data-loader.js'
+import {inDevMode} from '../../logic/runtime'
 
-let channelErrors = []
-const channels = loadAllChannels(true)
-	.then(channels => channels.map(([channel, id]) => ({...channel, id: id.replace('.yaml', '')})))
-	.catch(errors => {
-		channelErrors = errors
-		console.error('Channels do not conform to channel schema', errors)
-	})
+function getAllChannels(waitForAllErrors) {
+	return loadAllChannels(waitForAllErrors)
+		.then(channels => channels.map(([channel, id]) => ({...channel, id: id.replace('.yaml', '')})))
+}
 
 export function get(request, response) {
-	if (channelErrors.length > 0) {
-		sendError(channelErrors)
-		return
+	if (inDevMode) {
+		getAllChannels(true)
+			.then(sendResult)
+			.catch(sendError)
+	} else {
+		if (cachedChannelErrors.length > 0) {
+			sendError(cachedChannelErrors)
+			return
+		}
+		cachedChannels.then(sendResult)	
 	}
-
-	channels.then(sendResult)
 
 	function sendResult(channels) {
 		response.setHeader('Content-Type', 'application/json')
@@ -23,7 +26,16 @@ export function get(request, response) {
 
 	function sendError(errors) {
 		console.error('Channels do not conform to channel schema', errors)
-		response.statusCode = 500
-		response.end('Channels do not conform to channel schema')
+		response.writeHead(500, { 'Content-Type': 'text/plain' })
+		response.write('Channels do not conform to channel schema\n')
+		if (inDevMode) response.write(errors.map(e => e.message).join(',\n'))
+		response.end()
 	}
 }
+
+let cachedChannelErrors = []
+const cachedChannels = getAllChannels(inDevMode)
+	.catch(errors => {
+		cachedChannelErrors = errors
+		console.error('Channels do not conform to channel schema', errors)
+	})

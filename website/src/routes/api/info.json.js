@@ -1,6 +1,4 @@
-const { PORT, NODE_ENV } = process.env;
-
-const inDevMode = NODE_ENV === 'development'
+import {port, inDevMode} from '../../logic/runtime'
 
 const info = {
 	title: 'Eucharistie-info',
@@ -9,7 +7,7 @@ const info = {
 	image: '/image/logo/social.png'
 }
 
-info.url = inDevMode ? `http://localhost:${PORT}` : info.remoteWebsiteURL
+info.url = inDevMode ? `http://localhost:${port}` : info.remoteWebsiteURL
 
 export function get(request, response) {
 	response.setHeader('Content-Type', 'application/json')
