@@ -14,40 +14,34 @@
 	
 	import Filter from '../components/timetable/filter.svelte'
 	import DatePicker from '../components/date picker.svelte'
-	import { matchesFilter } from '../logic/timetable'
+	import { filterTimetable } from '../logic/timetable'
 
 	// will be filled with result of '/api/timetable.json'
 	export let timetable
 
+	// Filter properties:
 	let date = new Date()
 	let selectedLanguages = new Set(timetable.languages)
+
+	// Dynamically filter masses based on `date` & `selectedLanguages`
+	let filteredHours = [];
+	$: filteredHours = filterTimetable(timetable, date, selectedLanguages)
+
+	// --- Helpers ---
+	function massClass(kind) {
+		if (kind == 'sunday') return 'text-blue'
+		else if (kind == 'feast') return 'text-red'
+	}
 
 	const datePickerOptions = {
 		inline: true,
 		mode: 'single'
 	}
-
-	// Dynamically filter masses based on `date` & `selectedLanguages`
-	let filteredHours = [];
-	$: {
-		const serializedDate = `${date.getFullYear()}-${("00" + (date.getMonth() + 1)).slice(-2)}-${("0" + date.getDate()).slice(-2)}`
-		const dayOfWeek = date.getDay()
-		filteredHours = timetable
-			.hours
-			.map(({time, masses}) => ({time, masses: masses.filter(matchesFilter, {languages: selectedLanguages, serializedDate, dayOfWeek})}))
-			.filter(({masses}) => masses.length > 0)
-	}
-
-	// Helper functions
-	function massClass(kind) {
-		if (kind == 'sunday') return 'text-blue'
-		else if (kind == 'feast') return 'text-red'
-	}
 </script>
 
 <SidebarLayout>
 	<div slot=sidebar>
-		<nav class="SideNav mt-md-3 border-bottom border-md overflow-hidden rounded-0 rounded-md-2">
+		<nav class="SideNav mt-md-3 ml-md-3 border-bottom border-md overflow-hidden rounded-0 rounded-md-2">
 			<!-- Calendar component -->
 				<div id="datePicker" class="hide-sm hide-md date-picker">
 					<DatePicker options={datePickerOptions} bind:selection={date}></DatePicker>

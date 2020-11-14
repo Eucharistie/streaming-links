@@ -32,7 +32,30 @@ export function createTimetable(channels) {
 	}	
 }
 
-export function matchesFilter(mass) {
+export function filterTimetable(timetable, date, languages) {
+	const year  = date.getFullYear()
+	const month = ("0" + (date.getMonth() + 1)).slice(-2)
+	const day   = ("0" +  date.getDate()      ).slice(-2)
+	const serializedDate = `${year}-${month}-${day}`
+	const dayOfWeek = date.getDay()
+	return timetable
+		.hours
+		.map(removeNonMatchingMasses)
+		.filter(hasOneOrMoreMasses)
+
+	function removeNonMatchingMasses({time, masses}) {
+		return {
+			time,
+			masses: masses.filter(matchesFilter, {
+				languages,
+				serializedDate,
+				dayOfWeek
+			})
+		}
+	}
+}
+
+function matchesFilter(mass) {
 	if (!this.languages.has(mass.language))
 		return false
 	if (mass.excludingDates) {
@@ -56,6 +79,10 @@ export function matchesFilter(mass) {
 				return true
 		return false
 	}
+}
+
+function hasOneOrMoreMasses({masses}) {
+	return masses.length > 0
 }
 
 function orderOf(first, second) {
