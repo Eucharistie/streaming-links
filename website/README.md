@@ -13,7 +13,7 @@ This is the source to build the website at https://eucharistie.info
 Once you have created the project, install dependencies and run the project in development mode:
 
 ```bash
-cd streaming-links
+cd website
 npm install # or yarn
 npm run dev
 ```
@@ -21,6 +21,18 @@ npm run dev
 This will start the development server on [localhost:3000](http://localhost:3000). Open it and click around.
 
 You now have a fully functional Sapper project! To get started developing, consult [sapper.svelte.dev](https://sapper.svelte.dev).
+
+### Exporting the static website
+
+*See the above instructions to install the dependencies.*
+
+To bundle all the pages into a static website:
+
+```bash
+npm run export
+```
+
+The static website will be saved in the directory `__sapper__/export/`
 
 ### Using TypeScript
 
