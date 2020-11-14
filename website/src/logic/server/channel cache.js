@@ -1,4 +1,4 @@
-import {loadAllChannels, loadChannel, schema} from '../../data-loader.js'
+import {loadAllChannels, loadChannel, schema} from './data-loader.js'
 import {inDevMode} from '../../logic/runtime'
 
 export function getAllChannels() {
