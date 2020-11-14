@@ -10,12 +10,12 @@
 		<h6 class="m-0">
 			{day.nl} om {time}u
 		</h6>
-		<a href="/{ channel.url }">
+		<a href="{ channel.url }">
 			<h4 class="css-truncate css-truncate-overflow mt-2">
 				{title}
 			</h4>
 		</a>
-		<a href="/{ channel.url }">
+		<a href="{ channel.url }">
 			<Avatar {channel} maxsize="140px"></Avatar>
 		</a>
 	</div>

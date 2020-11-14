@@ -5,7 +5,7 @@
 
 <script>
 	import SidebarLayout from '../layouts/sidebar.svelte'
-	import ChannelRow from '../components/channel/layouts/row.svelte'
+	import ChannelRow from '../components/channel/compositions/row.svelte'
 	import {hydrate} from '../logic/hydrate'
 
 	export let channels

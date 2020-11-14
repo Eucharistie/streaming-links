@@ -8,7 +8,7 @@
 </script>
 
 <script>
-	import ChannelTile from '../components/channel/layouts/tile.svelte'
+	import ChannelTile from '../components/channel/compositions/tile.svelte'
 	import {hydrate} from '../logic/hydrate'
 
 	let upcoming = []
