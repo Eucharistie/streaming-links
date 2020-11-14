@@ -2,6 +2,19 @@
 	"type": "object",
 	"title": "Channel",
 	"description": "A channel that broadcasts the Holy Mass",
+
+	"definitions": {
+		"days": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "string",
+				"title": "Weekdays",
+				"enum": ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+			}
+		}
+	},
+
 	"properties": {
 		"name": {
 			"type": "string",
@@ -163,15 +176,7 @@
 								"title": "Weekly date descriptor",
 								"description": "Indicates the weekdays at which an entry occurs in the timetable",
 								"properties": {
-									"days": {
-										"type": "array",
-										"uniqueItems": true,
-										"items": {
-											"type": "string",
-											"title": "Weekdays",
-											"enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
-										}
-									}
+									"days": { "$ref": "#/definitions/days" }
 								},
 								"required": ["days"]
 							},

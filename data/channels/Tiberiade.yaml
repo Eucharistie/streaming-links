@@ -19,18 +19,17 @@ eucharistTimetable:
   kind: sunday
   location: 0
   language: fr
-  excludingDates: []
   days: [sun]
 - time: '18:30'
   kind: week
   location: 0
   language: fr
-  excludingDates: []
+  excludingDates: [2020-11-02]
   days: [mon]
 - time: '17:00'
   kind: week
   location: 0
-  language: fr
+  language: en
   excludingDates: []
   days:
   - tue

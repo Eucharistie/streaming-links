@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { safeLoad } from 'js-yaml'
+import { safeLoad, CORE_SCHEMA } from 'js-yaml'
 const Ajv = require('ajv');
 
 const rootPath = '../'
@@ -9,7 +9,7 @@ const schemaParserWithEarlyExit = new Ajv({loadSchema})
 const schemaParserWithLastExit = new Ajv({allErrors: true, loadSchema})
 
 const schemaText = fs.readFileSync(rootPath + 'schema/channel.schema.json', 'utf-8')
-const schema = JSON.parse(schemaText)
+export const schema = JSON.parse(schemaText)
 
 export async function loadAllChannels(waitForAllErrors) {
 	const channels = await parseAllChannels()
@@ -85,7 +85,7 @@ function parse(text, filename) {
 	try {
 		return [
 			filename,
-			safeLoad(text)
+			safeLoad(text, {schema: CORE_SCHEMA})
 		]
 	} catch (error) {
 		console.error('Could not parse yaml file', filename)
@@ -95,12 +95,24 @@ function parse(text, filename) {
 
 /**
  * 
- * @param {Promise[]} promises An array of promises
+ * Aggregates the results of multiple promises into one promise.
+ * 
+ * The returned promise will
+ *  - **Fullfill** when all the input promises are fulfilled (or if there is no input).
+ *  - **Reject** if one or more of the input promises are fulfilled.
+ * 
+ * Differs from Promise.all because it waits until all failing promises are rejected. It does **not** exit after the first rejection but collects all errors and then rejects with a list of these errors.
+ * 
+ * @param {Promise[]} promises An iterable object such as an Array.
  * @returns {Promise<Array>}
  */
 function waitAndCaptureAllErrorsIn(promises) {
 	return new Promise(wait)
 	function wait(resolve, reject) {
+		if (promises.length == 0) {
+			resolve()
+			return
+		}
 		let semaphore = promises.length
 		const results = []
 		const errors = []
@@ -121,6 +133,8 @@ function waitAndCaptureAllErrorsIn(promises) {
 }
 
 /**
+ * 
+ * Wrapper around Promise.all
  * 
  * @param {Promise[]} promises An array of promises
  * @returns {Promise<Array>}

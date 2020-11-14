@@ -1,13 +1,14 @@
 <script>
-	export let channel;
+  export let url = false;
+  export let name = 'Kanaalafbeelding'
 	export let maxsize = '100px';
 </script>
 
-{#if channel.fbid }
+{#if url}
   <img
     class="avatar circle"
-    src="https://graph.facebook.com/v6.0/{ channel.fbid }/picture?type=large"
-    alt="{channel.name | channel.shortName}"
+    src={ url }
+    alt="{name}"
     style="max-width:{maxsize}; max-height:{maxsize};">
 {:else}
   <svg

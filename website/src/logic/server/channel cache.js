@@ -1,10 +1,9 @@
-import {loadAllChannels, loadChannel} from '../../data-loader.js'
+import {loadAllChannels, loadChannel, schema} from '../../data-loader.js'
 import {inDevMode} from '../../logic/runtime'
 
 export function getAllChannels() {
 	return inDevMode ? getAllTransformedChannels(true) : cachedChannels
 }
-
 
 export async function getChannel(id) {
 	if (inDevMode) {
@@ -18,18 +17,30 @@ export async function getChannel(id) {
 
 async function getAllTransformedChannels(waitForAllErrors) {
 	const channels = await loadAllChannels(waitForAllErrors)
-	return channels.map(useFileNameAsID)
+	return channels
+		.map(useFileNameForID)
+		.map(useNumbersForDays)
 }
 
-function useFileNameAsID([id, channel]) {
+function useFileNameForID([id, channel]) {
 	return {
 		...channel,
 		id: id.replace(extension, '')
 	}
 }
 
+const days = schema.definitions.days.items.enum
+function useNumbersForDays(channel) {
+	for (const entry of channel.eucharistTimetable) {
+		if (entry.hasOwnProperty('days')) {
+			entry.days = entry.days.map(day => days.indexOf(day))
+		}
+	}
+	return channel
+}
+
 const extension = '.yaml'
-const cachedChannels = getAllTransformedChannels(inDevMode)
+export const cachedChannels = getAllTransformedChannels(inDevMode)
 cachedChannels.catch( errors => console.error('Channels do not conform to channel schema', errors) )
 
 export const cachedMap = cachedChannels.then(channels =>

@@ -1,65 +1,50 @@
 <script context="module">
-	import {fetchChannels} from '../logic/channels'
-	export const preload = fetchChannels
+	export async function preload(page, session) {
+		const response = await this.fetch(`/api/timetable.json`);
+		if (!response.ok) throw new Error(await response.text())
+		const timetable = await response.json();
+
+		return {timetable}
+	}
 </script>
 
 <script>
-	import {hydrate} from '../logic/hydrate'
 	import SidebarLayout from '../layouts/sidebar.svelte'
 	import {Filter16, X16, Check16, ChevronLeft16, ChevronRight16} from 'svelte-octicons'
 
 	import DatePicker from '../components/date picker.svelte'
+	import { matchesFilter } from '../logic/timetable'
 
-	let timetable = {languages: [], hours: []}
-	export let channels
-	channels = channels.map(hydrate)
+	export let timetable
 	let date = new Date()
-
-	$: {
-		timetable = timetableForChannels(channels, date)
-	}
-
-	function timetableForChannels(channels, date) {
-		const hours = new Map()
-		const languages = new Set()
-
-		for (const channel of channels) {
-			const shortName = channel.shortName || channel.name
-			for (const entry of channel.eucharistTimetable) {
-				languages.add(entry.language)
-				const summary = {
-					title: shortName, // TODO add location name
-					url: channel.url,
-					language: entry.language
-				}
-				if (hours.has(entry.time))
-					hours.get(entry.time).push(summary)
-				else
-					hours.set(entry.time, [summary])
-			}
-		}
-
-		return {
-			hours: Array
-				.from( hours.entries() )
-				.map( ([time, masses]) => ({time, masses}) )
-				.sort( ({time: first}, {time: second}) => orderOf(first, second) ),
-			languages
-		}
-	}
-
-	function orderOf(first, second) {
-		if (first == second)
-			return 0
-		else if (first < second)
-			return -1
-		else
-			return 1
-	}
+	let selectedLanguages = new Set(timetable.languages)
 
 	const datePickerOptions = {
 		inline: true,
 		mode: 'single'
+	}
+
+	function toggleLanguage(language) {
+		if (selectedLanguages.has(language))
+			selectedLanguages.delete(language)
+		else
+			selectedLanguages.add(language)
+		selectedLanguages = selectedLanguages
+	}
+
+	let filteredHours = [];
+	$: {
+		const serializedDate = `${date.getFullYear()}-${("00" + (date.getMonth() + 1)).slice(-2)}-${("0" + date.getDate()).slice(-2)}`
+		const dayOfWeek = date.getDay()
+		filteredHours = timetable
+			.hours
+			.map(({time, masses}) => ({time, masses: masses.filter(matchesFilter, {languages: selectedLanguages, serializedDate, dayOfWeek})}))
+			.filter(({masses}) => masses.length > 0)
+	}
+
+	function massClass(kind) {
+		if (kind == 'sunday') return 'text-blue'
+		else if (kind == 'feast') return 'text-red'
 	}
 </script>
 
@@ -99,7 +84,7 @@
 						</header>
 						<div class="SelectMenu-list" id="languageFilter">
 							{#each Array.from(timetable.languages) as language}
-								<button class="SelectMenu-item" role="menuitem" aria-checked="true">
+								<button class="SelectMenu-item" role="menuitem" aria-checked={selectedLanguages.has(language)} on:click={e => toggleLanguage(language, e)}>
 									<Check16 class="SelectMenu-icon SelectMenu-icon--check"></Check16>
 									<span>{language}</span>
 								</button>								
@@ -128,13 +113,13 @@
 		</div> <!-- end timetable header -->
 	
 		<!-- time-of-day row -->
-		{#each timetable.hours as entry}
+		{#each filteredHours as entry}
 			<div class="Box-row day-row">
-				{entry.time}
+				{entry.time[0]}:{entry.time[1]}
 
 				<!-- calendar event -->
 				{#each entry.masses as mass}
-					<a href={mass.url} class="capitalize-first-letter event Label Label--gray">
+					<a href={mass.url} class="capitalize-first-letter event Label Label--gray {massClass(mass.kind)}">
 						{mass.title}
 						<span class="Counter Counter--gray language-badge">
 							{mass.language}
