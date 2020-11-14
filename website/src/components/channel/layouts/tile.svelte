@@ -5,7 +5,7 @@
 	const title = (channel.shortName || channel.name || 'Onbekend') // TODO add priest and location as fallback
 </script>
 
-<div class="home-link col-12 col-sm-6 col-md-4 col-lg-3 float-left text-center" data-day="{day.value}" data-time="{time}">
+<div class="home-link col-12 col-sm-6 col-md-4 col-lg-3 float-left text-center">
 	<div class="bg-white rounded-md-2 my-md-6 mx-md-3 p-4">
 		<h6 class="m-0">
 			{day.nl} om {time}u
