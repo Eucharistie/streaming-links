@@ -10,12 +10,15 @@
 
 <script>
 	import SidebarLayout from '../layouts/sidebar.svelte'
-	import {Filter16, X16, Check16, ChevronLeft16, ChevronRight16} from 'svelte-octicons'
-
+	import {ChevronLeft16, ChevronRight16, Filter16} from 'svelte-octicons'
+	
+	import Filter from '../components/timetable/filter.svelte'
 	import DatePicker from '../components/date picker.svelte'
 	import { matchesFilter } from '../logic/timetable'
 
+	// will be filled with result of '/api/timetable.json'
 	export let timetable
+
 	let date = new Date()
 	let selectedLanguages = new Set(timetable.languages)
 
@@ -24,14 +27,7 @@
 		mode: 'single'
 	}
 
-	function toggleLanguage(language) {
-		if (selectedLanguages.has(language))
-			selectedLanguages.delete(language)
-		else
-			selectedLanguages.add(language)
-		selectedLanguages = selectedLanguages
-	}
-
+	// Dynamically filter masses based on `date` & `selectedLanguages`
 	let filteredHours = [];
 	$: {
 		const serializedDate = `${date.getFullYear()}-${("00" + (date.getMonth() + 1)).slice(-2)}-${("0" + date.getDate()).slice(-2)}`
@@ -42,15 +38,12 @@
 			.filter(({masses}) => masses.length > 0)
 	}
 
+	// Helper functions
 	function massClass(kind) {
 		if (kind == 'sunday') return 'text-blue'
 		else if (kind == 'feast') return 'text-red'
 	}
 </script>
-
-<svelte:head>
-	<link rel="stylesheet" href="/style/flatpickr.min.css">
-</svelte:head>
 
 <SidebarLayout>
 	<div slot=sidebar>
@@ -68,40 +61,17 @@
 		<!-- timetable header -->
 		<div class="Box-header order-0 border-md rounded-0 rounded-md-top-2 d-flex flex-justify-between Box-header--blue">
 	
-			<!-- filter button -->
-			<details class="details-reset details-overlay m-0 mr-3">
-				<summary class="btn btn-sm" aria-haspopup="true">
-					<Filter16></Filter16>
-					<span class="hide-sm ml-2">Filter</span>
-				</summary>
-				<div class="SelectMenu">
-					<div class="SelectMenu-modal">
-						<header class="SelectMenu-header">
-							<h6 class="m-0 p-1 SelectMenu-title">Talen</h6>
-							<button class="SelectMenu-closeButton" type="button" onclick="document.querySelector('#filter').open = false">
-								<X16></X16>
-							</button>
-						</header>
-						<div class="SelectMenu-list" id="languageFilter">
-							{#each Array.from(timetable.languages) as language}
-								<button class="SelectMenu-item" role="menuitem" aria-checked={selectedLanguages.has(language)} on:click={e => toggleLanguage(language, e)}>
-									<Check16 class="SelectMenu-icon SelectMenu-icon--check"></Check16>
-									<span>{language}</span>
-								</button>								
-							{/each}
-						</div>
-					</div>
-				</div>
-			</details>
+			<Filter
+				allLanguages={timetable.languages}
+				bind:selectedLanguages={selectedLanguages} >
+			</Filter>
 	
 			<!-- mobile day chooser (for desktop: sidenav) -->
 			<div class="BtnGroup hide-lg hide-xl m-0">
 				<button class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron left icon">
 					<ChevronLeft16></ChevronLeft16>
 				</button>
-				<button class="text-center btn btn-sm BtnGroup-item" style="width: 8em;">
-					<!-- day of week comes here -->
-				</button>
+				<DatePicker className="text-center btn btn-sm BtnGroup-item" bind:selection={date}></DatePicker>
 				<button class="btn btn-sm BtnGroup-item" type="button" aria-label="Chevron right icon">
 					<ChevronRight16></ChevronRight16>
 				</button>
