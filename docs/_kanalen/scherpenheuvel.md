@@ -8,11 +8,16 @@ locations:
   dioceseRegion: 
   country: BE
 timetable:
-- time: 11:00
+- time: 10:30
   days: [mon,tue,wed,thu,fri,sat]
   excludingDates:
   kind: weekMass
   language: nl
+- time: 10:30
+  days: [sun]
+  excludingDates:
+  kind: feast
+  language: nl  
 - title: Palmzondag
   time: 07:15
   dates: [2020-04-05]
