@@ -14,5 +14,6 @@ timetable:
   language: nl
 homepage: https://www.facebook.com/felix.vanmeerbergen
 youtube: https://www.youtube.com/channel/UCpteAQpOrDwvgGyIwK9kUGA
+youtubeChannelID: UCpteAQpOrDwvgGyIwK9kUGA
 
 ---
