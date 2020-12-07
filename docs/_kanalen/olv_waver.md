@@ -13,10 +13,18 @@ timetable:
   excludingDates: [2020-11-15,2020-11-22]
   kind: sundayMass
   language: nl
+- time: 17:45
+  days: [sat]
+  kind: sundayMass
+  language: nl
+- time: 19:00
+  days: [mon,thu]
+  kind: weekMass
+  language: nl  
 facebook: 
 fbid: 
 youtube: https://www.youtube.com/channel/UCllQb1jp_I4XjLWAtSrKN5Q
 channelID: UCllQb1jp_I4XjLWAtSrKN5Q
-homepage: 
+homepage: https://parochiesintkatelijnewaver.be/eucharistievieringen
 stream:
 ---
