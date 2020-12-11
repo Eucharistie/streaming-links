@@ -16,7 +16,7 @@ timetable:
 - time: 10:30
   days: [sun]
   excludingDates:
-  kind: feast
+  kind: sundayMass
   language: nl  
 - title: Palmzondag
   time: 07:15
