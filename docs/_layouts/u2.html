@@ -89,6 +89,29 @@ layout: main
       {{channel | where_exp: "hash", "hash[0] != 'output'" | where_exp: "hash", "hash[0] != 'next' and hash[0] != 'previous'"  | jsonify}},
     {% endfor %}
   ];
+
+  // POLYFILLS
+  if (Object.fromEntries == undefined) {
+    Object.fromEntries = function(entries) {
+      const object = {}
+      for (var tuple of entries)
+        object[tuple[0]] = tuple[1]
+      return object
+    }
+  }
+  if (window.Intl == undefined) {
+    Intl = {
+      DateTimeFormat: function() {
+        return {
+          format: function(date) {
+            const minutes = ("0" + date.getMinutes())
+            return date.getHours() + ":" + minutes.substr(minutes.length - 2)
+          }
+        }
+      }
+    }
+  }
+
   const channels = channelEntries.map(function (entries) {return Object.fromEntries(entries)});
   const localDays = {{localDays|jsonify}};
   const languageNames = {{languageNames|jsonify}};
@@ -132,10 +155,10 @@ layout: main
     return dateShort;
   }
 
-  let dateToShow = shortDate(new Date())
+  var dateToShow = shortDate(new Date())
 
   // Find used languages
-  let languages = new Set();
+  var languages = new Set();
   channels.forEach( function(channel) {
     if (channel.timetable && Array.isArray(channel.timetable)) {
       channel.timetable.forEach( function (event) {
@@ -266,7 +289,7 @@ layout: main
 
         // event has exlude dates
         const excludesThisDate = event.event.excludingDates && Array.isArray(event.event.excludingDates) && (event.event.excludingDates.indexOf(date) >= 0);
-        let hidden = notThisDate || excludesThisDate || notThisLang
+        var hidden = notThisDate || excludesThisDate || notThisLang
 
         if (hidden) {
           eventCount--;
@@ -284,7 +307,7 @@ layout: main
     datePickerMobile.setDate(new Date(newdate), true);
   }
 
-  let calendar = generateCalendar();
+  var calendar = generateCalendar();
   // show today
   showDate(dateToShow);
 
